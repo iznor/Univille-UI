@@ -1,7 +1,12 @@
 import React from 'react';
+import Homepage from './components/Homepage';
 
 export const App = (): JSX.Element => {
-  return <div>UnivilleUi</div>;
+  return (
+    <>
+      <Homepage />
+    </>
+  );
 };
 
 export default App;
