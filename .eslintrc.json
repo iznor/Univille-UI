@@ -8,6 +8,7 @@
         "standard-with-typescript",
         "eslint:recommended",
         "plugin:@typescript-eslint/recommended",
+        "plugin:eslint-comments/recommended",
         "prettier"
     ],
     "overrides": [],
@@ -22,28 +23,13 @@
     },
     "plugins": [
         "@typescript-eslint",
-        "react"
+        "react",
+        "eslint-comments",
+        "promise",
+        "import",
+        "prettier"
     ],
     "rules": {
-        "@typescript-eslint/dot-notation": "error",
-        "no-use-before-define": "off",
-        "@typescript-eslint/no-use-before-define": ["error"],
-        "react/jsx-filename-extension": [ "warn", {"extensions": [".tsx"]} ],
-        "import/extensions": [
-            "error",
-            "ignorePackages",
-            {
-                "ts": "never",
-                "tsx": "never"
-            }
-        ],
-        "no-shadow": "off",
-        "@typescript-eslint/no-shadow": ["error"],
-        "max-len": ["warn", { "code": 80 }]
-    },
-    "settings": {
-        "import/resolver": {
-            "typescript": {}
-        }
+        "@typescript-eslint/dot-notation": "error"
     }
 }
