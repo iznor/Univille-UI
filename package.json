@@ -18,6 +18,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint:eslint": "eslint --ext .tsx src/ --fix"
+
   },
   "eslintConfig": {
     "extends": [

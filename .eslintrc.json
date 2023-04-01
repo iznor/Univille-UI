@@ -1,35 +1,30 @@
 {
     "env": {
         "browser": true,
-        "es2021": true
+        "es6": true,
+        "node": true
     },
     "extends": [
-        "plugin:react/recommended",
-        "standard-with-typescript",
         "eslint:recommended",
+        "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended",
-        "plugin:eslint-comments/recommended",
-        "prettier"
+        "plugin:import/recommended",
+        "plugin:import/electron",
+        "plugin:import/typescript"
     ],
-    "overrides": [],
     "parser": "@typescript-eslint/parser",
-    "parserOptions": {
-        "ecmaVersion": "latest",
-        "project": "./tsconfig.json",
-        "sourceType": "module",
-        "ecmaFeatures": {
-            "jsx": true
+    "settings": {
+        "import/resolver": {
+            "typescript": {}
         }
     },
-    "plugins": [
-        "@typescript-eslint",
-        "react",
-        "eslint-comments",
-        "promise",
-        "import",
-        "prettier"
-    ],
     "rules": {
-        "@typescript-eslint/dot-notation": "error"
+        "@typescript-eslint/ban-ts-comment": "off",
+        "prefer-const": "off",
+        "import/no-named-as-default-member": "off",
+        "@typescript-eslint/no-empty-interface": "off",
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/explicit-module-boundary-types": "off",
+        "@typescript-eslint/no-empty-function": "off"
     }
 }
