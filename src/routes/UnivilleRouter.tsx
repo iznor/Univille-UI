@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import RequireAuth from './RequireAuth';
-import { Layout, Login, Signup, Leaderboard, GameWizard } from '../pages';
+import { Layout, Login, Signup, Leaderboard, GameWizard, Home } from '../pages';
 
 export const UnivilleRouter = () => {
   const [isAuth, setAuth] = useState(true);
@@ -17,12 +17,13 @@ export const UnivilleRouter = () => {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/login" element={<Login />} />
+        <Route index element={<Home />} />
+        {/* <Route path="/signup" element={<Signup />} /> */}
+        {/* <Route path="/login" element={<Login />} /> */}
         <Route
           path="/Game"
           element={
-            <RequireAuth isAuth={isAuth}>
+            <RequireAuth isAuth={true}>
               <GameWizard />
             </RequireAuth>
           }
@@ -30,7 +31,7 @@ export const UnivilleRouter = () => {
         <Route
           path="/Leaderboard"
           element={
-            <RequireAuth isAuth={isAuth}>
+            <RequireAuth isAuth={true}>
               <Leaderboard />
             </RequireAuth>
           }

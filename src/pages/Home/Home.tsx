@@ -1,15 +1,15 @@
 import React from 'react';
 import { P } from '../../components';
 
-interface IGameWizard {}
+interface IHome {}
 
-const GameWizard = (props: IGameWizard) => {
+const Home = (props: IHome) => {
   const {} = props;
   return (
     <div>
-      <P>IGameWizard</P>
+      <P>Home</P>
     </div>
   );
 };
 
-export { GameWizard };
+export { Home };

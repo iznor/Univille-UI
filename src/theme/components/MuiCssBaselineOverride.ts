@@ -11,7 +11,7 @@ export const MuiCssBaselineOverride = (theme) => {
       },
       body: {
         color: themeParam.palette.text[500],
-        backgroundColor: themeParam.palette.dark[100],
+        backgroundColor: themeParam.palette.neutral[100],
         overflowX: 'hidden',
         letterSpacing: '0.03em',
         display: 'unset',
