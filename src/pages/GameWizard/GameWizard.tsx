@@ -1,14 +1,17 @@
 import React from 'react';
 import { P } from '../../components';
+import { Box } from '@mui/material';
+import './GameWizard.scss';
+import { MapView } from './MapView';
 
 interface IGameWizard {}
 
 const GameWizard = (props: IGameWizard) => {
   const {} = props;
   return (
-    <div>
-      <P>IGameWizard</P>
-    </div>
+    <Box className="game-wizard-wrapper">
+      <MapView />
+    </Box>
   );
 };
 

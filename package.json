@@ -11,6 +11,7 @@
     "color": "^4.2.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-material-ui-carousel": "^3.4.2",
     "react-router-dom": "^6.10.0",
     "react-scripts": "^5.0.1",
     "react-use": "^17.4.0",
@@ -19,10 +20,14 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "lint:eslint": "eslint --ext .tsx src/ --fix"
+    "build": "npm-run-all build:*",
+    "test": "react-scripts-ts test --env=jsdom",
+    "eject": "react-scripts-ts eject",
+    "lint:eslint": "eslint --ext .tsx src/ --fix",
+    "build:css": "node-sass src/ -o src/ ",
+    "watch:css": "npm run build:css && node-sass src/ -o src/ -w -r",
+    "start:js": "react-scripts-ts start",
+    "build:js": "react-scripts-ts build"
   },
   "eslintConfig": {
     "extends": [
@@ -43,6 +48,7 @@
     ]
   },
   "devDependencies": {
+    "@types/node-sass": "^4.11.3",
     "@typescript-eslint/eslint-plugin": "^5.57.0",
     "@typescript-eslint/parser": "^5.57.0",
     "eslint": "^8.37.0",
@@ -57,6 +63,8 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-react": "^7.32.2",
+    "node-sass": "^7.0.3",
+    "npm-run-all": "^4.1.5",
     "prettier": "^2.8.1"
   }
 }
