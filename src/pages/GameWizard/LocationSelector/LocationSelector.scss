@@ -1,0 +1,20 @@
+.location-selector-wrapper {
+  box-shadow: #00000087 2px 5px 15px;
+  border-radius: 30px;
+  height: 300px;
+  .paper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    .item-description-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 10px;
+    }
+    .item-photo-box {
+      width: 450px;
+    }
+  }
+}
