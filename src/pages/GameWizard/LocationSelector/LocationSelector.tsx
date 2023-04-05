@@ -4,13 +4,16 @@ import { Box, Paper, Button } from '@mui/material';
 import './LocationSelector.scss';
 import Carousel from 'react-material-ui-carousel';
 import { Item } from '../Item/Item';
-import { useLocationItems } from './hooks/useLocationItems';
+import { LocationItem } from '../consts';
 
-interface IMapView {}
+interface ILocationSelector {
+  itemsList: LocationItem[];
+  selectItem: (item: LocationItem) => void;
+  removeItem: (item: LocationItem) => void;
+}
 
-export const LocationSelector = (props: IMapView) => {
-  const {} = props;
-  const { items } = useLocationItems();
+export const LocationSelector = (props: ILocationSelector) => {
+  const { itemsList, selectItem, removeItem } = props;
 
   return (
     <Carousel
@@ -23,8 +26,13 @@ export const LocationSelector = (props: IMapView) => {
       animation={'slide'}
       duration={500}
     >
-      {items.map((item, i) => (
-        <Item key={i} item={item} />
+      {itemsList.map((item, i) => (
+        <Item
+          key={i}
+          item={item}
+          selectItem={selectItem}
+          removeItem={removeItem}
+        />
       ))}
     </Carousel>
   );

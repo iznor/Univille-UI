@@ -4,4 +4,5 @@ export type LocationItem = {
   description: string;
   objectPhotoUrl: string;
   mapPhotoUrl: string;
+  hint?: string;
 };

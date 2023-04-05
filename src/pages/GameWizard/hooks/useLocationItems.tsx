@@ -1,30 +1,30 @@
-import { LocationItem } from '../../consts';
+import { LocationItem } from '../consts';
 
 export const useLocationItems = () => {
   // todo - api GET request to receive:
-  const items: LocationItem[] = [
+  const itemsList: LocationItem[] = [
     {
-      name: 'Random Name #1',
+      name: 'Location #1',
       unityObjectTag: '0_StreetLight',
-      description: 'Probably the most random!',
+      description: 'Decription of location 1',
       objectPhotoUrl: 'https://random.imagecdn.app/450/300',
       mapPhotoUrl: 'https://random.imagecdn.app/450/300',
     },
     {
-      name: 'Random Name #2',
+      name: 'Location #2',
       unityObjectTag: '0_Bus',
-      description: 'Hello World!',
+      description: 'Decription of location 2',
       objectPhotoUrl: 'https://random.imagecdn.app/450/300',
       mapPhotoUrl: 'https://random.imagecdn.app/450/300',
     },
     {
-      name: 'Random Name #2',
+      name: 'Location #3',
       unityObjectTag: '1_Tower',
-      description: 'Hello World!',
+      description: 'Decription of location 3',
       objectPhotoUrl: 'https://random.imagecdn.app/450/300',
       mapPhotoUrl: 'https://random.imagecdn.app/450/300',
     },
   ];
 
-  return { items };
+  return { itemsList };
 };
