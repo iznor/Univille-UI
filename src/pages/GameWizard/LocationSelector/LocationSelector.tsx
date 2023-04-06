@@ -8,12 +8,13 @@ import { LocationItem } from '../consts';
 
 interface ILocationSelector {
   itemsList: LocationItem[];
+  selectedItems: LocationItem[];
   selectItem: (item: LocationItem) => void;
   removeItem: (item: LocationItem) => void;
 }
 
 export const LocationSelector = (props: ILocationSelector) => {
-  const { itemsList, selectItem, removeItem } = props;
+  const { itemsList, selectedItems, selectItem, removeItem } = props;
 
   return (
     <Carousel
@@ -32,6 +33,7 @@ export const LocationSelector = (props: ILocationSelector) => {
           item={item}
           selectItem={selectItem}
           removeItem={removeItem}
+          selectedItems={selectedItems}
         />
       ))}
     </Carousel>
