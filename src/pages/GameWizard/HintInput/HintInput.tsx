@@ -15,6 +15,11 @@ export const HintInput = (props: HintInputProps) => {
   };
 
   return (
-    <Input value={hintValue} onChange={handleChange} sx={{ width: '100%' }} />
+    <Input
+      value={hintValue}
+      onChange={handleChange}
+      placeholder={'Your hint goes here...'}
+      sx={{ width: '100%' }}
+    />
   );
 };
