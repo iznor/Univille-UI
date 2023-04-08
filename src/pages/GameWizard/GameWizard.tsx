@@ -1,13 +1,13 @@
 import React from 'react';
 import './GameWizard.scss';
-import { LocationSelector } from './LocationSelector';
-import { useLocationItems } from './hooks';
-import { LocationItem } from './consts';
 import { TableCell, TableRow } from '@mui/material';
+import Button from '@mui/material/Button';
+import { LocationSelector } from './LocationSelector';
+import { LocationItem } from './consts';
 import { LocationsTable } from './LocationsTable';
 import { HintInput } from './HintInput';
-import { WithDialog, useWithDialog } from './WithDialog';
-import { DeleteButton } from './DeleteButton';
+import { DeleteItemWithDialog } from './DeleteItemWithDialog';
+import { useLocationItems, useGame } from './hooks';
 
 interface GameWizardProps {}
 
@@ -15,9 +15,7 @@ const GameWizard = (props: GameWizardProps) => {
   // const {} = props;
   const { itemsList, selectedItems, handleSelect, handleRemove } =
     useLocationItems();
-
-  const { handleClose } = useWithDialog();
-
+  const { handleGameCreation, isGameReady } = useGame();
   return (
     <>
       <LocationSelector
@@ -39,23 +37,19 @@ const GameWizard = (props: GameWizardProps) => {
               />
             </TableCell>
             <TableCell>
-              <WithDialog
-                component={DeleteButton}
-                componentProps={{
-                  color: 'error',
-                  cursor: 'pointer',
-                }}
-                titleText={`Delete Location`}
-                messageText={`Delete ${item.name} from the table ?`}
-                agreeText={'Delete'}
-                declineText={'Cancel'}
-                handleAgree={() => handleRemove(item)}
-                handleDecline={handleClose}
+              <DeleteItemWithDialog
+                item={item}
+                removeHandler={(item) => handleRemove(item)}
               />
             </TableCell>
           </TableRow>
         ))}
       />
+      {!isGameReady && (
+        <Button onClick={() => handleGameCreation(selectedItems)}>
+          Finish
+        </Button>
+      )}
     </>
   );
 };

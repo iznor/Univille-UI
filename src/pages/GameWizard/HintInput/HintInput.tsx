@@ -16,6 +16,7 @@ export const HintInput = (props: HintInputProps) => {
 
   return (
     <Input
+      required={true}
       value={hintValue}
       onChange={handleChange}
       placeholder={'Your hint goes here...'}
