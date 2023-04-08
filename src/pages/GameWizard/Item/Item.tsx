@@ -2,6 +2,7 @@ import { Box, Button, Paper } from '@mui/material';
 import { H2, P } from '../../../components';
 import React, { useEffect, useState } from 'react';
 import { LocationItem } from '../consts';
+import { DeleteItemWithDialog } from '../DeleteItemWithDialog/DeleteItemWithDialog';
 type ItemProps = {
   item: LocationItem;
   selectedItems: LocationItem[];
@@ -31,7 +32,7 @@ export const Item = (props: ItemProps) => {
           <H2>{item.name}</H2>
           <P>{item.description}</P>
           <Button
-            className={isSelected ? 'button-remove' : 'button-add'}
+            className={isSelected ? 'button-remove' : ''}
             onClick={handleButtonClick}
           >
             {isSelected ? 'Remove' : 'Add Location'}
