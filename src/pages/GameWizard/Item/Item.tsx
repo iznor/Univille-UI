@@ -11,7 +11,6 @@ type ItemProps = {
 export const Item = (props: ItemProps) => {
   const { item, selectedItems, selectItem, removeItem } = props;
   const [isSelected, setIsSelected] = useState<boolean>(false);
-  const [buttonText, setButtonText] = useState<string>('Add this location');
   useEffect(() => {
     const isInSelectedItems = selectedItems.some(
       (selectedItem) => item.unityObjectTag === selectedItem.unityObjectTag
@@ -31,8 +30,11 @@ export const Item = (props: ItemProps) => {
         <Box className="item-description-box">
           <H2>{item.name}</H2>
           <P>{item.description}</P>
-          <Button className="CheckButton" onClick={handleButtonClick}>
-            {isSelected ? 'Remove from list' : 'Add this location'}
+          <Button
+            className={isSelected ? 'button-remove' : 'button-add'}
+            onClick={handleButtonClick}
+          >
+            {isSelected ? 'Remove' : 'Add Location'}
           </Button>
         </Box>
         <img src={item.mapPhotoUrl} className="item-photo-box" />
