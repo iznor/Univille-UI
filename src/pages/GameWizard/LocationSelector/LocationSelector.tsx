@@ -1,19 +1,18 @@
 import React from 'react';
-import { H2, P } from '../../../components';
-import { Box, Paper, Button } from '@mui/material';
 import './LocationSelector.scss';
 import Carousel from 'react-material-ui-carousel';
-import { Item } from '../Item/Item';
+import { Item } from '../Item';
 import { LocationItem } from '../consts';
 
 interface ILocationSelector {
   itemsList: LocationItem[];
+  selectedItems: LocationItem[];
   selectItem: (item: LocationItem) => void;
   removeItem: (item: LocationItem) => void;
 }
 
 export const LocationSelector = (props: ILocationSelector) => {
-  const { itemsList, selectItem, removeItem } = props;
+  const { itemsList, selectedItems, selectItem, removeItem } = props;
 
   return (
     <Carousel
@@ -32,6 +31,7 @@ export const LocationSelector = (props: ILocationSelector) => {
           item={item}
           selectItem={selectItem}
           removeItem={removeItem}
+          selectedItems={selectedItems}
         />
       ))}
     </Carousel>

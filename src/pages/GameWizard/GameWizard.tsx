@@ -1,50 +1,62 @@
-import React, { useEffect, useState } from 'react';
-import { P } from '../../components';
-import { Box } from '@mui/material';
+import React from 'react';
 import './GameWizard.scss';
 import { LocationSelector } from './LocationSelector';
-import { useLocationItems } from './hooks/useLocationItems';
+import { useLocationItems } from './hooks';
 import { LocationItem } from './consts';
+import { TableCell, TableRow } from '@mui/material';
+import { LocationsTable } from './LocationsTable';
+import { HintInput } from './HintInput';
+import { WithDialog, useWithDialog } from './WithDialog';
+import { DeleteButton } from './DeleteButton';
 
-interface IGameWizard {}
+interface GameWizardProps {}
 
-const GameWizard = (props: IGameWizard) => {
+const GameWizard = (props: GameWizardProps) => {
   // const {} = props;
-  const { itemsList } = useLocationItems();
-  const [selectedItems, setSelectedItems] = useState<LocationItem[]>([]);
-  useEffect(() => {}, [selectedItems]);
-  const handleSelect = (item: LocationItem) => {
-    !selectedItems.some(
-      (selectedItem) => selectedItem.unityObjectTag === item.unityObjectTag
-    )
-      ? setSelectedItems([...selectedItems, item])
-      : console.log('todo: already in the list message');
-  };
+  const { itemsList, selectedItems, handleSelect, handleRemove } =
+    useLocationItems();
 
-  const handleRemove = (item: LocationItem) => {
-    const newSelectedItems = selectedItems.filter(
-      (selectedItem) => selectedItem.unityObjectTag !== item.unityObjectTag
-    );
-    selectedItems.some(
-      (selectedItem) => selectedItem.unityObjectTag === item.unityObjectTag
-    )
-      ? setSelectedItems(newSelectedItems)
-      : console.log('todo: error message - cant remove item');
-  };
+  const { handleClose } = useWithDialog();
+
   return (
-    <Box className="game-wizard-wrapper">
+    <>
       <LocationSelector
         itemsList={itemsList}
+        selectedItems={selectedItems}
         selectItem={(item: LocationItem) => handleSelect(item)}
         removeItem={(item: LocationItem) => handleRemove(item)}
       />
-      <P>
-        Selected Locations:{' '}
-        {selectedItems.map((item) => (
-          <p>{item.name}</p>
+      <LocationsTable
+        rows={selectedItems.map((item) => (
+          <TableRow key={item.unityObjectTag}>
+            <TableCell>{selectedItems.indexOf(item) + 1}</TableCell>
+            <TableCell>{item.name}</TableCell>
+            <TableCell>
+              <HintInput
+                key={item.unityObjectTag}
+                item={item}
+                hint={item.hint}
+              />
+            </TableCell>
+            <TableCell>
+              <WithDialog
+                component={DeleteButton}
+                componentProps={{
+                  color: 'error',
+                  cursor: 'pointer',
+                }}
+                titleText={`Delete Location`}
+                messageText={`Delete ${item.name} from the table ?`}
+                agreeText={'Delete'}
+                declineText={'Cancel'}
+                handleAgree={() => handleRemove(item)}
+                handleDecline={handleClose}
+              />
+            </TableCell>
+          </TableRow>
         ))}
-      </P>
-    </Box>
+      />
+    </>
   );
 };
 

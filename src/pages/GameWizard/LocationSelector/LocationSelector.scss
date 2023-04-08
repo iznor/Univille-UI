@@ -12,9 +12,22 @@
       align-items: center;
       text-align: center;
       padding: 10px;
+      min-width: 250px;
+      max-width: 500px;
+      H2, P, Button{
+        margin-bottom: 25px;
+      }
+      Button{
+        font-size: 16px;
+      }
+      .button-remove{
+        font-weight: bold;
+        color: #e31212;
+      }
     }
     .item-photo-box {
       width: 450px;
+      height: 300px;
     }
   }
 }
