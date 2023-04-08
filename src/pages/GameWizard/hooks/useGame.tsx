@@ -14,6 +14,7 @@ export const useGame = () => {
     undefined,
     undefined
   );
+  // todo: validation function - verify there is no 'undefined' fields before sending to the server.
   const handleGameCreation = (selectedItems: LocationItem[]) => {
     const gameMissions: Mission[] = [];
     selectedItems.forEach((item: LocationItem) => {
