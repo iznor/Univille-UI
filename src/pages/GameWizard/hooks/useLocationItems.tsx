@@ -13,7 +13,6 @@ export const useLocationItems = () => {
         'https://upload.wikimedia.org/wikipedia/commons/7/7c/Safari_park.jpg',
       mapPhotoUrl:
         'https://docs.unity-ar-gps-location.com/assets/img/02.9e27a4eb.png',
-      hint: 'sss',
     },
     {
       unityObjectTag: '0_Bus',
