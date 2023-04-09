@@ -7,7 +7,7 @@ const Home = (props: IHome) => {
   const {} = props;
   return (
     <div>
-      <P>Home</P>
+      <P>Hommmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmme</P>
     </div>
   );
 };

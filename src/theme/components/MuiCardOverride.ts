@@ -4,7 +4,9 @@ export const MuiCardOverride: ComponentThemeFn['MuiCard'] = (theme) => {
   return {
     defaultProps: {},
     styleOverrides: {
-      root: {},
+      root: {
+        boxShadow: '0 0 0 1px rgba(0,0,0,0.05), 0 1px 3px 0 rgba(0,0,0,0.1)',
+      },
     },
     variants: [
       // {
