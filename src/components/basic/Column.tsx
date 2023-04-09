@@ -1,9 +1,10 @@
-import {Stack, StackProps} from '@mui/material'
+import { Stack, StackProps } from '@mui/material';
+import React from 'react';
 
-export function Column({children,className="",...props}:StackProps){
-    return (
-        <Stack direction={"column"} {...props} className={`desktop-column ${className}`}>
-            {children}
-        </Stack>
-    )
+export function Column(props: StackProps) {
+  return (
+    <Stack direction={'column'} {...props}>
+      {props.children}
+    </Stack>
+  );
 }

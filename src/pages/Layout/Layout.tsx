@@ -1,49 +1,62 @@
-import React, { useEffect, useState } from 'react';
-import { Outlet } from 'react-router-dom';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import { Outlet, useLocation } from 'react-router-dom';
 import { Box, CssBaseline, Toolbar } from '@mui/material';
 import { Header } from './Header';
 import { Sidebar } from './SideBar';
-import { Column } from '../../components';
+import { Column, Main } from '../../components';
+import { useWindowSize } from 'react-use';
 
 function Layout() {
+  const location = useLocation();
+  const { width, height } = useWindowSize();
+  console.log(location);
   // const {uiState} = useUi();
   // const {
   //   routingState: {isAuthPage},
   // } = uiState;
-  const [isAuthPage, setIsAuthPage] = useState(false);
-  const [drawerIsOpen, setDrawerIsOpen] = useState(true);
-  const [drawerWidth, setDrawerWidth] = useState(300);
+  // const [isAuthPage, setIsAuthPage] = useState(false);
+  const [drawerIsOpen, setDrawerIsOpen] = useState(false);
+  // const [drawerWidth, setDrawerWidth] = useState(300);
   const toggleDrawer = () => {
     setDrawerIsOpen(!drawerIsOpen);
   };
-  useEffect(() => {
-    setDrawerWidth(isAuthPage ? 0 : 300);
-  }, [isAuthPage]);
+
+  const drawerWidth = useMemo(
+    () => (['/login', '/signup'].includes(location.pathname) ? 0 : 300),
+    [location.pathname]
+  );
+  const isAuthPage = useMemo(
+    () => ['/login', '/signup'].includes(location.pathname),
+    [location.pathname]
+  );
   return (
-    <Box>
+    <Column alignItems={'flex-end'}>
       <CssBaseline />
       <Header
         isAuthPage={isAuthPage}
         drawerWidth={drawerWidth}
         toggleDrawer={toggleDrawer}
+        drawerIsOpen={drawerIsOpen}
       />
       <Sidebar
         drawerWidth={drawerWidth}
         toggleDrawer={toggleDrawer}
         isOpen={drawerIsOpen}
       />
-      <Box
-        component="main"
+      <Main
         sx={{
           flexGrow: 1,
-          p: 3,
-          width: { sm: `calc(100% - ${drawerWidth}px)` },
+          px: 3,
+          // border: '1px solid red',
+          width: `calc(100% - ${width < 770 ? 0 : drawerWidth}px)`,
+          height: '90vh',
+          mt: '64px',
         }}
       >
-        <Toolbar />
+        {/* <Toolbar /> */}
         <Outlet />
-      </Box>
-    </Box>
+      </Main>
+    </Column>
   );
 }
 

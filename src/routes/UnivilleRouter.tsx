@@ -18,7 +18,7 @@ export const UnivilleRouter = () => {
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
-        {/* <Route path="/signup" element={<Signup />} /> */}
+        <Route path="/signup" element={<Signup />} />
         {/* <Route path="/login" element={<Login />} /> */}
         <Route
           path="/Game"

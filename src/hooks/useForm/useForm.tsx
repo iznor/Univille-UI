@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { formValidators } from './formValidators';
 
-
-
 export const useForm = (initialValues: Record<string, string>) => {
   const [formValues, setFormValues] = useState<IFormValues | null>(null);
   const [formIsValid, setFormIsValid] = useState(false);
@@ -45,7 +43,7 @@ export const useForm = (initialValues: Record<string, string>) => {
     return isFormValid;
   };
 
-  const validate = (name:string, value:string, validators:string[]) => {
+  const validate = (name: string, value: string, validators: string[]) => {
     let message = '';
     if (validators.includes('required')) {
       message = formValidators.required(value);
@@ -78,12 +76,15 @@ export const useForm = (initialValues: Record<string, string>) => {
     checkFormValidity();
   };
 
-  const handleInput:IHandleInput = ({ target: { name, value } }, validators) => {
+  const handleInput: IHandleInput = (
+    { target: { name, value } },
+    validators
+  ) => {
     setValue(name, value, 'value');
     validate(name, value, validators);
   };
 
-  const submitForm:ISubmitForm = (submitCallback, reset = true) => {
+  const submitForm: ISubmitForm = (submitCallback, reset = true) => {
     if (checkFormValidity()) {
       const values = {};
       Object.keys(formValues).forEach((key) => {
@@ -97,7 +98,6 @@ export const useForm = (initialValues: Record<string, string>) => {
 
   return [handleInput, formValues, formIsValid, submitForm] as const;
 };
-
 
 interface IFormValue {
   value: string;

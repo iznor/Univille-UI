@@ -41,11 +41,14 @@ const useStyles = makeStyles<{ drawerWidth }>()((theme, { drawerWidth }) => ({
     },
   },
   tempDrawer: {
-    [theme.breakpoints.up('md')]: {
+    [theme.breakpoints.up('xs')]: {
       display: 'none',
     },
     [theme.breakpoints.up('sm')]: {
       display: 'block',
+    },
+    [theme.breakpoints.up('md')]: {
+      display: 'none',
     },
     '& .MuiDrawer-paper': {
       boxSizing: 'border-box',
@@ -53,11 +56,14 @@ const useStyles = makeStyles<{ drawerWidth }>()((theme, { drawerWidth }) => ({
     },
   },
   stickyDrawer: {
-    [theme.breakpoints.up('md')]: {
-      display: 'block',
+    [theme.breakpoints.up('xs')]: {
+      display: 'none',
     },
     [theme.breakpoints.up('sm')]: {
       display: 'none',
+    },
+    [theme.breakpoints.up('md')]: {
+      display: 'block',
     },
     '& .MuiDrawer-paper': {
       boxSizing: 'border-box',

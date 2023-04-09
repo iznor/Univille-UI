@@ -8,21 +8,23 @@ interface IHeader {
   drawerWidth: number;
   toggleDrawer: (val?: any) => any;
   isAuthPage: boolean;
+  drawerIsOpen: boolean;
 }
 
-export const Header = (props) => {
-  const { drawerWidth, toggleDrawer, isAuthPage } = props;
-  const { classes, cx } = useStyle();
+export const Header = (props: IHeader) => {
+  const { drawerWidth, toggleDrawer, isAuthPage, drawerIsOpen } = props;
+  const { classes, cx } = useStyle({ isAuthPage });
   return (
     <AppBar
       position="fixed"
       className={cx(classes.root)}
       sx={{
+        backgroundColor: '#b01212',
         width: { md: `calc(100% - ${drawerWidth}px)` },
         ml: { md: `${drawerWidth}px` },
       }}
     >
-      <Toolbar>
+      <Toolbar sx={{ position: 'relative' }}>
         {!isAuthPage && (
           <>
             <IconButton className={cx(classes.menuIcon)} onClick={toggleDrawer}>
@@ -32,16 +34,23 @@ export const Header = (props) => {
             <ImageLink
               to="/"
               className={cx(classes.logoImg)}
-              src={require('../../../assets/images/univille-logo.png')}
+              src={require('../../../assets/images/horizontal-logo.png')}
             />
           </>
+        )}
+        {isAuthPage && (
+          <ImageLink
+            to="/"
+            className={cx(classes.logoImg)}
+            src={require('../../../assets/images/horizontal-logo.png')}
+          />
         )}
       </Toolbar>
     </AppBar>
   );
 };
 
-const useStyle = makeStyles()((theme) => ({
+const useStyle = makeStyles<{ isAuthPage }>()((theme, { isAuthPage }) => ({
   root: {
     backgroundColor: '#fff',
     boxShadow: '0px 1px 5px -4px rgba(0,0,0,0.61)',
@@ -53,10 +62,15 @@ const useStyle = makeStyles()((theme) => ({
     },
   },
   logoImg: {
-    height: 40,
-    width: 150,
+    // center horizontally
+    position: 'absolute',
+    left: '50%',
+    transform: 'translateX(-50%)',
+    top: 5,
+    height: 60,
+
     [theme.breakpoints.up('md')]: {
-      display: 'none',
+      display: isAuthPage ? 'block' : 'none',
     },
   },
 }));
