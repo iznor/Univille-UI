@@ -2,10 +2,14 @@ import { GameSettings, LocationItem, Mission } from '../consts';
 import { Game } from '../../../classes';
 import { useLocationItems } from './useLocationItems';
 import { useEffect, useState } from 'react';
+import { IFormValues } from '../../../hooks/useForm/useForm';
+import { useHintsValidator } from './useHintsValidator';
 
 export const useGame = () => {
   const { selectedItems } = useLocationItems();
-  const [isGameReady, setIsGameReady] = useState<boolean>(false);
+  const { isHintsValid } = useHintsValidator();
+  const [isMissingHints, setIsMissingHints] = useState<boolean>(false);
+  useEffect(() => {}, [selectedItems, isMissingHints]);
   const game: Game | undefined = new Game(
     undefined,
     undefined,
@@ -14,28 +18,42 @@ export const useGame = () => {
     undefined,
     undefined
   );
-  // todo: validation function - verify there is no 'undefined' fields before sending to the server.
-  const handleGameCreation = (selectedItems: LocationItem[]) => {
+  enum GAMES_STATUS {
+    // @ts-ignore
+    VALID = true,
+    // @ts-ignore
+    NOT_VALID = false,
+  }
+
+  const handleGameCreation = (
+    selectedItems: LocationItem[],
+    formValues: IFormValues
+  ): GAMES_STATUS => {
+    const { value: timeLimit } = formValues.timeLimit;
+    const { value: numberOfGroups } = formValues.numberOfGroups;
+    const { value: classroomName } = formValues.classroomName;
     const gameMissions: Mission[] = [];
-    selectedItems.forEach((item: LocationItem) => {
-      gameMissions.push({
-        unityObjectTag: item.unityObjectTag,
-        hint: item.hint,
+    isHintsValid(selectedItems) &&
+      selectedItems.forEach((item: LocationItem) => {
+        gameMissions.push({
+          unityObjectTag: item.unityObjectTag,
+          hint: item.hint,
+        });
       });
-    });
-
-    // todo:
-    //  game.setGameId(gameId)
-    //  game.setMissions(gameMissions);
-    //  game.setTimeLimitMinutes(timeLimit);
-    //  game.setStartTimeEpoch(startTime);
-    //  game.setNumberOfGroups(numberOfGroups)
-    //  game.setGameName(gameName);
-    game.setMissions(gameMissions);
-    setIsGameReady(true);
-    console.log(JSON.stringify(game)); // dev - sanity check (to be removed)
+    if (gameMissions.length) {
+      game.setMissions(gameMissions);
+      game.setTimeLimitMinutes(parseInt(timeLimit));
+      game.setNumberOfGroups(parseInt(numberOfGroups));
+      game.setClassroomName(classroomName);
+      return GAMES_STATUS.VALID;
+    } else {
+      setIsMissingHints(true);
+      return GAMES_STATUS.NOT_VALID;
+    }
   };
-  useEffect(() => {}, [selectedItems, isGameReady]);
 
-  return { handleGameCreation, isGameReady };
+  return {
+    handleGameCreation,
+    isMissingHints,
+  };
 };
