@@ -1,6 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import './GameWizard.scss';
-import { Card, TableCell, TableRow } from '@mui/material';
+import {
+  Box,
+  Card,
+  CardContent,
+  Grid,
+  TableCell,
+  TableRow,
+} from '@mui/material';
 import Button from '@mui/material/Button';
 import { LocationSelector } from './LocationSelector';
 import { LocationItem } from './consts';
@@ -9,7 +16,8 @@ import { HintInput } from './HintInput';
 import { DeleteItemWithDialog } from './DeleteItemWithDialog';
 import { useLocationItems, useGame } from './hooks';
 import { SettingsForm } from './SettingsForm/SettingsForm';
-import { H2, H3, P } from '../../components';
+import { H1, H2, H3, P, Row } from '../../components';
+import { GameStart } from './GameStart/GameStart';
 
 interface GameWizardProps {}
 
@@ -19,11 +27,30 @@ const GameWizard = (props: GameWizardProps) => {
     useLocationItems();
   const [isGameReady, setIsGameReady] = useState<boolean>(false);
   const { isMissingHints } = useGame();
+  const [gameId, setGameId] = useState<string>('');
+  const [timer, setTimer] = useState<number>(20000);
+  const [gameStarted, setGameStarted] = useState<boolean>(false);
+
+  const getGameId = (): Promise<string> => {
+    return fetch('https://api.kanye.rest/')
+      .then((response) => response.json())
+      .then((data) =>
+        data.quote.substring(0, 6).trim().replace(/ /g, '').toUpperCase()
+      );
+  };
+  const startTimer = () => {
+    setInterval(() => {
+      setTimer((prevState) => prevState - 1);
+    }, 1000);
+  };
 
   useEffect(() => {
-    console.log(isGameReady);
-    console.log(isMissingHints);
-  }, [isMissingHints, isGameReady]);
+    getGameId().then((quote) => setGameId(quote));
+  }, []);
+
+  useEffect(() => {
+    // todo - GET GameId from server
+  }, [isMissingHints, isGameReady, timer, gameStarted]);
   return !isGameReady ? (
     <>
       <LocationSelector
@@ -60,13 +87,13 @@ const GameWizard = (props: GameWizardProps) => {
       {isMissingHints && <P style={{ color: 'red' }}>Missing hints</P>}
     </>
   ) : (
-    <Card>
-      <H2>Game is ready</H2>
-      <H3>Your game code is: BLABLA</H3>
-      <Button>
-        <H3>Start Game</H3>
-      </Button>
-    </Card>
+    <GameStart
+      gameId={gameId}
+      timer={timer}
+      startTimer={startTimer}
+      gameStarted={gameStarted}
+      setGameStarted={setGameStarted}
+    />
   );
 };
 
