@@ -2,21 +2,26 @@ import { useForm } from '../../../hooks';
 import { PageWrapper } from '../../Layout';
 import { Box, Button, Card } from '@mui/material';
 import { Form, H3, P, Row, SelectInput, TextInput } from '../../../components';
-import React from 'react';
+import React, { Dispatch, SetStateAction } from 'react';
 import {} from '../../../theme/pallet';
 import { LocationItem } from '../consts';
 import { useGame } from '../hooks';
 type SettingsFormProps = {
   selectedItems: LocationItem[];
+  setGameReady: Dispatch<SetStateAction<boolean>>;
 };
 export const SettingsForm = (props: SettingsFormProps) => {
-  const { selectedItems } = props;
-  const { handleGameCreation, setIsGameReady } = useGame();
+  const { selectedItems, setGameReady } = props;
+  const { handleGameCreation /*, setIsGameReady*/ } = useGame();
   const [handleInput, formValues, formIsValid, submitForm] = useForm({
     timeLimit: '',
     numberOfGroups: '',
     classroomName: '',
   });
+
+  const handleSubmit = () => {
+    handleGameCreation(selectedItems, formValues) && setGameReady(true);
+  };
 
   return (
     <Card sx={{}}>
@@ -63,7 +68,7 @@ export const SettingsForm = (props: SettingsFormProps) => {
         />
         <Button
           disabled={!formIsValid}
-          onClick={() => handleGameCreation(selectedItems, formValues)}
+          onClick={() => handleSubmit()}
           variant={'contained'}
           color={'primary'}
         >

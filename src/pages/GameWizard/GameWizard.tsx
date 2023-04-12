@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './GameWizard.scss';
-import { TableCell, TableRow } from '@mui/material';
+import { Card, TableCell, TableRow } from '@mui/material';
 import Button from '@mui/material/Button';
 import { LocationSelector } from './LocationSelector';
 import { LocationItem } from './consts';
@@ -9,7 +9,7 @@ import { HintInput } from './HintInput';
 import { DeleteItemWithDialog } from './DeleteItemWithDialog';
 import { useLocationItems, useGame } from './hooks';
 import { SettingsForm } from './SettingsForm/SettingsForm';
-import { P } from '../../components';
+import { H2, H3, P } from '../../components';
 
 interface GameWizardProps {}
 
@@ -17,11 +17,13 @@ const GameWizard = (props: GameWizardProps) => {
   // const {} = props;
   const { itemsList, selectedItems, handleSelect, handleRemove } =
     useLocationItems();
-  const { handleGameCreation, isGameReady, isMissingHints } = useGame();
+  const [isGameReady, setIsGameReady] = useState<boolean>(false);
+  const { isMissingHints } = useGame();
 
   useEffect(() => {
     console.log(isGameReady);
-  }, [isGameReady]);
+    console.log(isMissingHints);
+  }, [isMissingHints, isGameReady]);
   return !isGameReady ? (
     <>
       <LocationSelector
@@ -51,11 +53,20 @@ const GameWizard = (props: GameWizardProps) => {
           </TableRow>
         ))}
       />
-      <SettingsForm selectedItems={selectedItems} />
+      <SettingsForm
+        selectedItems={selectedItems}
+        setGameReady={setIsGameReady}
+      />
       {isMissingHints && <P style={{ color: 'red' }}>Missing hints</P>}
     </>
   ) : (
-    <P>Game is ready</P>
+    <Card>
+      <H2>Game is ready</H2>
+      <H3>Your game code is: BLABLA</H3>
+      <Button>
+        <H3>Start Game</H3>
+      </Button>
+    </Card>
   );
 };
 

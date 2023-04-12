@@ -3,11 +3,13 @@ import { Game } from '../../../classes';
 import { useLocationItems } from './useLocationItems';
 import { useEffect, useState } from 'react';
 import { IFormValues } from '../../../hooks/useForm/useForm';
+import { useHintsValidator } from './useHintsValidator';
 
 export const useGame = () => {
   const { selectedItems } = useLocationItems();
-  const [isGameReady, setIsGameReady] = useState<boolean>(false);
+  const { isHintsValid } = useHintsValidator();
   const [isMissingHints, setIsMissingHints] = useState<boolean>(false);
+  useEffect(() => {}, [selectedItems, isMissingHints]);
   const game: Game | undefined = new Game(
     undefined,
     undefined,
@@ -16,19 +18,17 @@ export const useGame = () => {
     undefined,
     undefined
   );
-  // todo: validation function - verify there is no 'undefined' fields before sending to the server.
-  const isHintsValid = (selectedItems: LocationItem[]): boolean => {
-    const itemsWithoutHints: string[] = [];
-    selectedItems.forEach((item: LocationItem) => {
-      !item.hint && itemsWithoutHints.push(`${item.name}`);
-    });
-    return !itemsWithoutHints.length;
-  };
+  enum GAMES_STATUS {
+    // @ts-ignore
+    VALID = true,
+    // @ts-ignore
+    NOT_VALID = false,
+  }
 
   const handleGameCreation = (
     selectedItems: LocationItem[],
     formValues: IFormValues
-  ) => {
+  ): GAMES_STATUS => {
     const { value: timeLimit } = formValues.timeLimit;
     const { value: numberOfGroups } = formValues.numberOfGroups;
     const { value: classroomName } = formValues.classroomName;
@@ -45,16 +45,15 @@ export const useGame = () => {
       game.setTimeLimitMinutes(parseInt(timeLimit));
       game.setNumberOfGroups(parseInt(numberOfGroups));
       game.setClassroomName(classroomName);
-      console.log('trigger setIsGameReady');
-      setIsGameReady(true); // todo - fix - it doesnt trigger gameWizard re-rendering
-      console.log('after trigger setIsGameReady');
+      return GAMES_STATUS.VALID;
     } else {
       setIsMissingHints(true);
-      setIsGameReady(false);
+      return GAMES_STATUS.NOT_VALID;
     }
-    console.log(JSON.stringify(game)); // dev - sanity check (to be removed)
   };
-  useEffect(() => {}, [selectedItems, isGameReady, isMissingHints]);
 
-  return { handleGameCreation, isGameReady, setIsGameReady, isMissingHints };
+  return {
+    handleGameCreation,
+    isMissingHints,
+  };
 };
