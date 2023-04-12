@@ -24,7 +24,11 @@ export const useGame = () => {
     // @ts-ignore
     NOT_VALID = false,
   }
-
+  const getGameId = (): Promise<string> => {
+    return fetch('https://api.kanye.rest/')
+      .then((response) => response.json())
+      .then((data) => data.quote);
+  };
   const handleGameCreation = (
     selectedItems: LocationItem[],
     formValues: IFormValues
@@ -45,7 +49,7 @@ export const useGame = () => {
       game.setTimeLimitMinutes(parseInt(timeLimit));
       game.setNumberOfGroups(parseInt(numberOfGroups));
       game.setClassroomName(classroomName);
-      return GAMES_STATUS.VALID;
+      return GAMES_STATUS.VALID; // todo - server will generate gameId which later could be called with GET
     } else {
       setIsMissingHints(true);
       return GAMES_STATUS.NOT_VALID;
