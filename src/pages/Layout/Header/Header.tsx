@@ -34,7 +34,8 @@ export const Header = (props: IHeader) => {
             <ImageLink
               to="/"
               className={cx(classes.logoImg)}
-              src={require('../../../assets/images/horizontal-logo.png')}
+              // src={require('../../../assets/images/horizontal-logo.png')} // todo - fix file not found
+              src={require('../../../assets/images/univille-logo.png')} // todo - delete after fix
             />
           </>
         )}
@@ -42,7 +43,8 @@ export const Header = (props: IHeader) => {
           <ImageLink
             to="/"
             className={cx(classes.logoImg)}
-            src={require('../../../assets/images/horizontal-logo.png')}
+            // src={require('../../../assets/images/horizontal-logo.png')} // todo - fix file not found
+            src={require('../../../assets/images/univille-logo.png')} // todo - delete after fix
           />
         )}
       </Toolbar>

@@ -1,26 +1,28 @@
 import { Mission } from '../pages/GameWizard/consts';
 export class Game {
   private gameId: string | undefined;
-  private gameName: string | undefined;
-  private startTimeEpoch: number | undefined;
+  private classroomName: string | undefined;
   private timeLimitMinutes: number | undefined;
   private numberOfGroups: number | undefined;
   private missions: Mission[];
+  private startTimeEpoch?: number | undefined;
 
   constructor(
     gameId: string,
-    gameName: string,
-    startTimeEpoch: number,
+    classroomName: string,
     timeLimitMinutes: number,
     numberOfGroups: number,
-    missions: Mission[]
+    missions: Mission[],
+    startTimeEpoch?: number
   ) {
     this.gameId = gameId;
-    this.gameName = gameName;
-    this.startTimeEpoch = startTimeEpoch;
+    this.classroomName = classroomName;
     this.timeLimitMinutes = timeLimitMinutes;
     this.numberOfGroups = numberOfGroups;
     this.missions = missions;
+    startTimeEpoch
+      ? (this.startTimeEpoch = startTimeEpoch)
+      : (this.startTimeEpoch = undefined);
   }
 
   // Getter and setter for gameId
@@ -31,12 +33,12 @@ export class Game {
     this.gameId = gameId;
   }
 
-  // Getter and setter for gameName
-  getGameName(): string | undefined {
-    return this.gameName;
+  // Getter and setter for classroomName
+  getClassroomName(): string | undefined {
+    return this.classroomName;
   }
-  setGameName(gameName: string): void {
-    this.gameName = gameName;
+  setClassroomName(classroomName: string): void {
+    this.classroomName = classroomName;
   }
 
   // Getter and setter for startTimeEpoch

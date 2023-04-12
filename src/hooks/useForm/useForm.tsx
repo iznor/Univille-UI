@@ -105,7 +105,7 @@ interface IFormValue {
   hasError: boolean;
 }
 
-interface IFormValues {
+export interface IFormValues {
   [key: string]: IFormValue;
 }
 

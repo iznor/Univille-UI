@@ -1,17 +1,19 @@
 import React from 'react';
 import {
+  Card,
   Table,
   TableBody,
   TableCell,
   TableHead,
   TableRow,
 } from '@mui/material';
-import { P } from '../../../components';
+import { H3, P } from '../../../components';
 
 export const LocationsTable = (props: { rows }) => {
   return (
-    <>
-      <P>Selected Locations: </P>
+    <Card sx={{ padding: '15px', marginBottom: '15px' }}>
+      <H3>Locations</H3>
+      {/* <P>Selected Locations: </P> */}
       <Table sx={{ maxWidth: '100%' }} stickyHeader={true}>
         <TableHead>
           <TableRow>
@@ -29,6 +31,6 @@ export const LocationsTable = (props: { rows }) => {
         </TableHead>
         <TableBody>{props.rows}</TableBody>
       </Table>
-    </>
+    </Card>
   );
 };

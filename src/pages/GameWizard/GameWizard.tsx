@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './GameWizard.scss';
 import { TableCell, TableRow } from '@mui/material';
 import Button from '@mui/material/Button';
@@ -8,6 +8,8 @@ import { LocationsTable } from './LocationsTable';
 import { HintInput } from './HintInput';
 import { DeleteItemWithDialog } from './DeleteItemWithDialog';
 import { useLocationItems, useGame } from './hooks';
+import { SettingsForm } from './SettingsForm/SettingsForm';
+import { P } from '../../components';
 
 interface GameWizardProps {}
 
@@ -15,8 +17,12 @@ const GameWizard = (props: GameWizardProps) => {
   // const {} = props;
   const { itemsList, selectedItems, handleSelect, handleRemove } =
     useLocationItems();
-  const { handleGameCreation, isGameReady } = useGame();
-  return (
+  const { handleGameCreation, isGameReady, isMissingHints } = useGame();
+
+  useEffect(() => {
+    console.log(isGameReady);
+  }, [isGameReady]);
+  return !isGameReady ? (
     <>
       <LocationSelector
         itemsList={itemsList}
@@ -45,12 +51,11 @@ const GameWizard = (props: GameWizardProps) => {
           </TableRow>
         ))}
       />
-      {!isGameReady && (
-        <Button onClick={() => handleGameCreation(selectedItems)}>
-          Finish
-        </Button>
-      )}
+      <SettingsForm selectedItems={selectedItems} />
+      {isMissingHints && <P style={{ color: 'red' }}>Missing hints</P>}
     </>
+  ) : (
+    <P>Game is ready</P>
   );
 };
 
