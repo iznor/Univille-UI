@@ -5,6 +5,7 @@ import {
   Card,
   CardContent,
   Grid,
+  Snackbar,
   TableCell,
   TableRow,
 } from '@mui/material';
@@ -18,6 +19,8 @@ import { useLocationItems, useGame } from './hooks';
 import { SettingsForm } from './SettingsForm/SettingsForm';
 import { H1, H2, H3, P, Row } from '../../components';
 import { GameStart } from './GameStart/GameStart';
+import { Done } from '@mui/icons-material';
+import { DoneButton } from './DoneButton';
 
 interface GameWizardProps {}
 
@@ -53,33 +56,36 @@ const GameWizard = (props: GameWizardProps) => {
   }, [isMissingHints, isGameReady, timer, gameStarted]);
   return !isGameReady ? (
     <>
-      <LocationSelector
-        itemsList={itemsList}
-        selectedItems={selectedItems}
-        selectItem={(item: LocationItem) => handleSelect(item)}
-        removeItem={(item: LocationItem) => handleRemove(item)}
-      />
-      <LocationsTable
-        rows={selectedItems.map((item) => (
-          <TableRow key={item.unityObjectTag}>
-            <TableCell>{selectedItems.indexOf(item) + 1}</TableCell>
-            <TableCell>{item.name}</TableCell>
-            <TableCell>
-              <HintInput
-                key={item.unityObjectTag}
-                item={item}
-                hint={item.hint}
-              />
-            </TableCell>
-            <TableCell>
-              <DeleteItemWithDialog
-                item={item}
-                removeHandler={(item) => handleRemove(item)}
-              />
-            </TableCell>
-          </TableRow>
-        ))}
-      />
+      <Card sx={{ marginBottom: '10px', marginTop: '10px' }}>
+        <LocationSelector
+          itemsList={itemsList}
+          selectedItems={selectedItems}
+          selectItem={(item: LocationItem) => handleSelect(item)}
+          removeItem={(item: LocationItem) => handleRemove(item)}
+        />
+        <LocationsTable
+          rows={selectedItems.map((item) => (
+            <TableRow key={item.unityObjectTag}>
+              <TableCell>{selectedItems.indexOf(item) + 1}</TableCell>
+              <TableCell>{item.name}</TableCell>
+              <TableCell>
+                <HintInput
+                  key={item.unityObjectTag}
+                  item={item}
+                  hint={item.hint}
+                />
+              </TableCell>
+              <TableCell sx={{ display: 'flex', gap: '10px' }}>
+                <DoneButton item={item} />
+                <DeleteItemWithDialog
+                  item={item}
+                  removeHandler={(item) => handleRemove(item)}
+                />
+              </TableCell>
+            </TableRow>
+          ))}
+        />
+      </Card>
       <SettingsForm
         selectedItems={selectedItems}
         setGameReady={setIsGameReady}

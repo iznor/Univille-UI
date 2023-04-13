@@ -11,8 +11,8 @@ import { H3, P } from '../../../components';
 
 export const LocationsTable = (props: { rows }) => {
   return (
-    <Card sx={{ padding: '15px', marginBottom: '15px' }}>
-      <H3>Locations</H3>
+    <>
+      <H3 sx={{ margin: '10px' }}>Locations</H3>
       {/* <P>Selected Locations: </P> */}
       <Table sx={{ maxWidth: '100%' }} stickyHeader={true}>
         <TableHead>
@@ -31,6 +31,6 @@ export const LocationsTable = (props: { rows }) => {
         </TableHead>
         <TableBody>{props.rows}</TableBody>
       </Table>
-    </Card>
+    </>
   );
 };
