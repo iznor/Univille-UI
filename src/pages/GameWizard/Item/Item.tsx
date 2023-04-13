@@ -32,6 +32,7 @@ export const Item = (props: ItemProps) => {
           <H2>{item.name}</H2>
           <P>{item.description}</P>
           <Button
+            variant={'outlined'}
             className={isSelected ? 'button-remove' : ''}
             onClick={handleButtonClick}
           >
