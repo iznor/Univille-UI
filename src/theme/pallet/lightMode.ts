@@ -15,7 +15,7 @@ const colors = {
 export const palette = {
   module: 'light',
   text: {
-    primary: '#643400',
+    primary: '#BBBBBB',
     default: '#BBBBBB',
     disabled: '#777777',
     dark: '#2B2B2B',
