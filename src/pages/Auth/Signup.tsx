@@ -6,6 +6,7 @@ import { useForm } from '../../hooks';
 import { useNavigate } from 'react-router-dom';
 import { Container } from '@mui/system';
 import { Button, Card, Select } from '@mui/material';
+import { useUser } from '../../store';
 
 const schools = [
   { value: 'school1', label: 'School 1', id: '1' },
@@ -18,6 +19,8 @@ interface ISignup {}
 
 const Signup = (props: ISignup) => {
   const {} = props;
+  const { userActions, userState } = useUser();
+
   const navigate = useNavigate();
   const [handleInput, formValues, formIsValid, submitForm] = useForm({
     firstname: '',
@@ -33,7 +36,16 @@ const Signup = (props: ISignup) => {
   };
   const handleSubmitClick = (e) => {
     e.preventDefault();
-    submitForm((vals) => console.log(vals));
+    submitForm((vals) => {
+      console.log(vals);
+      userActions.signup(
+        vals.firstname,
+        vals.lastname,
+        vals.email,
+        vals.password,
+        vals.school
+      );
+    });
   };
   return (
     <PageWrapper>
