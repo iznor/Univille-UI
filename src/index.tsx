@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { UnivilleRouter } from './routes';
 import ThemeProvider from '@mui/material/styles/ThemeProvider';
 import { themeConfig } from './theme';
