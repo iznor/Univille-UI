@@ -9,7 +9,6 @@ import { useWindowSize } from 'react-use';
 function Layout() {
   const location = useLocation();
   const { width, height } = useWindowSize();
-  console.log(location);
   // const {uiState} = useUi();
   // const {
   //   routingState: {isAuthPage},
