@@ -8,7 +8,6 @@ import { Provider } from 'react-redux';
 import { store, persistor } from './store';
 import * as ReactDOMClient from 'react-dom/client';
 import { Loader, MessageDialog } from './components';
-
 const container = document.getElementById('root');
 const root = ReactDOMClient.createRoot(container);
 root.render(
