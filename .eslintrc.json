@@ -1,0 +1,65 @@
+{
+  "env": {
+    "es2022": true,
+    "node": true,
+    "mongo": true
+  },
+  "extends": [
+    "airbnb-base",
+    "airbnb-typescript/base",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:eslint-comments/recommended",
+    "plugin:promise/recommended",
+    "prettier"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.eslint.json"
+  },
+  "plugins": [
+    "@typescript-eslint",
+    "eslint-comments",
+    "promise",
+    "import",
+    "prettier"
+  ],
+  "rules": {
+    "prettier/prettier": "error",
+    "import/prefer-default-export": "off",
+    "@typescript-eslint/no-unused-vars": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-empty-interface": "off",
+    "@typescript-eslint/no-var-requires": "off",
+    "import/no-default-export": "off",
+    "func-names": "off",
+    "new-cap": "off",
+    "promise/always-return": "off",
+    "no-underscore-dangle": "off",
+    "consistent-return": "off",
+    "no-console": "off",
+    "no-use-before-define": "off",
+    "class-methods-use-this": "off",
+    "import/no-dynamic-require": "off",
+    "no-param-reassign": "off",
+    "global-require": "off",
+    "no-plusplus": "off",
+    "import/no-cycle": "off",
+    "no-useless-constructor": 0,
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/no-use-before-define": [
+      "warn",
+      {
+        "functions": false,
+        "classes": true,
+        "variables": true,
+        "typedefs": false
+      }
+    ],
+    "import/no-extraneous-dependencies": "off"
+  },
+  "settings": {
+    "import/resolver": {
+      "babel-module": {}
+    }
+  }
+}
