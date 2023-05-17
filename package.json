@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "NODE_ENV=development nodemon --inspect ./src/index.ts"
+    "dev": "NODE_ENV=development nodemon --inspect ./src/index.ts",
+    "start": "NODE_ENV=production node ./build/index.js",
+    "build": "rimraf build && tsc && babel ./src --out-dir ./build --extensions .ts"
   },
   "repository": {
     "type": "git",
