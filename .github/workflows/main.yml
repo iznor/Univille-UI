@@ -31,7 +31,14 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
+            if [ ! -d "/root/apps/univille" ] ; then
+              git clone https://github.com/OferElfassi/univille-fs.git /root/apps/univille
+            fi
             cd /root/apps/univille
             git pull
-            yarn install
-            pm2 start build/index.js
+            yarn install --production
+            if ! pm2 describe univille-fs >/dev/null 2>&1 ; then
+              pm2 start build/univille-fs.js --name "your-app"
+            else
+              pm2 restart univille-fs
+            fi
