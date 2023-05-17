@@ -37,8 +37,9 @@ jobs:
             cd /root/apps/univille
             git pull
             yarn install --production
+            yarn build
             if ! pm2 describe univille-fs >/dev/null 2>&1 ; then
-              pm2 start build/index.js --name "univille-fs"
+              pm2 start /root/apps/univille/build/index.js --name "univille-fs"
             else
               pm2 restart univille-fs
             fi
