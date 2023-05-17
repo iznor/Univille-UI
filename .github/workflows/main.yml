@@ -34,4 +34,4 @@ jobs:
             cd /root/apps/univille
             git pull
             yarn install
-            pm2 restart all
+            pm2 start build/index.js
