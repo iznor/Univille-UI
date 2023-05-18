@@ -4,6 +4,13 @@ import { static_targets } from '../../assets/targets';
 
 export const initialDataState = {
   gameIsActive: false,
+  serverInfo: {
+    message: '',
+    state: '',
+    version: '',
+    uptime: '',
+    dbState: '',
+  },
   games: [],
   schools: [],
   classes: [],
@@ -68,6 +75,7 @@ export const dataReducer = (state = initialDataState, action) => {
 };
 
 export interface IDataState {
+  serverInfo: IServerInfo;
   gameIsActive: boolean;
   timeLeft: number;
   editor: IEditor;
@@ -91,4 +99,12 @@ export interface IStaticTarget {
   name: string;
   address: string;
   description: string;
+}
+
+export interface IServerInfo {
+  message: string;
+  state: string;
+  version: string;
+  uptime: string;
+  dbState: string;
 }

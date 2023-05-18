@@ -1,7 +1,7 @@
 import express, { Application } from 'express';
 // import AuthRouter from './routers/auth.router';
 // import UserRouter from './routers/user.router';
-
+import cors from "cors";
 import { Logger } from 'src/utils';
 import {
   playerRouter,
@@ -31,7 +31,9 @@ class App {
 
   private setupGlobalMiddleware() {
     this.app.use(express.json());
+    this.app.use(cors());
     this.app.use(express.urlencoded({ extended: true }));
+
     this.app.use(httpLog);
   }
 

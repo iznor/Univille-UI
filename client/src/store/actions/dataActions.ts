@@ -292,4 +292,18 @@ export const dataActions = {
       }
     };
   },
+  getServerInfo: () => {
+    return async (dispatch, getState) => {
+      try {
+        dispatch(uiActions.setLoader(true));
+        const response = await dataApi.getServerInfo();
+        console.log('server info', response);
+        dispatch(dataActions.setData({ serverInfo: response}));
+      } catch (e) {
+        dispatch(uiActions.setAlert(e.message));
+      } finally {
+        dispatch(uiActions.setLoader(false));
+      }
+    };
+  }
 };

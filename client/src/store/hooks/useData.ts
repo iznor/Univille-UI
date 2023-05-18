@@ -44,6 +44,10 @@ export function useData() {
     dispatch(dataActions.startGame(gameId));
   };
 
+  const getServerInfo = () => {
+    dispatch(dataActions.getServerInfo());
+  }
+
   return {
     dataState: values,
     dataActions: {
@@ -58,6 +62,7 @@ export function useData() {
       getClasses: useCallback(getClasses, []),
       saveGame: useCallback(saveGame, []),
       startGame: useCallback(startGame, []),
+      getServerInfo: useCallback(getServerInfo, []),
     },
   };
 }

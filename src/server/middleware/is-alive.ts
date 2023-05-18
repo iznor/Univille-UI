@@ -4,7 +4,7 @@ export const isAlive = (req, res, next) => {
     res.status(200).json({
       message: 'success !',
       state: 'up',
-      version: process.env.npm_package_version,
+      version: process.env.UNIVILLE_VERSION,
       uptime: Math.floor(process.uptime()),
       dbState: mongoose.STATES[mongoose.connection.readyState],
     });
