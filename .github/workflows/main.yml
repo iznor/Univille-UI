@@ -27,6 +27,10 @@ jobs:
       - name: Build
         run: pwd && yarn build
 
+      - name: Fetch version
+        id: package
+        run: echo "::set-output name=version::$(node -p "require('./package.json').version")"
+
       - name: Deploy
         uses: appleboy/ssh-action@master
         with:
@@ -46,3 +50,4 @@ jobs:
             else
               pm2 restart univille-fs
             fi
+            sed -i "/UNIVILLE_VERSION=/c\UNIVILLE_VERSION=${{ steps.package.outputs.version }}" /etc/environment
