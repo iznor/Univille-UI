@@ -11,12 +11,13 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Setup Node.js environment
-        uses: actions/setup-node@v2.4.0
+        uses: actions/setup-node@v3
         with:
-          node-version: '16'
+          node-version: '14'
+        run: yarn install -g typescript
 
       - name: Install server dependencies
         run: yarn install --frozen-lockfile

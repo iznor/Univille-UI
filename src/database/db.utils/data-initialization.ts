@@ -6,7 +6,7 @@ import {
   MissionModel,
   GameModel,
   TeacherModel,
-} from 'src/database';
+} from '../models';
 
 const className = 'Tigers';
 const schoolName = 'Shenkar';
