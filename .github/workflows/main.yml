@@ -21,8 +21,11 @@ jobs:
       - name: Install dependencies
         run: yarn install --frozen-lockfile
 
+      - name: Install client dependencies
+        run: cd client && yarn install --frozen-lockfile
+
       - name: Build
-        run: yarn build
+        run: cd .. && yarn build
 
       - name: Deploy
         uses: appleboy/ssh-action@master
