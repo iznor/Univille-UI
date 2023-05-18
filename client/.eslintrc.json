@@ -23,6 +23,7 @@
         "@typescript-eslint/ban-ts-comment": "off",
         "prefer-const": "off",
         "no-empty-pattern": "off",
+        "import/no-named-as-default": 0,
         "import/no-named-as-default-member": "off",
         "@typescript-eslint/no-empty-interface": "off",
         "@typescript-eslint/no-explicit-any": "off",
