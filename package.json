@@ -8,7 +8,10 @@
     "dev": "NODE_ENV=development nodemon --inspect ./src/index.ts",
     "dev-server-client": "concurrently \"npm run dev\" \"cd client && npm run start\"",
     "start": "NODE_ENV=production node ./build/index.js",
-    "build": "rimraf build && tsc && babel ./src --out-dir ./build --extensions .ts && cd client && npm run build"
+    "build": "rimraf build && tsc && babel ./src --out-dir ./build --extensions .ts && cd client && npm run build",
+    "deploy-minor": "git add . && git commit -m \"Minor Release %npm_package_version% \" && npm version minor && git push && git push --tags",
+    "deploy-patch": "git add . && git commit -m \"Patch Release %npm_package_version% \" && npm version patch && git push && git push --tags",
+    "deploy-major": "git add . && git commit -m \"Major Release %npm_package_version% \" && npm version major && git push && git push --tags"
   },
   "repository": {
     "type": "git",
