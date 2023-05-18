@@ -56,17 +56,9 @@ jobs:
             cd /root/apps/univille/client
             yarn install --frozen-lockfile
             yarn build
-            if [ -f "ecosystem.config.js" ] ; then
-              if ! pm2 describe univille-fs >/dev/null 2>&1 ; then
-                pm2 start /root/apps/univille/ecosystem.config.js --env production
-              else
-                pm2 restart /root/apps/univille/ecosystem.config.js --env production
-              fi
-            else
-              if ! pm2 describe univille-fs >/dev/null 2>&1 ; then
+            if ! pm2 describe univille-fs >/dev/null 2>&1 ; then
                 pm2 start /root/apps/univille/build/index.js --name "univille-fs" --env production
-              else
+            else
                 pm2 restart univille-fs --env production
-              fi
             fi
             sed -i "/UNIVILLE_VERSION=/c\UNIVILLE_VERSION=${{ steps.package.outputs.version }}" /etc/environment
