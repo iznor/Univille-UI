@@ -1,6 +1,6 @@
 {
   "name": "univille-fs",
-  "version": "1.3.3",
+  "version": "1.3.4",
   "description": "Univille game management",
   "main": "index.js",
   "scripts": {
