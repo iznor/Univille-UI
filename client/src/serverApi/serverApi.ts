@@ -1,6 +1,6 @@
 import * as process from "process";
 
-const baseUrl = process.env.NODE_ENV === 'production' ? '' : 'http://localhost:5000';
+const baseUrl = process.env.NODE_ENV === 'development' ? 'http://localhost:5000' : '';
 // const baseUrl = process.env.NODE_ENV === 'production' ? 'https://univille.of-el.com' : 'http://localhost:5000';
 // const baseUrl = 'http://univille.of-el.com/:5000';
 // const baseUrl = 'https://comment-on-everything.herokuapp.com';

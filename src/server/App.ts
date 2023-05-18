@@ -49,7 +49,7 @@ class App {
     this.app.use('/api/v2/log', logRouter.getRouter());
     this.app.use('/api/v1/log', logRouter.getRouter());
     this.app.use(isError);
-    if (process.env.NODE_ENV === 'production') {
+    if (process.env.NODE_ENV !== 'development') {
       this.app.use(express.static(path.join(__dirname, '../../client/build')));
 
       this.app.get('/*', function (req, res) {
