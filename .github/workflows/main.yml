@@ -19,16 +19,16 @@ jobs:
           node-version: '16'
 
       - name: Install server dependencies
-        run: yarn install-server
-
-      - name: Install client dependencies
-        run: yarn install-client
-
-      - name: Build client
-        run: yarn build-client
+        run: yarn install --frozen-lockfile
 
       - name: Build server
-        run: yarn build-server
+        run: yarn build
+
+      - name: Install client dependencies
+        run: cd client && yarn install --frozen-lockfile
+
+      - name: Build client
+        run: cd client && yarn build
 
       - name: Fetch version
         id: package
@@ -47,7 +47,7 @@ jobs:
             cd /root/apps/univille
             git pull
             yarn install --frozen-lockfile
-            yarn build-server
+            yarn build
             cd /root/apps/univille/client
             yarn install --frozen-lockfile
             yarn build

@@ -4,19 +4,13 @@
   "description": "Univille game management",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "NODE_ENV=development nodemon --inspect ./src/index.ts",
     "dev-server-client": "concurrently \"npm run dev\" \"cd client && npm run start\"",
     "start": "NODE_ENV=production node ./build/index.js",
     "deploy-minor": "git add . && git commit -m \"Minor Release %npm_package_version% \" && npm version minor && git push && git push --tags",
     "deploy-patch": "git add . && git commit -m \"Patch Release %npm_package_version% \" && npm version patch && git push && git push --tags",
     "deploy-major": "git add . && git commit -m \"Major Release %npm_package_version% \" && npm version major && git push && git push --tags",
-    "build-server": "rimraf build && tsc && babel ./src --out-dir ./build --extensions .ts",
-    "build-client": "pwd && cd client && yarn build",
-    "install-client": "pwd && cd client && yarn install --frozen-lockfile",
-    "install-server": "pwd && yarn install --frozen-lockfile",
-    "install-all": "pwd && yarn install-server && yarn install-client",
-    "build-all": "pwd && yarn build-client && yarn build-server"
+    "build": "rimraf build && tsc && babel ./src --out-dir ./build --extensions .ts"
   },
   "repository": {
     "type": "git",
