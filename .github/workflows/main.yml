@@ -36,4 +36,4 @@ jobs:
             fi
             cd /root/apps/univille
             git pull
-            yarn install --production
+            yarn install
