@@ -25,10 +25,14 @@ jobs:
         run: yarn build
 
       - name: Install client dependencies
-        run: cd client && yarn install --frozen-lockfile
+        run: |
+          cd client
+          yarn install --frozen-lockfile
 
       - name: Build client
-        run: cd client && yarn build
+        run: |
+          cd client
+          yarn build
 
       - name: Fetch version
         id: package
@@ -59,9 +63,9 @@ jobs:
               fi
             else
               if ! pm2 describe univille-fs >/dev/null 2>&1 ; then
-                pm2 start /root/apps/univille/build/index.js --name "univille-fs"
+                pm2 start /root/apps/univille/build/index.js --name "univille-fs" --env production
               else
-                pm2 restart univille-fs
+                pm2 restart univille-fs --env production
               fi
             fi
             sed -i "/UNIVILLE_VERSION=/c\UNIVILLE_VERSION=${{ steps.package.outputs.version }}" /etc/environment
