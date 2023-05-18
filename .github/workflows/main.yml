@@ -13,13 +13,21 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
+      - name: Cache yarn dependencies
+        uses: actions/cache@v2
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+
       - name: Setup Node.js environment
         uses: actions/setup-node@v3
         with:
           node-version: '16'
 
       - name: Install server dependencies
-        run: yarn install --frozen-lockfile
+        run: |
+          yarn install --frozen-lockfile
+          yarn add babel-plugin-module-resolver
 
       - name: Build server
         run: yarn build
