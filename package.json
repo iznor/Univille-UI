@@ -11,7 +11,7 @@
     "deploy-minor": "git add . && git commit -m \"Minor Release %npm_package_version% \" && npm version minor && git push && git push --tags",
     "deploy-patch": "git add . && git commit -m \"Patch Release %npm_package_version% \" && npm version patch && git push && git push --tags",
     "deploy-major": "git add . && git commit -m \"Major Release %npm_package_version% \" && npm version major && git push && git push --tags",
-    "build-server": "pwd && rimraf build && tsc && babel ./src --out-dir ./build --extensions .ts",
+    "build-server": "rimraf build && tsc && babel ./src --out-dir ./build --extensions .ts",
     "build-client": "pwd && cd client && yarn build",
     "install-client": "pwd && cd client && yarn install --frozen-lockfile",
     "install-server": "pwd && yarn install --frozen-lockfile",
