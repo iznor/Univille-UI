@@ -46,8 +46,11 @@ jobs:
             fi
             cd /root/apps/univille
             git pull
-            yarn install-all
-            yarn build-all
+            yarn install --frozen-lockfile
+            yarn build-server
+            cd /root/apps/univille/client
+            yarn install --frozen-lockfile
+            yarn build
             if [ -f "ecosystem.config.js" ] ; then
               if ! pm2 describe univille-fs >/dev/null 2>&1 ; then
                 pm2 start /root/apps/univille/ecosystem.config.js --env production
