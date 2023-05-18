@@ -12,6 +12,7 @@ import {
 } from './routers';
 import { isError, isAlive } from './middleware';
 import { httpLog } from './middleware/http-log';
+import path from "path";
 
 class App {
   private app: Application;
@@ -35,7 +36,7 @@ class App {
   }
 
   private setupRouters() {
-    this.app.get('/', isAlive);
+    this.app.get('/test', isAlive);
     this.app.use('/api/v1/players', playerRouter.getRouter());
     this.app.use('/api/v2/auth', authRouter.getRouter());
     this.app.use('/api/v2/data', dataRouter.getRouter());
@@ -44,6 +45,13 @@ class App {
     this.app.use('/api/v2/log', logRouter.getRouter());
     this.app.use('/api/v1/log', logRouter.getRouter());
     this.app.use(isError);
+    if (process.env.NODE_ENV === 'production') {
+      this.app.use(express.static(path.join(__dirname, '../../client/build')));
+
+      this.app.get('/*', function (req, res) {
+        res.sendFile(path.join(__dirname, '../../client/build', 'index.html'));
+      });
+    }
   }
 }
 

@@ -12,6 +12,7 @@ declare module 'express' {
     StatusCode extends number = number
   > {
     status(code: StatusCode): this;
+    sendFile(path: string): this;
 
     json: (res: ResBody) => any;
   }

@@ -1,0 +1,81 @@
+{
+  "name": "univille-fe",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.5.2",
+    "@types/node": "^16.18.31",
+    "@types/react": "^18.2.6",
+    "@types/react-dom": "^18.2.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
+    "typescript": "^4.9.5",
+    "web-vitals": "^2.1.4",
+    "@material-table/core": "^6.1.15",
+    "@material-table/exporters": "^1.1.0",
+    "@mui/icons-material": "^5.11.16",
+    "@mui/material": "^5.6.4",
+    "@mui/system": "^5.6.4",
+    "@mui/x-data-grid": "^6.0.4",
+    "@reduxjs/toolkit": "^1.9.3",
+    "color": "^4.2.3",
+    "immer": "^9.0.21",
+    "react-lazy-load-image-component": "^1.5.6",
+    "react-material-ui-carousel": "^3.4.2",
+    "react-redux": "^8.0.5",
+    "react-router-dom": "^6.10.0",
+    "react-use": "^17.4.0",
+    "redux": "^4.2.1",
+    "redux-persist": "^6.0.0",
+    "thunk": "^0.0.1",
+    "tss-react": "^4.8.2"
+  },
+  "devDependencies": {
+    "@types/node-sass": "^4.11.3",
+    "@typescript-eslint/eslint-plugin": "^5.57.0",
+    "@typescript-eslint/parser": "^5.57.0",
+    "eslint": "^8.37.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-config-react-app": "^7.0.1",
+    "eslint-config-standard-with-typescript": "^34.0.1",
+    "eslint-import-resolver-typescript": "^3.5.4",
+    "eslint-plugin-eslint-comments": "^3.2.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-n": "^15.7.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-react": "^7.32.2",
+    "node-sass": "^7.0.3",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.8.1"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

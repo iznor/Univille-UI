@@ -6,8 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "NODE_ENV=development nodemon --inspect ./src/index.ts",
+    "dev-server-client": "concurrently \"npm run dev\" \"cd client && npm run start\"",
     "start": "NODE_ENV=production node ./build/index.js",
-    "build": "rimraf build && tsc && babel ./src --out-dir ./build --extensions .ts"
+    "build": "rimraf build && tsc && babel ./src --out-dir ./build --extensions .ts && cd client && npm run build"
   },
   "repository": {
     "type": "git",
@@ -31,6 +32,7 @@
     "@typescript-eslint/parser": "^5.46.0",
     "babel-core": "^7.0.0-bridge.0",
     "babel-plugin-module-resolver": "^4.1.0",
+    "concurrently": "^8.0.1",
     "eslint": "^8.29.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-airbnb-typescript": "^17.0.0",
