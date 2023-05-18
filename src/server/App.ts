@@ -30,6 +30,8 @@ class App {
   }
 
   private setupGlobalMiddleware() {
+    console.log('curr env ', process.env.NODE_ENV)
+    console.log('path to client ', path.join(__dirname, '../../client/build'))
     this.app.use(express.json());
     this.app.use(cors());
     this.app.use(express.urlencoded({ extended: true }));

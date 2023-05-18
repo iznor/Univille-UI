@@ -18,14 +18,17 @@ jobs:
         with:
           node-version: '16'
 
-      - name: Install dependencies
-        run: yarn install --frozen-lockfile
+      - name: Install server dependencies
+        run: yarn install-server
 
       - name: Install client dependencies
-        run: cd client && yarn install --frozen-lockfile
+        run: yarn install-client
 
-      - name: Build
-        run: pwd && yarn build
+      - name: Build client
+        run: yarn build-client
+
+      - name: Build server
+        run: yarn build-server
 
       - name: Fetch version
         id: package
@@ -43,11 +46,8 @@ jobs:
             fi
             cd /root/apps/univille
             git pull
-            yarn install
-            yarn build
-            cd /root/apps/univille/client
-            yarn install
-            yarn build
+            yarn install-all
+            yarn build-all
             if ! pm2 describe univille-fs >/dev/null 2>&1 ; then
               pm2 start /root/apps/univille/build/index.js --name "univille-fs"
             else
