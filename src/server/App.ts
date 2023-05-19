@@ -2,7 +2,7 @@ import express, { Application } from 'express';
 // import AuthRouter from './routers/auth.router';
 // import UserRouter from './routers/user.router';
 import cors from "cors";
-import { Logger } from 'src/utils';
+import { Logger } from '../utils';
 import {
   playerRouter,
   authRouter,

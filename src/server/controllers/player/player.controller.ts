@@ -3,7 +3,7 @@ import {
   IPlayerModel,
   PlayerModel,
   TeacherModel,
-} from 'src/database';
+} from '../../../database';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import { CurdController } from '../crud';

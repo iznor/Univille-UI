@@ -1,4 +1,4 @@
-import { SchoolModel, ISchoolModel, ClassModel } from 'src/database';
+import { SchoolModel, ISchoolModel, ClassModel } from '../../../database';
 import { ISchoolController } from './school.controller.types';
 import { CurdController } from '../crud';
 

@@ -1,4 +1,4 @@
-import { Logger } from 'src/utils';
+import { Logger } from '../../utils';
 
 export const isError = (error, req, res, next) => {
   const message = error.message || 'An unknown error occurred!';

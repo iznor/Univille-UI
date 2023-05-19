@@ -1,5 +1,4 @@
 import React from 'react';
-import './LocationSelector.scss';
 import Carousel from 'react-material-ui-carousel';
 import { Item } from '../Item';
 import { LocationItem } from '../consts';

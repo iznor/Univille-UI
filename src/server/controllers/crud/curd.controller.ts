@@ -1,6 +1,5 @@
-import { BaseModel, Models } from 'src/database';
+import { BaseModel, Models } from '../../../database';
 
-import * as models from 'src/database/index';
 import { ICrudController } from './crud.controller.types';
 
 export class CurdController<T extends BaseModel> implements ICrudController<T> {
