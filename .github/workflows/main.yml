@@ -27,7 +27,6 @@ jobs:
       - name: Install server dependencies
         run: |
           yarn install --frozen-lockfile
-          yarn add babel-plugin-module-resolver
 
       - name: Build server
         run: yarn build
