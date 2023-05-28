@@ -14,6 +14,7 @@ class DataRouter {
   }
 
   private setup() {
+    this.router.get('/meta', schoolController.getMeta); // GET /api/v2/data/meta
     this.router.get('/schools', schoolController.getSchools); // GET /api/v2/data/schools
     this.router.get('/school/:schoolId', schoolController.getSchool); // GET /api/v2/data/school/{schoolId}
     this.router.get('/school/:schoolId/classes', schoolController.getClasses); // GET /api/v2/data/school/{schoolId}/classes

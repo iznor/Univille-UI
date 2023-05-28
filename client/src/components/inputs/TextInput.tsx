@@ -17,6 +17,7 @@ export const TextInput = (props: ITextInput) => {
     icon,
     errorMsg = '',
     validators = [],
+      className='',
     onValueChange,
     ...rest
   } = props;
@@ -29,7 +30,7 @@ export const TextInput = (props: ITextInput) => {
     <FormControl className={cx(classes.root)}>
       {icon}
       <TextField
-        className={cx(classes.input, classes.icon)}
+        className={cx(classes.input, classes.icon,className)}
         InputLabelProps={{ shrink: true }}
         onChange={handleChange}
         onBlur={handleChange}

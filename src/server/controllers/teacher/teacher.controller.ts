@@ -11,8 +11,8 @@ import { ITeacherController } from './teacher.controller.types';
 import { HttpError } from '../../../utils';
 
 class TeacherController
-  extends CurdController<ITeacherModel>
-  implements ITeacherController
+    extends CurdController<ITeacherModel>
+    implements ITeacherController
 {
   constructor(model) {
     super(model);
@@ -27,8 +27,8 @@ class TeacherController
       }
       const hashedPassword = await bcrypt.hash(password, 12);
       const newTeacher = await TeacherModel.createTeacher(
-        { firstName, lastName, email, password: hashedPassword },
-        school
+          { firstName, lastName, email,username:email, password: hashedPassword },
+          school
       );
       res.status(200).json({ message: 'success', data: newTeacher });
     } catch (e) {
@@ -39,7 +39,7 @@ class TeacherController
   async teacherLogin(req, res, next) {
     try {
       const { email, password } = req.body;
-      const teacher = await TeacherModel.findOne({ email });
+      const teacher = await TeacherModel.findOne({ email }).populate('school');
       if (!teacher) {
         throw new HttpError('User not exists', 401);
       }
@@ -48,13 +48,16 @@ class TeacherController
         throw new HttpError('Wrong password', 401);
       }
       const token = jwt.sign(
-        { email: teacher.email, userId: teacher._id },
-        process.env.AUTH_SECRET
+          { email: teacher.email, userId: teacher._id },
+          process.env.AUTH_SECRET
       );
+
+      const teacherObj = teacher.toObject({ virtuals: true });
+      const {password:excludeThis, ...teacherSafe} = teacherObj;
 
       res.status(200).json({
         message: 'success',
-        data: { user: teacher.toObject({ virtuals: true }), token },
+        data: { user: teacherSafe, token },
       });
     } catch (e) {
       next(e);

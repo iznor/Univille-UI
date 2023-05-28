@@ -10,7 +10,7 @@ export const initialUserState: IUserState = {
     firstName: '',
     lastName: '',
     email: '',
-    school: '',
+    school: null,
   },
 };
 
@@ -37,13 +37,7 @@ export const userReducer = (state = initialUserState, action) => {
   });
 };
 
-export interface IUserInfoState {
-  id: string;
-  firstName: string;
-  lastName: string;
-  email: string;
-  school: string;
-}
+
 export interface IUserState {
   token: string;
   isAuth: boolean;

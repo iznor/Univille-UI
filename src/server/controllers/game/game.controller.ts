@@ -4,13 +4,13 @@ import {
   IGameModel,
   GameModel,
   MissionModel,
-  LogModel,
+  LogModel, ClassModel,
 } from '../../../database';
 import { idGenerator } from '../../../utils';
 
 class GameController
-  extends CurdController<IGameModel>
-  implements IGameController
+    extends CurdController<IGameModel>
+    implements IGameController
 {
   constructor(model) {
     super(model);
@@ -27,7 +27,11 @@ class GameController
 
   async getTeacherGames(req, res, next) {
     try {
-      const games = await GameModel.find({ teacher: req.params.teacherId });
+      const games = await GameModel.find({ teacher: req.params.teacherId })
+          .populate('teacher','firstName lastName email id')
+          .populate('missions')
+
+
       res.status(200).json({ message: 'success', data: games });
     } catch (e) {
       next(e);
@@ -45,13 +49,32 @@ class GameController
       const newMissions = await MissionModel.createMissions(missionsArr);
       const missions = newMissions.map((m) => m._id);
       const newGame = await GameModel.createGame(
-        { ...metadata, code: idGenerator(), missions },
-        teacherId,
-        className
+          { ...metadata, code: idGenerator(), missions },
+          teacherId,
+          className
       );
+      newGame.id = newGame._id;
+        const updatedGame = await newGame.save();
       res
-        .status(200)
-        .json({ message: 'Game created successfully', data: newGame });
+          .status(200)
+          .json({ message: 'Game created successfully', data: updatedGame });
+    } catch (e) {
+      next(e);
+    }
+  }
+
+  async addMissions(req, res, next) {
+    const {missions: missionsArr = []} = req.body;
+    try {
+      const newMissions = await MissionModel.createMissions(missionsArr);
+      const missions = newMissions.map((m) => m._id);
+      const game = await GameModel.findById(req.params.gameId);
+      game.missions = [...game.missions, ...missions];
+      game.id = game._id;
+      const updatedGame = await game.save();
+      res
+          .status(200)
+          .json({ message: 'Game created successfully', data: updatedGame });
     } catch (e) {
       next(e);
     }
@@ -59,12 +82,12 @@ class GameController
 
   async updateGameMeta(req, res, next) {
     try {
-      const game = await GameModel.findOne({ code: req.params.gameId });
+      const game = await GameModel.findOne({ _id: req.params.gameId });
       Object.assign(game, req.body);
       const updatedGame = await game.save();
       res
-        .status(200)
-        .json({ message: 'Game updated successfully', data: updatedGame });
+          .status(200)
+          .json({ message: 'Game updated successfully', data: updatedGame });
     } catch (e) {
       next(e);
     }
@@ -74,8 +97,8 @@ class GameController
     try {
       await GameModel.deleteGame(req.params.gameId);
       res
-        .status(200)
-        .json({ message: 'Game deleted successfully', data: null });
+          .status(200)
+          .json({ message: 'Game deleted successfully', data: null });
     } catch (e) {
       next(e);
     }
@@ -89,8 +112,8 @@ class GameController
       game.startTime = timestamp;
       const updatedGame = await game.save();
       res
-        .status(200)
-        .json({ message: 'Game started successfully', data: updatedGame });
+          .status(200)
+          .json({ message: 'Game started successfully', data: updatedGame });
     } catch (e) {
       next(e);
     }
@@ -101,8 +124,8 @@ class GameController
       const { gameId } = req.params;
       const updatedGame = await GameModel.createMission(gameId, req.body);
       res
-        .status(200)
-        .json({ message: 'Mission added successfully', data: updatedGame });
+          .status(200)
+          .json({ message: 'Mission added successfully', data: updatedGame });
     } catch (e) {
       next(e);
     }
@@ -113,8 +136,8 @@ class GameController
       const { missionId } = req.params;
       const updatedGame = await MissionModel.updateMission(missionId, req.body);
       res
-        .status(200)
-        .json({ message: 'Mission added successfully', data: updatedGame });
+          .status(200)
+          .json({ message: 'Mission added successfully', data: updatedGame });
     } catch (e) {
       next(e);
     }
@@ -125,8 +148,8 @@ class GameController
       const { missionId } = req.params;
       await MissionModel.deleteMission(missionId);
       res
-        .status(200)
-        .json({ message: 'Mission added successfully', data: null });
+          .status(200)
+          .json({ message: 'Mission added successfully', data: null });
     } catch (e) {
       next(e);
     }
@@ -237,9 +260,9 @@ class GameController
     try {
       const { identity, gameCode, missionId } = req.params;
       const achievement = await GameModel.setPlayerAchievement(
-        gameCode,
-        identity,
-        missionId
+          gameCode,
+          identity,
+          missionId
       );
       res.status(200).json({ message: 'success', data: achievement });
     } catch (e) {

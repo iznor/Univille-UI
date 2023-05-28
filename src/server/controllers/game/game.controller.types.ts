@@ -4,6 +4,7 @@ export interface IGameController {
   createGame: IControlFn<Partial<IGameParams>, never>;
   startGame: IControlFn<{ timestamp: number }, { gameId: string }>;
   addMission: IControlFn<Partial<IMission>, { gameId: string }>;
+  addMissions: IControlFn<Partial<IMission>, { gameId: string }>;
   deleteGame: IControlFn<never, { gameId: string }>;
   deleteMission: IControlFn<never, { missionId: string }>;
   updateMission: IControlFn<Partial<IMission>, { missionId: string }>;

@@ -7,24 +7,25 @@ import {
   VpnKey,
 } from '@mui/icons-material';
 import { Signup, Home, Login, GameWizard, Leaderboard } from '../pages';
+import {SVG} from "../components";
 
 export const navLinks = [
   {
     path: '/',
-    title: 'Home',
-    icon: <HomeIcon />,
+    title: 'home',
+    icon: <SVG name={"home-icon"}/>,
     component: Home,
   },
   {
-    path: '/Game',
-    title: 'Game',
-    icon: <VideogameAsset />,
+    path: '/game',
+    title: 'games',
+    icon: <SVG name={"gamepad"}/>,
     component: GameWizard,
   },
   {
-    path: '/Leaderboard',
-    title: 'Leaderboard',
-    icon: <LeaderboardIcon />,
+    path: '/leaderboard',
+    title: 'leaderboard',
+    icon: <SVG name={"chart-percent"}/>,
     component: Leaderboard,
   },
   // {

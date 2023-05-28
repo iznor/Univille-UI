@@ -13,8 +13,12 @@ export const methods: ISchoolInstanceMethods = {
     Object.assign(this, schoolInfo);
     return this.save();
   },
-  createClass(this, className) {
-    return ClassModel.createClass({ name: className, school: this._id });
+  async createClass(this, className) {
+    const newClass = await ClassModel.createClass({ name: className, school: this._id });
+    this.classes.push(newClass);
+    await this.save();
+    return newClass;
+
   },
   async findOrCreateClass(this, className) {
     const existingClass = await ClassModel.findOne({

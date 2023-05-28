@@ -1,0 +1,75 @@
+{
+
+  "info": {
+    "language": "Hebrew",
+    "logout": "יציאה",
+    "version": "גרסה",
+    "school": "בית ספר"
+  },
+  "home":{
+    "title": "בית",
+    "subtitle": "ברוכים הבאים ל Univille"
+  },
+  "login":{
+    "title": "התחברות",
+    "subtitle": "התחבר לחשבון שלך",
+    "email": "דואר אלקטרוני",
+    "password": "סיסמא",
+    "login": "התחבר",
+    "register": "עדיין לא נרשמת? הירשם עכשיו"
+  },
+  "signup": {
+    "title": "הרשמה",
+    "subtitle": "הרשם עכשיו ל Univille",
+    "firstname": "שם פרטי",
+    "lastname": "שם משפחה",
+    "email": "דואר אלקטרוני",
+    "password": "סיסמא",
+    "confirm": "אימות סיסמא",
+    "switch": "יש לך כבר חשבון? התחבר עכשיו",
+    "button": "הרשם"
+  },
+  "games": {
+    "title": "המשחקים שלי",
+    "subtitle": "נהל את המשחקים שלך",
+    "play": "התחל משחק",
+    "save": "שמור משחק",
+    "table": {
+      "title": "משחקים",
+      "name": "שם",
+      "teacher": "מורה",
+      "class": "כיתה",
+      "duration": "משך זמן משחק",
+      "groupCount": "מספר קבוצות",
+      "colors": "צבעים",
+      "startTime": "זמן התחלה",
+      "code": "קוד משחק"
+    }
+  },
+  "missions": {
+    "save": "שמור משימה",
+    "table": {
+      "title": "משימות",
+      "name": "שם",
+      "description": "פירוט",
+      "hint": "רמז",
+      "target": "מטרה",
+      "score": "ניקוד"
+    }
+  },
+  "targets": {
+    "list": {
+      "title": "בחר יעדים למשחק"
+    },
+    "map": {
+      "title": "בחר יעדים למשחק"
+    }
+  },
+  "leaderboard": {
+    "title": "טבלת ההישגים",
+    "subtitle": "ספר לכולם על ההישגים שלך",
+    "table": {
+      "title": "הישגים"
+    }
+  }
+}

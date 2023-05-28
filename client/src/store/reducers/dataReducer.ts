@@ -1,6 +1,7 @@
 import produce from 'immer';
 import { ActionTypes } from '../actionTypes';
 import { static_targets } from '../../assets/targets';
+import {IStaticTarget} from "../../components";
 
 export const initialDataState = {
   gameIsActive: false,
@@ -11,7 +12,15 @@ export const initialDataState = {
     uptime: '',
     dbState: '',
   },
+    appMetadata: {
+      schools:0,
+      classes:0,
+      teachers:0,
+      students:0,
+      games:0
+    },
   games: [],
+  players: [],
   schools: [],
   classes: [],
   editor: {
@@ -62,6 +71,19 @@ export const dataReducer = (state = initialDataState, action) => {
       case ActionTypes.EDIT_GAME:
         draft.games[payload.gameIndex] = payload.game;
         break;
+        case ActionTypes.DELETE_MISSION:
+            draft.games[payload.gameIndex].missions.splice(payload.missionIndex, 1);
+            break;
+        case ActionTypes.EDIT_MISSION:
+          draft.games[payload.gameIndex].missions[payload.missionIndex] = payload.updatedMission;
+            break;
+      case ActionTypes.ADD_MISSIONS:
+        draft.games[payload.gameIndex].missions.push(...payload.missions);
+        break;
+      case ActionTypes.SET_MISSIONS:
+        draft.games[payload.gameIndex].missions = payload.missions;
+        break;
+
       case ActionTypes.ADD_CLASS:
         draft.classes.push(payload);
         break;
@@ -76,13 +98,15 @@ export const dataReducer = (state = initialDataState, action) => {
 
 export interface IDataState {
   serverInfo: IServerInfo;
+  appMetadata: IAppMetadata;
   gameIsActive: boolean;
   timeLeft: number;
   editor: IEditor;
   games: IGame[];
+  players: IPlayer[];
   schools: ISchool[];
-  classes: IClass[];
-  staticTargets: IStaticTarget[];
+  classes: ClassOptionType[];
+  staticTargets: Partial<IStaticTarget>[];
 }
 
 export interface IEditor {
@@ -92,14 +116,20 @@ export interface IEditor {
   classDoc: Partial<IClass>;
 }
 
-export interface IStaticTarget {
-  objectTag: string;
-  realImage: string;
-  gameImage: string;
-  name: string;
-  address: string;
-  description: string;
-}
+// export interface IStaticTarget {
+//   unityObjectTag?: string;
+//   objectPhotoUrl?: string;
+//   mapPhotoUrl?: string;
+//   itemIndex: number;
+//   objectTag: string;
+//   realImage: string;
+//   gameImage: string;
+//   name: string;
+//   id: string;
+//   address?: string;
+//   location: ILocation;
+//   description: string;
+// }
 
 export interface IServerInfo {
   message: string;
@@ -108,3 +138,4 @@ export interface IServerInfo {
   uptime: string;
   dbState: string;
 }
+

@@ -1,8 +1,8 @@
-import {Box,BoxProps} from '@mui/material'
-import {FC} from 'react'
+import {Box, BoxProps} from "@mui/material";
 
-export function Span(props:BoxProps<"span">){
-    return (
-        <Box component="span" {...props}/>
-    )
-}
+const Span = (props: BoxProps<'span'>) => {
+    const {} = props;
+    return (<Box component={'span'} {...props}/>)
+};
+
+export {Span};

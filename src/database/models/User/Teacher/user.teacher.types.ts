@@ -7,6 +7,7 @@ export interface ITeacher {
   fullName: string;
   firstName: string;
   lastName: string;
+  username: string;
   email: string;
   password: string;
 }
@@ -37,7 +38,7 @@ export interface ITeacherStaticMethods {
   createTeacher: (
     this: ITeacherModel,
     teacherObj: Partial<ITeacherDocument>,
-    schoolName: string
+    schoolId: string
   ) => Promise<ITeacherDocument>;
   deleteTeacher: (this: ITeacherModel, identity: string) => Promise<any>;
 }

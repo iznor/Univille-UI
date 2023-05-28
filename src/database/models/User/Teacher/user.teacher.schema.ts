@@ -9,7 +9,7 @@ import type {
 export const TeacherSchema = new Schema<IPD, IPM, IPIM, any, any, IPSM>(
   {
     school: { type: Schema.Types.ObjectId, ref: 'School' },
-    class: { type: Schema.Types.ObjectId, ref: 'Class' },
+    class: { type: Schema.Types.ObjectId, ref: 'Tclass', autopopulate: true },
   },
   { timestamps: true, discriminatorKey: 'kind' }
 );

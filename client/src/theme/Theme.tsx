@@ -1,12 +1,13 @@
-import { createTheme, ThemeOptions, Components } from '@mui/material/styles';
+import {createTheme, ThemeOptions, Components, Direction} from '@mui/material/styles';
 import { components } from './components';
 import { darkMode, lightMode } from './pallet';
 import { typography, sizes, breakpoints } from './typography';
 import { PaletteColor } from '@mui/material/styles/createPalette';
 const spacingStyle = 8;
 
-export const themeConfig = (isDarkMode = true) => {
+export const themeConfig = (isDarkMode = true,direction:Direction="ltr") => {
   return createTheme({
+    direction,
     sizes: sizes,
     breakpoints: breakpoints,
     typography: typography,
@@ -32,12 +33,13 @@ declare module '@mui/material/styles' {
   }
 
   interface Palette {
-    app: PaletteColorOptions;
+    app: appColorOptions;
     text: TypeText;
     alert: PaletteColorOptions;
     dark: Partial<TypeNumColors>;
     red: Partial<TypeNumColors>;
     orange: Partial<TypeNumColors>;
+    purple: Partial<TypeNumColors>;
     green: Partial<TypeNumColors>;
     blue: Partial<TypeNumColors>;
     neutral: Partial<TypeNumColors>;
@@ -53,19 +55,31 @@ declare module '@mui/material/styles' {
     neutral: Partial<TypeNumColors>;
     blue: Partial<TypeNumColors>;
     orange: Partial<TypeNumColors>;
-    app: PaletteColorOptions;
+    purple: Partial<TypeNumColors>;
+    app: appColorOptions;
   }
 
   interface PaletteColorOptions extends Partial<TypeNumColors> {
     main: string;
   }
+  interface appColorOptions extends Partial<TypeNumColors> {
+    main: string;
+    bg: string;
+    bgInverse: string;
+    cardBg: string;
+    border: string;
+    shadow: string;
+  }
 
   interface TypeText {
     primary: string;
+    secondary: string;
+    inverse: string;
     default: string;
     disabled: string;
     dark: string;
     link: string;
+    muted: string;
     linkPressed: string;
   }
 }

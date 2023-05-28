@@ -63,8 +63,10 @@ export const statics: IGameStaticMethods = {
     const newMission = await MissionModel.createMission(missionObj);
     game.missions.push(newMission._id);
     await game.save();
-    return newMission;
+    return game;
   },
+
+
 
   async setPlayerAchievement(this, gameCode, playerIdentity, missionIdentity) {
     const game = await this.findOne({ code: gameCode });

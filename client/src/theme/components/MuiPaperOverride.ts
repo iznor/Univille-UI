@@ -5,6 +5,18 @@ export const MuiPaperOverride: ComponentThemeFn['MuiPaper'] = (theme) => {
     defaultProps: {},
     styleOverrides: {
       root: {
+        backgroundColor: theme.palette.app.bg,
+        "& table": {
+          padding: "10px",
+          "& th": {
+            backgroundColor: theme.palette.app.bg,
+            "& .MuiButtonBase-root": {
+              "&:hover": {
+                color: theme.palette.primary.main,
+              }
+            }
+          }
+        }
         // '&.header':{
         //     backgroundColor: theme.palette.popup.header,
         // },
@@ -13,8 +25,8 @@ export const MuiPaperOverride: ComponentThemeFn['MuiPaper'] = (theme) => {
         // borderColor: theme.palette.panel.border,
         // borderStyle: 'solid',
         // borderWidth: '0.1px',
-        boxShadow: 'none',
-        color: 'text.dark',
+        // boxShadow: 'none',
+        // color: 'text.dark',
       },
     },
     variants: [],

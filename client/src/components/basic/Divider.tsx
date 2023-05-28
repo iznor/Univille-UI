@@ -9,7 +9,7 @@ interface IDivider extends Partial<DividerProps> {
 }
 
 const Divider = (props: IDivider) => {
-    const {lineColor = "toggle.bg", full,gapX,gapY, ...rest} = props;
+    const {lineColor = "text.dark", full,gapX,gapY, ...rest} = props;
 
     const {classes, cx} = useStyles({lineColor});
 
@@ -24,8 +24,8 @@ export {Divider};
 const useStyles = makeStyles<{ lineColor }>()(
     (theme, {lineColor}) => ({
             "root": {
-                mx:'25px'
-                // backgroundColor:'app.borderSelected'
+                mx:'25px',
+                backgroundColor:lineColor
             },
         }
     )

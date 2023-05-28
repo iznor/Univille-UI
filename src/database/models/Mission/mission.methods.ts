@@ -67,7 +67,7 @@ export const statics: IMissionStaticMethods = {
     return Promise.all(newMissions.map((mission) => mission.save()));
   },
   async deleteMission(this, identity) {
-    const mission = await this.findOneByIdentity(identity);
+    const mission = await this.findById(identity);
     await mission.remove();
   },
 };

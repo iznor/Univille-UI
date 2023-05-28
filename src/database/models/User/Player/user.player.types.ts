@@ -13,7 +13,7 @@ import type {
 export interface IPlayer {
   username: string;
   fullName: string;
-  group: string;
+  group: IGroupColor;
   school: ISchool | string;
   class: IClass | string;
   avatar: string;

@@ -7,6 +7,9 @@ export enum ActionTypes {
   CLOSE_SNACKBAR = 'app/ui/CLOSE_SNACKBAR',
   SET_THEME = 'app/ui/SET_THEME',
   SET_LANG = 'app/ui/SET_LANG',
+  TOGGLE_DARK_MODE = 'app/ui/TOGGLE_DARK_MODE',
+  SET_PAGE = 'app/ui/SET_PAGE',
+  TOGGLE_LANGUAGE = 'app/ui/TOGGLE_LANGUAGE',
 
   // USER
   SET_USER = 'app/user/SET_USER',
@@ -22,10 +25,15 @@ export enum ActionTypes {
   ADD_GAME = 'app/data/ADD_GAME',
   REMOVE_GAME = 'app/data/REMOVE_GAME',
   EDIT_GAME = 'app/data/EDIT_GAME',
+  EDIT_MISSION = 'app/data/EDIT_MISSION',
+  DELETE_MISSION = 'app/data/DELETE_MISSION',
+  ADD_MISSIONS = 'app/data/ADD_MISSIONS',
+  SET_MISSIONS = 'app/data/SET_MISSIONS',
   ADD_CLASS = 'app/data/ADD_CLASS',
   SET_EDITOR = 'app/data/SET_EDITOR',
   SET_EDITOR_METADATA = 'app/data/SET_EDITOR_METADATA',
   EDITOR_ADD_MISSION = 'app/data/EDITOR_ADD_MISSION',
   EDITOR_REMOVE_MISSION = 'app/data/EDITOR_REMOVE_MISSION',
   EDITOR_EDIT_MISSION = 'app/data/EDITOR_EDIT_MISSION',
+  SET_APP_METADATA = 'app/data/SET_APP_METADATA',
 }

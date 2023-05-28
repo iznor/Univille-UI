@@ -37,8 +37,8 @@ export function useData() {
   const getClasses = (schoolId: string) => {
     dispatch(dataActions.getClasses(schoolId));
   };
-  const saveGame = () => {
-    dispatch(dataActions.createGame());
+  const createGame = (newGameParams:INewGameRequestParams) => {
+    dispatch(dataActions.createGame(newGameParams));
   };
   const startGame = (gameId: string) => {
     dispatch(dataActions.startGame(gameId));
@@ -46,6 +46,39 @@ export function useData() {
 
   const getServerInfo = () => {
     dispatch(dataActions.getServerInfo());
+  }
+
+  const addGame = (game) => {
+    dispatch(dataActions.addGame(game));
+  }
+
+  const removeGame = (gameIndex,game) => {
+    dispatch(dataActions.removeGame(gameIndex));
+  }
+
+  const createClass = (newClassName) => {
+    dispatch(dataActions.createClass(newClassName));
+  }
+  const addMissions = (gameId,missions) => {
+    dispatch(dataActions.addMissions(gameId,missions));
+  }
+  const addMission = (gameId,missions) => {
+    dispatch(dataActions.addMission(gameId,missions));
+  }
+  const editMission = (gameId,missionIndex,missions) => {
+    dispatch(dataActions.editMission(gameId,missionIndex,missions));
+  }
+  const removeMission = (gameId,missionId) => {
+    dispatch(dataActions.removeMission(gameId,missionId));
+  }
+  const updateGameMeta = (gameId, metadata) => {
+    dispatch(dataActions.updateGameMeta(gameId, metadata));
+  }
+  const deleteGame = (gameId) => {
+    dispatch(dataActions.deleteGame(gameId));
+  }
+  const getAppMeta = () => {
+    dispatch(dataActions.getAppMeta());
   }
 
   return {
@@ -60,9 +93,19 @@ export function useData() {
       getTeacherGames: useCallback(getTeacherGames, []),
       getSchools: useCallback(getSchools, []),
       getClasses: useCallback(getClasses, []),
-      saveGame: useCallback(saveGame, []),
+      createGame: useCallback(createGame, []),
       startGame: useCallback(startGame, []),
       getServerInfo: useCallback(getServerInfo, []),
+      addGame: useCallback(addGame, []),
+      removeGame: useCallback(removeGame, []),
+      createClass: useCallback(createClass, []),
+      addMissions: useCallback(addMissions, []),
+      editMission: useCallback(editMission, []),
+      addMission: useCallback(addMission, []),
+      removeMission: useCallback(removeMission, []),
+      getAppMeta: useCallback(getAppMeta, []),
+      updateGameMeta: useCallback(updateGameMeta, []),
+      deleteGame: useCallback(deleteGame, []),
     },
   };
 }

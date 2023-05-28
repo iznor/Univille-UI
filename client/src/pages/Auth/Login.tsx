@@ -32,7 +32,7 @@ const Login = (props: ILogin) => {
     e.stopPropagation();
     submitForm((vals) => {
       console.log(vals);
-      userActions.logIn(vals.email, vals.password);
+      userActions.logIn(vals.email.toLowerCase(), vals.password);
     });
   };
   return (
@@ -67,7 +67,7 @@ const Login = (props: ILogin) => {
             variant={'contained'}
             color={'primary'}
           >
-            <P>Signup</P>
+            <P>Login</P>
           </Button>
         </Form>
         <Button color={'secondary'}>

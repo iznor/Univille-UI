@@ -9,7 +9,7 @@ export interface IGame {
   name: string;
   startTime: Date;
   duration: number;
-  colors: string[];
+  colors: IGroupColor[];
   groupCount: number;
   missions: Schema.Types.ObjectId[];
   players: Schema.Types.ObjectId[];
@@ -57,12 +57,12 @@ export interface IGameStaticMethods {
     this: IGameModel,
     gameId: string,
     missionObj: Partial<IMission>
-  ) => Promise<IMissionDocument>;
+  ) => Promise<IGameModel>;
   giveColor: (
     this: IGameModel,
     gameCode: string,
     playerIdentity: string
-  ) => Promise<string>;
+  ) => Promise<IGroupColor>;
   isActive: (this: IGameModel, gameCode: string) => Promise<boolean>;
   getTimeLeft: (this: IGameModel, gameCode: string) => Promise<number>;
 }

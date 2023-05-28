@@ -1,20 +1,38 @@
 import React from 'react';
-import { SidebarData, SidebarHeader, SidebarLinks } from './SidebarComponents';
-import { Divider } from 'components';
+import {SidebarData, SidebarFooter, SidebarHeader, SidebarLinks} from './SidebarComponents';
+import { Divider,Column } from 'components';
+import { makeStyles } from 'tss-react/mui';
 
-interface ISidebarContent {}
+interface ISidebarContent {
+    onToggleSidebar?: () => void;
+}
 
 const SidebarContent = (props: ISidebarContent) => {
-  const {} = props;
+  const {onToggleSidebar} = props;
+    const {classes, cx} = useStyle()
   return (
-    <>
-      <SidebarHeader />
+    <Column className={classes.root}>
+        <Column >
+      <SidebarHeader onToggleSidebar={onToggleSidebar} />
       <Divider />
       <SidebarData />
       <Divider />
       <SidebarLinks />
-    </>
+        </Column>
+        <Column >
+      <Divider />
+      <SidebarFooter />
+        </Column>
+    </Column>
   );
 };
+
+const useStyle = makeStyles()((theme) => ({
+    root: {
+        justifyContent:'space-between',
+        height:"100%",
+    },
+}));
+
 
 export { SidebarContent };

@@ -13,7 +13,7 @@ export const GameSchema = new Schema<IPD, IPM, IPIM, any, any, IPSM>(
     name: { type: String },
     startTime: { type: Date },
     duration: { type: Number },
-    colors: [{ type: String }],
+    colors: [{ type: {name: String,hex: String, heb: String}}],
     groupCount: { type: Number },
     missions: [
       {
@@ -23,7 +23,7 @@ export const GameSchema = new Schema<IPD, IPM, IPIM, any, any, IPSM>(
       },
     ],
     players: [{ type: Schema.Types.ObjectId, ref: 'Player' }],
-    class: { type: Schema.Types.ObjectId, ref: 'Class' },
+    class: { type: Schema.Types.ObjectId, ref: 'Tclass', autopopulate: true },
     teacher: {
       type: Schema.Types.ObjectId,
       ref: 'Teacher',

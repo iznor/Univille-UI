@@ -64,7 +64,7 @@ jobs:
             rm .prettierrc.json
             rm .eslintrc.json
             rm .eslintignore
-            yarn build
+            npm run build
             if ! pm2 describe univille-fs >/dev/null 2>&1 ; then
                 pm2 start /root/apps/univille/build/index.js --name "univille-fs"
             else

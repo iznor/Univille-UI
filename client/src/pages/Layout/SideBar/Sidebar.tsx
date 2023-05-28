@@ -3,15 +3,18 @@ import React from 'react';
 import { P } from '../../../components';
 import { SidebarContent } from './SidebarContent';
 import { makeStyles } from 'tss-react/mui';
+import {useUi} from "../../../store";
 
 interface IDrawer {
   drawerWidth: number;
   isOpen: boolean;
   toggleDrawer: (val?: any) => any;
+  onToggleSidebar?: () => void;
 }
 
 export const Sidebar = (props: IDrawer) => {
-  const { drawerWidth, isOpen, toggleDrawer } = props;
+  const { drawerWidth, isOpen, toggleDrawer,onToggleSidebar } = props;
+  const {uiState,uiActions} = useUi();
   const { classes, cx } = useStyles({ drawerWidth });
   return (
     <Box component="nav" className={cx(classes.root)}>
@@ -22,12 +25,13 @@ export const Sidebar = (props: IDrawer) => {
         ModalProps={{
           keepMounted: true,
         }}
+        anchor={uiState.rtl ? 'right' : 'left'}
         className={cx(classes.root, classes.tempDrawer)}
       >
-        <SidebarContent />
+        <SidebarContent onToggleSidebar={onToggleSidebar} />
       </Drawer>
-      <Drawer variant="permanent" className={cx(classes.stickyDrawer)} open>
-        <SidebarContent />
+      <Drawer anchor={uiState.rtl ? 'right' : 'left'} variant="permanent" className={cx(classes.stickyDrawer)} open>
+        <SidebarContent onToggleSidebar={onToggleSidebar} />
       </Drawer>
     </Box>
   );
@@ -35,12 +39,15 @@ export const Sidebar = (props: IDrawer) => {
 
 const useStyles = makeStyles<{ drawerWidth }>()((theme, { drawerWidth }) => ({
   root: {
+    userSelect: 'none',
+    height: '100%',
     [theme.breakpoints.up('md')]: {
       flexShrink: 0,
       width: `${drawerWidth}px`,
     },
   },
   tempDrawer: {
+    height: '100%',
     [theme.breakpoints.up('xs')]: {
       display: 'none',
     },
@@ -51,11 +58,14 @@ const useStyles = makeStyles<{ drawerWidth }>()((theme, { drawerWidth }) => ({
       display: 'none',
     },
     '& .MuiDrawer-paper': {
+      backgroundColor: theme.palette.app.bg,
+      borderRight: `1px solid ${theme.palette.app.border}`,
       boxSizing: 'border-box',
       width: `${drawerWidth}px`,
     },
   },
   stickyDrawer: {
+    height: '100%',
     [theme.breakpoints.up('xs')]: {
       display: 'none',
     },
@@ -66,7 +76,9 @@ const useStyles = makeStyles<{ drawerWidth }>()((theme, { drawerWidth }) => ({
       display: 'block',
     },
     '& .MuiDrawer-paper': {
+      backgroundColor: theme.palette.app.bg,
       boxSizing: 'border-box',
+      borderRight: `1px solid ${theme.palette.app.border}`,
       width: `${drawerWidth}px`,
     },
   },

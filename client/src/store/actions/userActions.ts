@@ -1,28 +1,30 @@
 import { uiActions } from './uiActions';
 import { authApi } from 'serverApi';
+import {ActionTypes} from '../actionTypes';
+import {dataActions} from "./dataActions";
 
 export const userActions = {
   setUser: (userState) => {
     return {
-      type: 'SET_USER',
+      type: ActionTypes.SET_USER,
       payload: userState,
     };
   },
   setUserInfo: (userInfo) => {
     return {
-      type: 'SET_USER_INFO',
+      type: ActionTypes.SET_USER_INFO,
       payload: userInfo,
     };
   },
   setAuth: (isAuth, token) => {
     return {
-      type: 'SET_AUTH',
+      type: ActionTypes.SET_AUTH,
       payload: { isAuth, token },
     };
   },
   logOut: () => {
     return {
-      type: 'LOG_OUT',
+      type: ActionTypes.LOG_OUT,
     };
   },
   logIn: (email, password) => {
@@ -33,6 +35,8 @@ export const userActions = {
         const { token, user } = response.data;
         dispatch(userActions.setAuth(true, token));
         dispatch(userActions.setUserInfo(user));
+        dispatch(dataActions.setClasses(user.school.classes));
+        // dispatch(dataActions.getTeacherGames())
         dispatch(uiActions.setSuccess('You have successfully logged in'));
       } catch (e) {
         dispatch(uiActions.setAlert(e.message));

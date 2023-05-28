@@ -32,16 +32,20 @@ export const uiActions = {
             type: ActionTypes.CLOSE_SNACKBAR,
         };
     },
-    setTheme: (theme) => {
+    toggleDarkMode: () => {
         return {
-            type: ActionTypes.SET_THEME,
-            payload: theme,
+            type: ActionTypes.TOGGLE_DARK_MODE
         };
     },
-    setLang: (lang) => {
+    toggleLanguage: () => {
         return {
-            type: ActionTypes.SET_LANG,
-            payload: lang,
+            type: ActionTypes.TOGGLE_LANGUAGE
+        };
+    },
+    setPage: (page:string) => {
+        return {
+            type: ActionTypes.SET_PAGE,
+            payload: page,
         };
     }
 

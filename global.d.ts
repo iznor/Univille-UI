@@ -29,7 +29,7 @@ declare global {
     name: string;
     duration: number;
     groupCount: number;
-    colors: string[];
+    colors: IGroupColor[];
     code: string[];
     startTime: number;
   }
@@ -47,6 +47,11 @@ declare global {
     target: { objectTag: string; image?: string; title?: string };
     image: string;
     score: number;
+  }
+  interface IGroupColor {
+    name: string;
+    hex: string;
+    heb: string;
   }
 }
 

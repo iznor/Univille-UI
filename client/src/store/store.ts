@@ -23,7 +23,7 @@ const rootPersistConfig = {
 const uiPersistConfig = {
     key: 'ui',
     storage,
-    whitelist: ['theme'],
+    whitelist: ['isDark','rtl'],
 };
 
 

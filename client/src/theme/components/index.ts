@@ -6,6 +6,7 @@ import {
   Components,
 } from '@mui/material/styles';
 import { MuiCssBaselineOverride } from './MuiCssBaselineOverride';
+import { MuiFormControlOverride } from './MuiFormControlOverride';
 import { MuiTextFieldOverride } from './MuiTextFieldOverride';
 import { MuiMenuOverride } from './MuiMenuOverride';
 import { MuiPaperOverride } from './MuiPaperOverride';
@@ -18,10 +19,11 @@ export const components = (theme: Partial<ThemeOptions>) =>
     MuiCheckbox: MuiCheckboxOverride(theme),
     MuiButton: MuiButtonOverride(theme),
     // MuiMenu: MuiMenuOverride(theme),
-    // MuiPaper: MuiPaperOverride(theme),
+    MuiPaper: MuiPaperOverride(theme),
     // MuiTextField: MuiTextFieldOverride(theme),
     // MuiAlert: MuiAlertOverride(theme),
     MuiCssBaseline: MuiCssBaselineOverride(theme),
+      MuiFormControl: MuiFormControlOverride(theme),
     // MuiCard: MuiCardOverride(theme),
     // MuiCardHeader: MuiCardHeaderOverride(theme),
     // MuiCardContent: MuiCardContentOverride(theme),

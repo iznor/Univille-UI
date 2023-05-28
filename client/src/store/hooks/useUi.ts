@@ -10,8 +10,8 @@ export function useUi() {
     const setUi = (uiState: Partial<IUiState>) => {
         dispatch(uiActions.setUi(uiState))
     }
-    const setTheme = (theme: string) => {
-        dispatch(uiActions.setTheme(theme))
+    const toggleDarkMode = () => {
+        dispatch(uiActions.toggleDarkMode())
     }
     const setLoader = (state: boolean) => {
         dispatch(uiActions.setLoader(state))
@@ -26,20 +26,25 @@ export function useUi() {
         dispatch(uiActions.closeSnackbar())
     }
 
-    const setLang = (lang: string) => {
-        dispatch(uiActions.setLang(lang))
+    const toggleLanguage = () => {
+        dispatch(uiActions.toggleLanguage())
+    }
+
+    const setPage = (page: string) => {
+        dispatch(uiActions.setPage(page))
     }
 
     return {
         uiState: values,
         uiActions: {
             setUi: useCallback(setUi, []),
-            setTheme: useCallback(setTheme, []),
+            toggleDarkMode: useCallback(toggleDarkMode, []),
             setLoader: useCallback(setLoader, []),
             setAlert: useCallback(setAlert, []),
             setSuccess: useCallback(setSuccess, []),
             closeSnackbar: useCallback(closeSnackbar, []),
-            setLang: useCallback(setLang, []),
+            setPage: useCallback(setPage, []),
+            toggleLanguage: useCallback(toggleLanguage, []),
         }
     }
 

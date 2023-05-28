@@ -26,9 +26,9 @@ export const teacherStatics: ITeacherStaticMethods = {
     return this.find(teacherObj);
   },
 
-  async createTeacher(this, teacherObj, schoolName) {
-    const newTeacher = new this(teacherObj);
-    const school = await SchoolModel.findOne({ name: schoolName });
+  async createTeacher(this, teacherObj, schoolId) {
+    const newTeacher = new this({...teacherObj,school:schoolId});
+    const school = await SchoolModel.findById(schoolId)
     school.teachers.push(newTeacher._id);
     await school.save();
     return newTeacher.save();

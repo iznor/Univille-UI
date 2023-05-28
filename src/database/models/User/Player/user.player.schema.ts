@@ -12,9 +12,9 @@ import { IMission } from '../../Mission';
 
 export const PlayerSchema = new Schema<IPD, IPM, IPIM, any, any, IPSM>(
   {
-    group: { type: String },
+    group: { type: {name: String, hex: String, heb: String} },
     school: { type: Schema.Types.ObjectId, ref: 'School' },
-    class: { type: Schema.Types.ObjectId, ref: 'Class' },
+    class: { type: Schema.Types.ObjectId, ref: 'Tclass' },
     avatar: { type: String },
     score: { type: Number, default: 0 },
     location: {

@@ -1,0 +1,75 @@
+{
+  "info": {
+    "language": "English",
+    "logout": "Logout",
+    "version": "Version",
+    "school": "School"
+  },
+  "home": {
+    "title": "Home",
+    "subtitle": "Welcome to Univille"
+  },
+  "login": {
+    "title": "Login",
+    "subtitle": "Login to access your account.",
+    "email": "Your Email..",
+    "password": "Password",
+    "switch": "Don't have an account? Signup",
+    "button": "Login"
+  },
+  "signup": {
+    "title": "Signup",
+    "subtitle": "Register to manage your account",
+    "firstname": "Your First Name..",
+    "lastname": "Your Last Name..",
+    "email": "Your Email..",
+    "password": "Password",
+    "confirm": "Confirm Password",
+    "school": "Select your school..",
+    "switch": "Already have an account? Login",
+    "button": "Signup"
+  },
+  "games": {
+    "title": "My Games",
+    "subtitle": "Manage your games",
+    "play": "Start Game",
+    "save": "Save Game",
+    "table": {
+      "title": "Games",
+      "name": "Name",
+      "teacher": "Teacher",
+      "class": "Class",
+      "duration": "Duration",
+      "groupCount": "Group Count",
+      "colors": "Colors",
+      "startTime": "Start Time",
+      "code": "Game Code"
+    }
+  },
+  "missions": {
+    "save": "Save Mission",
+    "table": {
+      "title": "Game Missions",
+      "name": "Name",
+      "description": "Description",
+      "hint": "Hint",
+      "target": "Target",
+      "score": "Score"
+    }
+  },
+  "targets": {
+   "list": {
+        "title": "Choose targets"
+   },
+    "map": {
+      "title": "Choose targets"
+    }
+  },
+  "leaderboard": {
+    "title": "Leaderboard",
+    "subtitle": "Summary of all games",
+    "table": {
+      "title": "Leaderboard"
+    }
+  }
+}

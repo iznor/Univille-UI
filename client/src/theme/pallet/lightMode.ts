@@ -15,25 +15,33 @@ const colors = {
 export const palette = {
   module: 'light',
   text: {
-    primary: '#BBBBBB',
+    primary: '#2B2B2B',
+    secondary: 'rgba(43,43,43,0.7)',
+    inverse: '#BBBBBB',
     default: '#BBBBBB',
     disabled: '#777777',
     dark: '#2B2B2B',
     selected: '#FEFEFE',
     link: '#589DF6',
     linkPressed: '#BA6F25',
-    infoPanel: '#8C8C8C',
+    muted: 'rgba(43,43,43,0.3)',
     infoInput: '#787878',
-    error: '#FF5261',
+    error: '#f56c78',
     success: '#50A661',
   },
 
   app: {
     main: colors.app[500],
+    border: 'rgba(0, 0, 0, 0.12)',
+    shadow:'0px 1px 5px -4px rgba(0,0,0,0.61)',
+    bg: colors.neutral[500],
+    bgInverse: colors.neutral[600],
+    cardBg: "hsl(212.4deg 100% 89.27%)",
     ...colors.app,
   },
   primary: {
-    main: colors.orange[500],
+    // main: colors.orange[500],
+    main: '#1990a7',
     ...colors.orange,
   },
   secondary: {
@@ -56,6 +64,9 @@ export const palette = {
     main: colors.green[500],
     ...colors.green,
   },
+  action: {
+    active: '#1990a7',
+  },
 
   dark: { ...colors.dark },
   red: { ...colors.red },
@@ -63,4 +74,5 @@ export const palette = {
   green: { ...colors.green },
   blue: { ...colors.blue },
   neutral: { ...colors.neutral },
+  purple: { ...colors.purple },
 };

@@ -7,7 +7,9 @@ export const MuiButtonOverride: ComponentThemeFn['MuiButton'] = (theme) => {
     styleOverrides: {
       root: {
         textTransform: 'capitalize',
+
       },
+
     },
   };
 };

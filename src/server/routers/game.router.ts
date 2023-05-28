@@ -21,6 +21,7 @@ class GameRouter {
     this.router.delete('/:gameId', gameController.deleteGame); // DELETE /api/v2/game/{gameId}
     this.router.get('/teacher/:teacherId', gameController.getTeacherGames); // GET /api/v2/game/{teacherId}
     this.router.post('/:gameId/mission', gameController.addMission); // POST /api/v2/game/{gameId}/mission  -  {name,description,hint:{text,image,title},target:{objectTag,image,title},image,score}
+    this.router.post('/:gameId/missions', gameController.addMissions); // POST /api/v2/game/{gameId}/mission  -  {name,description,hint:{text,image,title},target:{objectTag,image,title},image,score}
     this.router.put('/mission/:missionId', gameController.updateMission); // PUT /api/v2/game/{gameId}/mission  -  {name,description,hint:{text,image,title},target:{objectTag,image,title},image,score}
     this.router.delete('/mission/:missionId', gameController.deleteMission); // DELETE /api/v2/game/mission/{missionId}
     this.router.post('/join', gameController.joinGame); // POST /api/v2/game/join  -  {playerId, gameCode}

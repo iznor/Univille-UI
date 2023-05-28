@@ -1,0 +1,6 @@
+export * from './ClassInput'
+export * from './ColorsInput'
+export * from './DurationInput'
+export * from './GameCodeInput'
+export * from './HintInput'
+export * from './TargetInput'

@@ -174,30 +174,30 @@ const clearData = async () => {
 };
 const createSchools = async () => {
   const schools = [
-    { name: 'אביגור', address: 'תל-חי', city: 'רמת-גן' },
-    { name: 'ארנון', address: 'החולה 4', city: 'רמת-גן' },
-    { name: 'בן גוריון', address: 'שרת 27', city: 'רמת-גן' },
-    { name: 'גבעולים', address: 'התקוה 20', city: 'רמת-גן' },
-    { name: 'הבילויים', address: 'אהרונסון 38', city: 'רמת-גן' },
-    { name: 'הגפן', address: 'בנימין 28', city: 'רמת-גן' },
-    { name: 'הלל', address: 'הגלגל 44', city: 'רמת-גן' },
-    { name: 'המנחיל', address: 'הפודים 41', city: 'רמת-גן' },
-    { name: 'המתמיד', address: 'המתמיד 37', city: 'רמת-גן' },
-    { name: 'ויצמן', address: 'מנדס 55', city: 'רמת-גן' },
-    { name: 'זומר', address: "שד' למדן 1", city: 'רמת-גן' },
-    { name: 'חשמונאים', address: 'חשמונאים 33', city: 'רמת-גן' },
-    { name: 'יהל"ם', address: 'קריניצי 68', city: 'רמת-גן' },
-    { name: 'מורדי הגטאות', address: 'אמנון ותמר 19', city: 'רמת-גן' },
-    { name: 'מכל"ל', address: 'פומבדיתא 16', city: 'רמת-גן' },
-    { name: 'נטעים', address: 'עזריאל 26', city: 'רמת-גן' },
-    { name: 'ניצנים', address: 'מוזס 10', city: 'רמת-גן' },
-    { name: 'עליות', address: 'האגדה 9', city: 'רמת-גן' },
-    { name: 'ערמונים', address: 'הכבאים 25', city: 'רמת-גן' },
-    { name: 'עתיד', address: 'מבוא נגבה 10', city: 'רמת-גן' },
-    { name: "קורצ'אק", address: 'גדעון 28', city: 'רמת-גן' },
-    { name: 'רמת-חן', address: 'רמת חן 41', city: 'רמת-גן' },
-    { name: 'רמת-אפעל', address: "שד' אורנים 52960", city: 'רמת-גן' },
-    { name: 'חווה חקלאית', address: "שד' הצבי 10", city: 'רמת-גן' },
+    { name: 'אביגור', address: 'תל-חי', city: 'רמת-גן',location: { x: 32.0691542, y: 34.8253758 } },
+    { name: 'ארנון', address: 'החולה 4', city: 'רמת-גן',location: { x: 32.0605901, y: 34.8286671 } },
+    { name: 'בן גוריון', address: 'שרת 27', city: 'רמת-גן',location: { x: 32.0862027, y: 34.8157825 } },
+    { name: 'גבעולים', address: 'התקוה 20', city: 'רמת-גן',location: { x: 32.0885303, y: 34.8103099 } },
+    { name: 'הבילויים', address: 'אהרונסון 38', city: 'רמת-גן',location: { x: 32.0607605, y: 34.8227041 } },
+    { name: 'הגפן', address: 'בנימין 28', city: 'רמת-גן',location: { x: 32.0848642, y: 34.8038936 } },
+    { name: 'הלל', address: 'הגלגל 44', city: 'רמת-גן',location: { x: 32.080249, y: 34.8211389 } },
+    { name: 'המנחיל', address: 'הפודים 41', city: 'רמת-גן',location: { x: 32.0932857, y: 34.8183109 } },
+    { name: 'המתמיד', address: 'המתמיד 37', city: 'רמת-גן',location: { x: 32.0803349, y: 34.8037645 } },
+    { name: 'ויצמן', address: 'מנדס 55', city: 'רמת-גן',location: { x: 32.0548809, y: 34.8457124 } },
+    { name: 'זומר', address: "שד' למדן 1", city: 'רמת-גן',location: { x: 32.0863098, y: 34.8116064 } },
+    { name: 'חשמונאים', address: 'חשמונאים 33', city: 'רמת-גן',location: { x: 32.079995, y: 34.8067611 } },
+    { name: 'יהל"ם', address: 'קריניצי 68', city: 'רמת-גן',location: { x: 32.0818028, y: 34.7685264 } },
+    { name: 'מורדי הגטאות', address: 'אמנון ותמר 19', city: 'רמת-גן',location: { x: 32.0723638, y: 34.8246126 } },
+    { name: 'מכל"ל', address: 'פומבדיתא 16', city: 'רמת-גן',location: { x: 32.0687555, y: 34.8283161 } },
+    { name: 'נטעים', address: 'עזריאל 26', city: 'רמת-גן',location: { x: 32.0519421, y: 34.817399 } },
+    { name: 'ניצנים', address: 'מוזס 10', city: 'רמת-גן',location: { x: 32.0936132, y: 34.8085779 } },
+    { name: 'עליות', address: 'האגדה 9', city: 'רמת-גן',location: { x: 32.0752053, y: 34.8238873 } },
+    { name: 'ערמונים', address: 'הכבאים 25', city: 'רמת-גן',location: { x: 32.0624362, y: 34.8331584 } },
+    { name: 'עתיד', address: 'מבוא נגבה 10', city: 'רמת-גן',location: { x: 32.0693173, y: 34.8210005 } },
+    { name: "קורצ'אק", address: 'גדעון 28', city: 'רמת-גן',location: { x: 32.0674672, y: 34.8147761 } },
+    { name: 'רמת-חן', address: 'רמת חן 41', city: 'רמת-גן',location: { x: 32.0515687, y: 34.8084362 } },
+    { name: 'רמת-אפעל', address: "שד' אורנים 52960", city: 'רמת-גן',location: { x: 32.0467447, y: 34.8283588 } },
+    { name: 'חווה חקלאית', address: "שד' הצבי 10", city: 'רמת-גן',location: { x: 32.0525442, y: 34.8246676 } },
   ];
   try {
     await SchoolModel.insertMany(schools);
@@ -209,11 +209,11 @@ const createSchools = async () => {
 const dataInitialization = async () => {
   console.log('Data initialization');
   try {
-    const exist = await PlayerModel.findOne({ username: 'DekelBD' });
-    if (exist) {
-      console.log('data already initialized');
-      return;
-    }
+    // const exist = await PlayerModel.findOne({ username: 'DekelBD' });
+    // if (exist) {
+    //   console.log('data already initialized');
+    //   return;
+    // }
     // await clearData();
     // await createSchools();
 

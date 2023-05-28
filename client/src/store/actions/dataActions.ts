@@ -49,6 +49,38 @@ export const dataActions = {
       },
     };
   },
+  updateMission: (gameIndex,missionIndex, updatedMission) => {
+    return {
+      type: ActionTypes.EDIT_MISSION,
+      payload: {
+        gameIndex,missionIndex, updatedMission
+      },
+    };
+  },
+  deleteMission: (gameIndex,missionIndex) => {
+    return {
+      type: ActionTypes.DELETE_MISSION,
+      payload: {
+        gameIndex,missionIndex
+      },
+    };
+  },
+  concatMissions: (gameIndex,missions) => {
+    return {
+      type: ActionTypes.ADD_MISSIONS,
+      payload: {
+        gameIndex,missions
+      },
+    };
+  },
+  setGameMissions: (gameIndex,missions) => {
+    return {
+      type: ActionTypes.SET_MISSIONS,
+      payload: {
+        gameIndex,missions
+      },
+    };
+  },
   addClass: (newClass) => {
     return {
       type: ActionTypes.ADD_CLASS,
@@ -86,6 +118,22 @@ export const dataActions = {
         missionIndex,
         mission,
       },
+    };
+  },
+
+  createClass: (newClassName) => {
+    return async (dispatch, getState) => {
+      try {
+        const {token, user:{school:{id}}} = getState().user;
+        dispatch(uiActions.setLoader(true));
+        const response = await dataApi.addClass(id, newClassName, token);
+        dispatch(dataActions.addClass(response.data));
+        dispatch(uiActions.setSuccess('You have successfully created a class'));
+      } catch (e) {
+        dispatch(uiActions.setAlert(e.message));
+      } finally {
+        dispatch(uiActions.setLoader(false));
+      }
     };
   },
 
@@ -133,22 +181,15 @@ export const dataActions = {
       }
     };
   },
-  createGame: () => {
+  createGame: (newGameParams:INewGameRequestParams) => {
     return async (dispatch, getState) => {
       try {
         dispatch(uiActions.setLoader(true));
         const {
-          user: { id },
-          data: {
-            editor: { teacher, classDoc, metadata, missions },
-          },
+          user: { user:{id} },
         } = getState();
-        const response = await gameApi.createGame(
-          teacher.id,
-          classDoc.name,
-          missions,
-          metadata
-        );
+        newGameParams.teacherId = id;
+        const response = await gameApi.createGame(newGameParams);
         dispatch(dataActions.addGame(response.data));
         dispatch(uiActions.setSuccess('You have successfully created a game'));
       } catch (e) {
@@ -183,9 +224,10 @@ export const dataActions = {
     return async (dispatch, getState) => {
       try {
         dispatch(uiActions.setLoader(true));
+        console.log(gameId, metadata)
         const response = await gameApi.updateGameMeta(gameId, metadata);
         const gameIndex = getState().data.games.findIndex(
-          (game) => game.id === gameId
+          (game) => game._id === gameId
         );
         dispatch(dataActions.editGame(gameIndex, response.data));
         dispatch(
@@ -204,7 +246,7 @@ export const dataActions = {
         dispatch(uiActions.setLoader(true));
         const response = await gameApi.deleteGame(gameId);
         const gameIndex = getState().data.games.findIndex(
-          (game) => game.id === gameId
+          (game) => game._id === gameId
         );
         dispatch(dataActions.removeGame(gameIndex));
         dispatch(uiActions.setSuccess('You have successfully deleted a game'));
@@ -219,11 +261,32 @@ export const dataActions = {
     return async (dispatch, getState) => {
       try {
         dispatch(uiActions.setLoader(true));
+        console.log('dddd')
         const response = await gameApi.addMission(gameId, mission);
         const gameIndex = getState().data.games.findIndex(
-          (game) => game.id === gameId
+          (game) => game._id === gameId
         );
-        dispatch(dataActions.editGame(gameIndex, response.data));
+        dispatch(dataActions.setGameMissions(gameIndex, response.data?.missions??[]));
+        // dispatch(dataActions.editGame(gameIndex, response.data));
+        dispatch(uiActions.setSuccess('You have successfully added a mission'));
+      } catch (e) {
+        dispatch(uiActions.setAlert(e.message));
+      } finally {
+        dispatch(uiActions.setLoader(false));
+      }
+    };
+  },
+  addMissions: (gameId: string, missions: Partial<IMission>[]) => {
+    return async (dispatch, getState) => {
+      try {
+        dispatch(uiActions.setLoader(true));
+        const response = await gameApi.addMissions(gameId, missions);
+        const gameIndex = getState().data.games.findIndex(
+          (game) => game._id === gameId
+        );
+        dispatch(dataActions.setGameMissions(gameIndex, response.data?.missions??[]));
+
+        // dispatch(dataActions.editGame(gameIndex, response.data));
         dispatch(uiActions.setSuccess('You have successfully added a mission'));
       } catch (e) {
         dispatch(uiActions.setAlert(e.message));
@@ -240,15 +303,18 @@ export const dataActions = {
     return async (dispatch, getState) => {
       try {
         dispatch(uiActions.setLoader(true));
-        const response = await gameApi.updateMission(gameId, mission);
+        const response = await gameApi.updateMission(mission._id, mission);
         const gameIndex = getState().data.games.findIndex(
-          (game) => game.id === gameId
+          (game) => game._id === gameId
         );
-        dispatch(dataActions.editGame(gameIndex, response.data));
+        console.log({gameIndex, missionIndex,response,gameId})
+        dispatch(dataActions.updateMission(gameIndex, missionIndex,response.data));
+
         dispatch(
           uiActions.setSuccess('You have successfully edited a mission')
         );
       } catch (e) {
+        console.log(e)
         dispatch(uiActions.setAlert(e.message));
       } finally {
         dispatch(uiActions.setLoader(false));
@@ -261,9 +327,12 @@ export const dataActions = {
         dispatch(uiActions.setLoader(true));
         const response = await gameApi.deleteMission(missionId);
         const gameIndex = getState().data.games.findIndex(
-          (game) => game.id === gameId
+          (game) => game._id === gameId
         );
-        dispatch(dataActions.editGame(gameIndex, response.data));
+        const missionIndex = getState().data.games[gameIndex].missions.findIndex(
+            (mission) => mission._id === missionId);
+        dispatch(dataActions.deleteMission(gameIndex, missionIndex));
+
         dispatch(
           uiActions.setSuccess('You have successfully removed a mission')
         );
@@ -305,5 +374,21 @@ export const dataActions = {
         dispatch(uiActions.setLoader(false));
       }
     };
+  },
+
+  getAppMeta: () => {
+    return async (dispatch, getState) => {
+      try {
+        dispatch(uiActions.setLoader(true));
+        const response = await dataApi.getMeta();
+        console.log('app meta', response);
+        dispatch(dataActions.setData({ appMetadata: response.data}));
+      } catch (e) {
+        dispatch(uiActions.setAlert(e.message));
+      } finally {
+        dispatch(uiActions.setLoader(false));
+      }
+    };
   }
+
 };
