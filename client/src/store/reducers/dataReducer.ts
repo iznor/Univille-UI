@@ -59,6 +59,9 @@ export const dataReducer = (state = initialDataState, action) => {
       case ActionTypes.SET_GAMES:
         draft.games = payload;
         break;
+        case ActionTypes.SET_PLAYERS:
+            draft.players = payload;
+            break;
       case ActionTypes.SET_CLASSES:
         draft.classes = payload;
         break;

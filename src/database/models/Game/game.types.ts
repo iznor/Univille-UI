@@ -57,7 +57,7 @@ export interface IGameStaticMethods {
     this: IGameModel,
     gameId: string,
     missionObj: Partial<IMission>
-  ) => Promise<IGameModel>;
+  ) => Promise<IGameDocument>;
   giveColor: (
     this: IGameModel,
     gameCode: string,

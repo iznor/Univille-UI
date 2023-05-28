@@ -20,6 +20,7 @@ export enum ActionTypes {
   // DATA
   SET_DATA = 'app/data/SET_DATA',
   SET_GAMES = 'app/data/SET_GAMES',
+  SET_PLAYERS = 'app/data/SET_PLAYERS',
   SET_CLASSES = 'app/data/SET_CLASSES',
   SET_SCHOOLS = 'app/data/SET_SCHOOLS',
   ADD_GAME = 'app/data/ADD_GAME',

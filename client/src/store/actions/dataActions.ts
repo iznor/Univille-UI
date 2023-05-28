@@ -73,6 +73,14 @@ export const dataActions = {
       },
     };
   },
+  setPlayers: (players) => {
+    return {
+      type: ActionTypes.SET_PLAYERS,
+      payload: {
+        players
+      },
+    };
+  },
   setGameMissions: (gameIndex,missions) => {
     return {
       type: ActionTypes.SET_MISSIONS,
@@ -121,6 +129,20 @@ export const dataActions = {
     };
   },
 
+  fetchSchoolPlayers: () => {
+    return async (dispatch, getState) => {
+      try {
+        const { token,user:{school:_id} } = getState().user;
+        dispatch(uiActions.setLoader(true));
+        const response = await dataApi.getPlayers(_id);
+        dispatch(dataActions.setPlayers(response.data));
+      } catch (e) {
+        dispatch(uiActions.setAlert(e.message));
+      } finally {
+        dispatch(uiActions.setLoader(false));
+      }
+    };
+  },
   createClass: (newClassName) => {
     return async (dispatch, getState) => {
       try {

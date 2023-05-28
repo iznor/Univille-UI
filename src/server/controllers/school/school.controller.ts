@@ -52,6 +52,20 @@ class SchoolController // @ts-ignore
     }
   }
 
+  async getPlayers(req, res, next) {
+    try {
+      const Players = await PlayerModel.find({school: req.params.schoolId})
+          .populate('class')
+          .populate({
+            path:'achievements', populate: {path:'game', select: ['name','startTime']}
+          });
+
+      res.status(200).json({ message: 'success', data: Players });
+    } catch (e) {
+      next(e);
+    }
+  }
+
   async addClass(req, res, next) {
     try {
       const school = await SchoolModel.findById(req.params.schoolId);

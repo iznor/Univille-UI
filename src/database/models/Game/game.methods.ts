@@ -85,7 +85,7 @@ export const statics: IGameStaticMethods = {
   },
   async giveColor(this, gameCode, playerIdentity) {
     const game = await this.findOne({ code: gameCode });
-    const player = await PlayerModel.findOneByIdentity(playerIdentity);
+    const player = await PlayerModel.findById(playerIdentity);
     const randomColorIndex = Math.floor(Math.random() * game.colors.length);
     const color = game.colors[randomColorIndex];
     player.group = color;

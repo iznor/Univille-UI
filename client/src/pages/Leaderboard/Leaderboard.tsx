@@ -19,6 +19,10 @@ const Leaderboard = (props: ILeaderboard) => {
     useEffect(() => {
         uiActions.setPage("leaderboard")
     },[])
+
+    useEffect(() => {
+    dataActions.fetchSchoolPlayers()
+    },[])
     const onPlayerDelete = async (oldData: any) =>{
 
     }
@@ -27,7 +31,7 @@ const Leaderboard = (props: ILeaderboard) => {
         <Box>
             <P>{t("leaderboard.subtitle")}</P>
             <MaterialTable
-                title="Games"
+                title="Players Achievements"
                 columns={playerColumns}
                 data={dataState.players}
                 editable={{
@@ -35,7 +39,6 @@ const Leaderboard = (props: ILeaderboard) => {
                 }}
                 options={{
                     columnsButton: true,
-                    detailPanelType: "single",
                 }}
 
 
@@ -52,8 +55,9 @@ const playerColumns: Array<Column<IPlayer>> = [
     {title:'class', field: 'class',render: (rowData) => <div>{rowData.class.name}</div>},
     {title:'avatar', field: 'avatar',render: (rowData) => <img src={rowData.avatar} style={{width: 50, borderRadius: '50%'}}/>},
     {title:'score', field: 'score',type:'numeric'},
-    {title:'achievements', field: 'achievements'},
+    {title:'achievements', field: 'achievements',render: (rowData) => rowData.achievements.length},
     {title:'id', field: 'id',hidden:true},
+    {title:'id', field: '_id',hidden:true},
 
 ]
 const achievementColumns: Array<Column<IAchievement>> = [

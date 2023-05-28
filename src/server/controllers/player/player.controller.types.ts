@@ -7,6 +7,7 @@ export interface IPlayerController {
       password: string;
       school: string;
       className: string;
+        avatar: string;
     },
     never
   >;
@@ -14,6 +15,7 @@ export interface IPlayerController {
   joinGame: IControlFn<never, { identity: string; gameCode: string }>;
   getStatus: IControlFn<never, { identity: string }>;
   getPlayer: IControlFn<never, { identity: string }>;
+    giveColor: IControlFn<never,{playerId:string,gameCode:string,color:string}>;
   setAchievement: IControlFn<
     never,
     { identity: string; gameCode: string; missionId: string }

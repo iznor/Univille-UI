@@ -81,6 +81,10 @@ export function useData() {
     dispatch(dataActions.getAppMeta());
   }
 
+  const fetchSchoolPlayers = () => {
+    dispatch(dataActions.fetchSchoolPlayers());
+  }
+
   return {
     dataState: values,
     dataActions: {
@@ -106,6 +110,7 @@ export function useData() {
       getAppMeta: useCallback(getAppMeta, []),
       updateGameMeta: useCallback(updateGameMeta, []),
       deleteGame: useCallback(deleteGame, []),
+      fetchSchoolPlayers: useCallback(fetchSchoolPlayers, []),
     },
   };
 }
