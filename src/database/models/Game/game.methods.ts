@@ -41,7 +41,11 @@ export const statics: IGameStaticMethods = {
 
   async addPlayerByGameCode(this, gameCode, playerId) {
     const game = await this.findOne({ code: gameCode });
+    console.log('game', game)
     const player = await PlayerModel.findOne({ _id: playerId });
+    if(!game.players ||  game.players.length === 0){
+      game.players = [];
+    }
     game.players.push(player._id);
     return game.save();
   },

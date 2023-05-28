@@ -39,13 +39,13 @@ class App {
 
   private setupRouters() {
     this.app.get('/test', isAlive);
-    this.app.use('/api/v1/players', playerRouter.getRouter());
     this.app.use('/api/v2/auth', authRouter.getRouter());
     this.app.use('/api/v2/data', dataRouter.getRouter());
     this.app.use('/api/v2/game', gameRouter.getRouter());
-    this.app.use('/api/v1/game', gameRouter.getRouter());
     this.app.use('/api/v2/log', logRouter.getRouter());
-    this.app.use('/api/v1/log', logRouter.getRouter());
+
+    this.app.use('/api/v2/log', logRouter.getRouter());
+    this.app.use('/api/v2/players', playerRouter.getRouter());
     this.app.use(isError);
     if (process.env.NODE_ENV !== 'development') {
       this.app.use(express.static(path.join(__dirname, '../../client/build')));
