@@ -2,7 +2,7 @@ import React from "react";
 import {makeStyles} from 'tss-react/mui';
 import {Box, Button} from "@mui/material";
 import {Column, Img, IStaticTarget, P, Row, TextInput} from "components";
-import {useModal} from "hooks";
+import {useModal} from "../../../../hooks";
 import {ITargetsModal, TargetsModal} from "../../TargetsMap";
 import {AddLocationAlt, AddLocation} from '@mui/icons-material';
 interface ITargetInput extends Partial<ITargetsModal>{

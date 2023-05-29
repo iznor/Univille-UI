@@ -1,4 +1,4 @@
-import { Column } from 'components';
+import { Column } from '../../../components';
 import React from 'react';
 import { ContainerProps, Container, StackProps } from '@mui/material';
 

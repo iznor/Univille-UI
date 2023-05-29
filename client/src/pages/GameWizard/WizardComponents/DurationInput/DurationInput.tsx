@@ -1,7 +1,7 @@
 import React from "react";
 import {Box, Grid, Input, Slider, Typography} from "@mui/material";
 import {AccessAlarms} from "@mui/icons-material";
-import {Column, Row, P} from "components";
+import {Column, Row, P} from "../../../../components";
 
 interface IDurationInput {
     onChange: (value: number | string | Array<number | string>) => void;

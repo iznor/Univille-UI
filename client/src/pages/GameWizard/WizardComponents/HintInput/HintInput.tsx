@@ -1,7 +1,7 @@
 import React from "react";
 import {makeStyles} from 'tss-react/mui';
 import {Box} from "@mui/material";
-import {Column, Img, TextInput} from "components";
+import {Column, Img, TextInput} from "../../../../components";
 import {useForm} from "../../../../hooks";
 
 interface IHintInput{

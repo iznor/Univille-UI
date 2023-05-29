@@ -1,9 +1,7 @@
 import React from 'react';
-import {List, ListItem, ListItemIcon, ListItemText} from '@mui/material';
+import {List} from '@mui/material';
 import {SidebarLinkItem} from './SidebarLinkItem';
-import {navLinks} from 'routes';
-import {Divider, Row, SVG} from 'components';
-import {MeetingRoom} from '@mui/icons-material';
+import {navLinks} from '../../../../routes';
 import {useUser} from "../../../../store";
 import { makeStyles } from 'tss-react/mui';
 import {useTranslation} from "react-i18next";

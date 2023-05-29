@@ -1,5 +1,5 @@
 import {Column as Col, Options} from "@material-table/core";
-import {Img, NumberInput} from "components";
+import {Img, NumberInput} from "../../../components";
 import React from "react";
 import {TFunction} from "i18next";
 import moment from "moment/moment";

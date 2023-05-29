@@ -198,6 +198,7 @@ const createSchools = async () => {
     { name: 'רמת-חן', address: 'רמת חן 41', city: 'רמת-גן',location: { x: 32.0515687, y: 34.8084362 } },
     { name: 'רמת-אפעל', address: "שד' אורנים 52960", city: 'רמת-גן',location: { x: 32.0467447, y: 34.8283588 } },
     { name: 'חווה חקלאית', address: "שד' הצבי 10", city: 'רמת-גן',location: { x: 32.0525442, y: 34.8246676 } },
+    { name: 'שנקר', address: "אנה פרנק 12", city: 'רמת-גן',location: { x: 32.0900601, y: 34.8009942 } }
   ];
   try {
     await SchoolModel.insertMany(schools);
@@ -209,6 +210,10 @@ const createSchools = async () => {
 const dataInitialization = async () => {
   console.log('Data initialization');
   try {
+    const schoolsExist = await SchoolModel.find({});
+    if(!schoolsExist || schoolsExist.length === 0) {
+        await createSchools();
+    }
     // const exist = await PlayerModel.findOne({ username: 'DekelBD' });
     // if (exist) {
     //   console.log('data already initialized');

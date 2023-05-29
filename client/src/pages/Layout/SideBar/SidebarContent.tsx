@@ -1,6 +1,6 @@
 import React from 'react';
 import {SidebarData, SidebarFooter, SidebarHeader, SidebarLinks} from './SidebarComponents';
-import { Divider,Column } from 'components';
+import { Divider,Column } from '../.././../components';
 import { makeStyles } from 'tss-react/mui';
 
 interface ISidebarContent {

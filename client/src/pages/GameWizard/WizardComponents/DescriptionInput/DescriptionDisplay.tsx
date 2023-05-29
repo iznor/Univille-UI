@@ -1,7 +1,7 @@
 import React from "react";
 import {makeStyles} from 'tss-react/mui';
 import {Box, Card, CardContent, CardMedia} from "@mui/material";
-import {P} from "components";
+import {P} from "../../../../components";
 
 interface IDescriptionDisplay{
 description:string

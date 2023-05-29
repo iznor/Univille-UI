@@ -1,7 +1,7 @@
 import React from "react";
 import {makeStyles} from 'tss-react/mui';
 import {Box, Card, CardContent, CardMedia} from "@mui/material";
-import {Column, Img, P, Row} from "components";
+import {Column, Img, P, Row} from "../../../../components";
 
 interface IHintDisplay{
 hint:IHint

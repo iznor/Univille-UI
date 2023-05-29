@@ -1,12 +1,13 @@
 import {makeStyles} from 'tss-react/mui';
 import {PageWrapper} from '../Layout';
-import {Form, H3, H4, P, Row, SelectInput, TextInput} from 'components';
+import {Form, H3, H4, P, Row, SelectInput, TextInput} from '../../components';
 import React, {useEffect, useMemo} from 'react';
 import {useForm} from '../../hooks';
 import {useNavigate} from 'react-router-dom';
 import {Container} from '@mui/system';
 import {Button, Card, Select} from '@mui/material';
-import {useData, useUser} from '../../store';
+import {useData, useUi, useUser} from '../../store';
+import {useTranslation} from "react-i18next";
 
 // const schools = [
 //   { value: 'school1', label: 'School 1', id: '1' },
@@ -20,8 +21,11 @@ interface ISignup {
 
 const Signup = (props: ISignup) => {
     const {} = props;
+    const {uiActions, uiState} = useUi();
     const {userActions, userState} = useUser();
-    const {dataActions, dataState} = useData()
+    const {dataActions, dataState} = useData();
+    const {t} = useTranslation();
+    const { classes, cx } = useStyles();
     useEffect(() => {
         dataActions.getSchools();
     }, []);
@@ -30,6 +34,9 @@ const Signup = (props: ISignup) => {
             navigateToLogin();
         }
     }, [userState.signedUp]);
+    useEffect(() => {
+        uiActions.setPage("signup")
+    },[])
     const schools = useMemo(() => {
         return dataState.schools.map((school) => {
             return {value: school._id, label: school.name, id: school._id};
@@ -64,15 +71,15 @@ const Signup = (props: ISignup) => {
     };
     return (
         <PageWrapper>
-            <Card sx={{}}>
+            <Card className={cx(classes.root)}>
                 <Form justifyContent="space-between" spacing={2}>
-                    <H3>Signup</H3>
-                    <P>Register to manage your account</P>
-                    <Row spacing={1}>
+                    <H3>{t('signup.title')}</H3>
+                    <P>{t('signup.subtitle')}</P>
+                    <Row spacing={2}>
                         <TextInput
                             name="firstname"
                             id="firstname"
-                            placeholder="Your first name.."
+                            placeholder={t('signup.firstname')}
                             onValueChange={handleInput}
                             value={formValues ? formValues.firstname.value : ''}
                             errorMsg={formValues ? formValues.firstname.error : ''}
@@ -81,7 +88,7 @@ const Signup = (props: ISignup) => {
                         <TextInput
                             name="lastname"
                             id="lastname"
-                            placeholder="Your last name.."
+                            placeholder={t('signup.lastname')}
                             onValueChange={handleInput}
                             value={formValues ? formValues.lastname.value : ''}
                             errorMsg={formValues ? formValues.lastname.error : ''}
@@ -91,7 +98,7 @@ const Signup = (props: ISignup) => {
                     <TextInput
                         name="email"
                         id="email"
-                        placeholder="Your email.."
+                        placeholder={t('signup.email')}
                         onValueChange={handleInput}
                         value={formValues ? formValues.email.value : ''}
                         errorMsg={formValues ? formValues.email.error : ''}
@@ -101,7 +108,7 @@ const Signup = (props: ISignup) => {
                         name="password"
                         id="password"
                         type="password"
-                        placeholder="Password"
+                        placeholder={t('signup.password')}
                         onValueChange={handleInput}
                         value={formValues ? formValues.password.value : ''}
                         errorMsg={formValues ? formValues.password.error : ''}
@@ -111,7 +118,7 @@ const Signup = (props: ISignup) => {
                         name="confirmpassword"
                         id="confirmpassword"
                         type="password"
-                        placeholder="Confirm password"
+                        placeholder={t('signup.confirm')}
                         onValueChange={handleInput}
                         value={formValues ? formValues.confirmpassword.value : ''}
                         errorMsg={formValues ? formValues.confirmpassword.error : ''}
@@ -133,7 +140,7 @@ const Signup = (props: ISignup) => {
                         value={formValues ? formValues.school.value : ''}
                         errorMsg={formValues ? formValues.school.error : ''}
                         validators={['required']}
-                        label={'Select your school'}
+                        label={t('signup.school')}
                     />
 
                     <Button
@@ -142,17 +149,19 @@ const Signup = (props: ISignup) => {
                         variant={'contained'}
                         color={'primary'}
                     >
-                        <P>Signup</P>
+                        <P>{t('signup.button')}</P>
                     </Button>
                 </Form>
                 <Button color={'secondary'}>
-                    <P onClick={navigateToLogin}>Already have an account? Login</P>
+                    <P onClick={navigateToLogin}>{t('signup.switch')}</P>
                 </Button>
             </Card>
         </PageWrapper>
     );
 };
 const useStyles = makeStyles()((theme) => ({
-    root: {},
+    root: {
+        backgroundColor: theme.palette.app.cardBg
+    }
 }));
 export {Signup};

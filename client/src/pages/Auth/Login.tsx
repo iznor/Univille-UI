@@ -4,17 +4,25 @@ import { Form, H3, P, Row, TextInput } from '../../components';
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useForm } from '../../hooks';
-import { useUser } from '../../store';
+import {useUi, useUser} from '../../store';
+import {makeStyles} from 'tss-react/mui';
+import {useTranslation} from "react-i18next";
 interface ILogin {}
 
 const Login = (props: ILogin) => {
   const {} = props;
   const { userActions, userState } = useUser();
+  const {uiActions, uiState} = useUi();
   const navigate = useNavigate();
+  const { classes, cx } = useStyles();
+  const {t} = useTranslation();
   const [handleInput, formValues, formIsValid, submitForm] = useForm({
     email: '',
     password: '',
   });
+  useEffect(() => {
+    uiActions.setPage("signup")
+  },[])
   useEffect(() => {
     if (userState.isAuth) {
       navigateToHome();
@@ -37,14 +45,14 @@ const Login = (props: ILogin) => {
   };
   return (
     <PageWrapper>
-      <Card sx={{}}>
+      <Card className={cx(classes.root)}>
         <Form justifyContent="space-between" spacing={2}>
-          <H3>Login</H3>
-          <P>Login to access your account</P>
+          <H3>{t('signup.title')}</H3>
+          <P>{t('signup.subtitle')}</P>
           <TextInput
             name="email"
             id="email"
-            placeholder="Your email.."
+            placeholder={t('signup.email')}
             onValueChange={handleInput}
             value={formValues ? formValues.email.value : ''}
             errorMsg={formValues ? formValues.email.error : ''}
@@ -54,7 +62,7 @@ const Login = (props: ILogin) => {
             name="password"
             id="password"
             type="password"
-            placeholder="Password"
+            placeholder={t('signup.password')}
             onValueChange={handleInput}
             value={formValues ? formValues.password.value : ''}
             errorMsg={formValues ? formValues.password.error : ''}
@@ -67,15 +75,20 @@ const Login = (props: ILogin) => {
             variant={'contained'}
             color={'primary'}
           >
-            <P>Login</P>
+            <P>{t('signup.button')}</P>
           </Button>
         </Form>
         <Button color={'secondary'}>
-          <P onClick={navigateToSignup}>Don't have an account? Signup</P>
+          <P onClick={navigateToSignup}>{t('signup.switch')}</P>
         </Button>
       </Card>
     </PageWrapper>
   );
 };
+const useStyles = makeStyles()((theme) => ({
+  root: {
+    backgroundColor: theme.palette.app.cardBg
+  }
+}))
 
 export { Login };

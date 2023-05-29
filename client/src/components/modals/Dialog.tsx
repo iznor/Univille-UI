@@ -7,7 +7,7 @@ import {
 } from '@mui/material';
 import {IModalState, dialogModalProps} from "hooks/useModal";
 import React from "react";
-import {Row} from "components";
+import {Row} from "../basic";
 import Draggable from 'react-draggable';
 import {makeStyles} from 'tss-react/mui';
 

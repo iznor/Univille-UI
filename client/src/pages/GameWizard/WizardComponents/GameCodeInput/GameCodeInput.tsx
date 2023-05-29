@@ -1,8 +1,8 @@
 import {P, Row, SVG} from "components";
 import {makeStyles} from 'tss-react/mui';
 import React, {useEffect} from "react";
-import {idGenerator} from "utils";
 import {Box} from "@mui/material";
+import {idGenerator} from "../../../../utils";
 
 interface IGameCodeInput{
 value?:string;

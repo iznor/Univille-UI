@@ -1,6 +1,6 @@
 import {makeStyles} from 'tss-react/mui';
 import React, {useEffect} from "react";
-import {Tooltip,Row} from "components";
+import {Tooltip,Row} from "../../../../components";
 
 interface IColorsInput {
     count: number;

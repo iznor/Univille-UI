@@ -2,7 +2,7 @@ import React from "react";
 import {makeStyles} from 'tss-react/mui';
 import {Chip, ListItem, Paper} from "@mui/material";
 import {TagFaces} from "@mui/icons-material";
-import {useUi} from "store";
+import {useUi} from "../../../../store";
 
 interface IColorChip{
 colors?:IGroupColor[];

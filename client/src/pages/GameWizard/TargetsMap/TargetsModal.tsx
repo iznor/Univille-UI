@@ -1,10 +1,8 @@
 import React, {useState} from "react";
 import {makeStyles} from 'tss-react/mui';
-import {Box} from "@mui/material";
-import {Dialog, EditorMap, IEditorMap, IMarkerItem, IStaticTarget} from "components";
+import {Dialog, EditorMap, IEditorMap, IMarkerItem, IStaticTarget} from "../../../components";
 import {IModalState} from "../../../hooks";
 import {useTranslation} from "react-i18next";
-import {IListItem} from "../../../components/List/ListItem";
 
 export interface ITargetsModal extends Partial<IEditorMap>{
  modalState?: Partial<IModalState>;
