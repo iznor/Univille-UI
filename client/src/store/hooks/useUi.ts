@@ -10,6 +10,15 @@ export function useUi() {
     const setUi = (uiState: Partial<IUiState>) => {
         dispatch(uiActions.setUi(uiState))
     }
+    const toggleDrawer = (open:boolean|undefined = undefined) => {
+        dispatch(uiActions.toggleDrawer(open))
+    }
+    const closeDrawer = () => {
+        dispatch(uiActions.toggleDrawer(false))
+    }
+    const openDrawer = () => {
+        dispatch(uiActions.toggleDrawer(true))
+    }
     const toggleDarkMode = () => {
         dispatch(uiActions.toggleDarkMode())
     }
@@ -39,6 +48,9 @@ export function useUi() {
         uiActions: {
             setUi: useCallback(setUi, []),
             toggleDarkMode: useCallback(toggleDarkMode, []),
+            toggleDrawer: useCallback(toggleDrawer, []),
+            closeDrawer: useCallback(closeDrawer, []),
+            openDrawer: useCallback(openDrawer, []),
             setLoader: useCallback(setLoader, []),
             setAlert: useCallback(setAlert, []),
             setSuccess: useCallback(setSuccess, []),

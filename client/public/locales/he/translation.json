@@ -11,12 +11,12 @@
     "subtitle": "ברוכים הבאים ל Univille"
   },
   "login":{
-    "title": "התחברות",
+    "title": "ברוכים הבאים ל Univille",
     "subtitle": "התחבר לחשבון שלך",
     "email": "דואר אלקטרוני",
     "password": "סיסמא",
     "login": "התחבר",
-    "register": "עדיין לא נרשמת? הירשם עכשיו"
+    "switch": "עדיין לא נרשמת? הירשם עכשיו"
   },
   "signup": {
     "title": "הרשמה",

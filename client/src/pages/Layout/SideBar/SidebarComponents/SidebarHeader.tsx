@@ -1,22 +1,25 @@
 import React from 'react';
-import {Button, IconButton, Toolbar} from '@mui/material';
+import {Button, IconButton, Toolbar, useMediaQuery} from '@mui/material';
 import {ImageLink} from '../../../../components';
 import {makeStyles} from 'tss-react/mui';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import {useUi} from "../../../../store";
+import {Theme} from "@mui/system";
 
 interface ISidebarHeader {
-    onToggleSidebar?: () => void;
+    hideLogo?: boolean;
 }
 
 const SidebarHeader = (props: ISidebarHeader) => {
-    const {onToggleSidebar} = props;
-    const {uiState:{rtl}} = useUi();
-    const {classes, cx} = useStyle({rtl});
+    const {hideLogo} = props;
+
+
+    const {uiState:{rtl,drawer},uiActions} = useUi();
+    const {classes, cx} = useStyle({rtl,hideLogo});
     return (
-        <Toolbar className={cx(classes.root)}>
-            <Button onClick={onToggleSidebar} color="primary">
+        <Toolbar className={cx(classes.root)} sx={theme => theme.mixins.toolbar}>
+            <Button onClick={uiActions.closeDrawer} color="primary">
                 {rtl?<ChevronRightIcon/>:<ChevronLeftIcon/>}
             </Button>
             {/*<IconButton onClick={onToggleSidebar} color="secondary">*/}
@@ -30,17 +33,22 @@ const SidebarHeader = (props: ISidebarHeader) => {
     );
 };
 
-const useStyle = makeStyles<{rtl}>()((theme,{rtl}) => ({
+const useStyle = makeStyles<{rtl,hideLogo}>()((theme,{rtl,hideLogo}) => ({
     root: {
         display: 'flex',
-        justifyContent: 'center',
+        // justifyContent: 'center',
         alignItems: 'center',
-        padding: '10px',
+        padding: theme.spacing(0, 1),
+        justifyContent: 'center',
+
+        // padding: '10px',
         '& img': {
+            display:hideLogo?'none':'block',
             height: 150,
             width: 150,
         },
         "& button": {
+            display:hideLogo?'none':'block',
             position: 'absolute',
             backgroundColor: '#00000012',
             padding: 0,

@@ -2,18 +2,20 @@ import React from 'react';
 import {SidebarData, SidebarFooter, SidebarHeader, SidebarLinks} from './SidebarComponents';
 import { Divider,Column } from '../.././../components';
 import { makeStyles } from 'tss-react/mui';
+import {useUi} from "../../../store";
 
 interface ISidebarContent {
-    onToggleSidebar?: () => void;
 }
 
 const SidebarContent = (props: ISidebarContent) => {
-  const {onToggleSidebar} = props;
-    const {classes, cx} = useStyle()
+  const {} = props;
+    const {uiState, uiActions} = useUi();
+    const {classes, cx} = useStyle({drawerWidth:uiState.drawer.width})
+
   return (
-    <Column className={classes.root}>
-        <Column >
-      <SidebarHeader onToggleSidebar={onToggleSidebar} />
+    <>
+        <Column sx={{height:"95vh"}} >
+      <SidebarHeader/>
       <Divider />
       <SidebarData />
       <Divider />
@@ -23,12 +25,13 @@ const SidebarContent = (props: ISidebarContent) => {
       <Divider />
       <SidebarFooter />
         </Column>
-    </Column>
+    </>
   );
 };
 
-const useStyle = makeStyles()((theme) => ({
+const useStyle = makeStyles<{drawerWidth}>()((theme,{drawerWidth}) => ({
     root: {
+        width: `${drawerWidth}px`,
         justifyContent:'space-between',
         height:"100%",
     },

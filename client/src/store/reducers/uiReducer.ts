@@ -4,6 +4,10 @@ import {ActionTypes} from '../actionTypes';
 export const initialUiState: IUiState = {
     isDark: false,
     rtl: true,
+    drawer: {
+        isOpen: false,
+        width:300,
+    },
     page: "Home",
     loading: false,
     alert: {
@@ -26,6 +30,9 @@ export const uiReducer = (state = initialUiState, action) => {
             case ActionTypes.SET_LOADER:
                 draft.loading = payload;
                 break;
+            case ActionTypes.TOGGLE_DRAWER:
+                draft.drawer.isOpen = payload ?? !draft.drawer.isOpen;
+                break;
             case ActionTypes.SET_ALERT:
                 draft.loading = false;
                 Object.assign(draft.alert, payload);
@@ -47,7 +54,7 @@ export const uiReducer = (state = initialUiState, action) => {
                 draft.page = payload;
                 break;
             case ActionTypes.LOG_OUT:
-                draft = initialUiState;
+                draft = {...initialUiState, isDark: draft.isDark, rtl: draft.rtl,};
                 break;
             default:
                 break;
@@ -60,7 +67,13 @@ export interface IUiState {
     rtl: boolean;
     page: string;
     loading: boolean;
+    drawer: IDrawer;
     alert: IAlert;
+}
+
+export interface IDrawer {
+    isOpen: boolean;
+    width: number;
 }
 
 export interface IAlert {

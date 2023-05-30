@@ -14,7 +14,7 @@ const MyGames = (props: IMyGames) => {
   const onRowAdd = async (newData: IGame) => {};
 
   return (
-    <PageWrapper>
+    <PageWrapper page={"MyGames"}>
       <MaterialTable
         title="My Games"
         columns={columns}

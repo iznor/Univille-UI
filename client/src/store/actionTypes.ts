@@ -10,6 +10,9 @@ export enum ActionTypes {
   TOGGLE_DARK_MODE = 'app/ui/TOGGLE_DARK_MODE',
   SET_PAGE = 'app/ui/SET_PAGE',
   TOGGLE_LANGUAGE = 'app/ui/TOGGLE_LANGUAGE',
+  TOGGLE_DRAWER = 'app/ui/TOGGLE_DRAWER',
+  CLOSE_DRAWER = 'app/ui/CLOSE_DRAWER',
+  OPEN_DRAWER = 'app/ui/OPEN_DRAWER',
 
   // USER
   SET_USER = 'app/user/SET_USER',

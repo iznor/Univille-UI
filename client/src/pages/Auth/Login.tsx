@@ -21,7 +21,7 @@ const Login = (props: ILogin) => {
     password: '',
   });
   useEffect(() => {
-    uiActions.setPage("signup")
+    uiActions.setPage("login")
   },[])
   useEffect(() => {
     if (userState.isAuth) {
@@ -44,15 +44,15 @@ const Login = (props: ILogin) => {
     });
   };
   return (
-    <PageWrapper>
-      <Card className={cx(classes.root)}>
+    <PageWrapper page={"Login"}>
+      <Card className={cx(classes.root)} >
         <Form justifyContent="space-between" spacing={2}>
-          <H3>{t('signup.title')}</H3>
-          <P>{t('signup.subtitle')}</P>
+          <H3>{t('login.title')}</H3>
+          <P>{t('login.subtitle')}</P>
           <TextInput
             name="email"
             id="email"
-            placeholder={t('signup.email')}
+            placeholder={t('login.email')}
             onValueChange={handleInput}
             value={formValues ? formValues.email.value : ''}
             errorMsg={formValues ? formValues.email.error : ''}
@@ -62,7 +62,7 @@ const Login = (props: ILogin) => {
             name="password"
             id="password"
             type="password"
-            placeholder={t('signup.password')}
+            placeholder={t('login.password')}
             onValueChange={handleInput}
             value={formValues ? formValues.password.value : ''}
             errorMsg={formValues ? formValues.password.error : ''}
@@ -75,11 +75,11 @@ const Login = (props: ILogin) => {
             variant={'contained'}
             color={'primary'}
           >
-            <P>{t('signup.button')}</P>
+            <P>{t('login.button')}</P>
           </Button>
         </Form>
-        <Button color={'secondary'}>
-          <P onClick={navigateToSignup}>{t('signup.switch')}</P>
+        <Button color={'primary'} onClick={navigateToSignup}>
+          <P sx={{color:"primary.main"}}>{t('login.switch')}</P>
         </Button>
       </Card>
     </PageWrapper>
@@ -87,7 +87,17 @@ const Login = (props: ILogin) => {
 };
 const useStyles = makeStyles()((theme) => ({
   root: {
-    backgroundColor: theme.palette.app.cardBg
+    backgroundColor: theme.palette.app.cardBg,
+    [theme.breakpoints.up('xs')]: {
+        width: '80%',
+    },
+    [theme.breakpoints.up('sm')]: {
+      width: '60%',
+    },
+    [theme.breakpoints.up('md')]: {
+      width: '25%',
+    },
+
   }
 }))
 

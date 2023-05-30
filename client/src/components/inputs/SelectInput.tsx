@@ -40,7 +40,7 @@ const SelectInput = (props: ISelectInput) => {
 
   return (
     <FormControl sx={{ m: 1, minWidth: 120 }}>
-      <InputLabel id="demo-multiple-chip-label" sx={{backgroundColor: 'white'
+      <InputLabel id="demo-multiple-chip-label" sx={{backgroundColor: theme => theme.palette.app.cardBg
       }}>{label}</InputLabel>
       <Select onChange={handleChange} error={!!errorMsg} value={value} MenuProps={MenuProps} {...rest}>
         {options.map((option) => (

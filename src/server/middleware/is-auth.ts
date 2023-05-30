@@ -9,7 +9,7 @@ export const isAuth = async (req, res, next) => {
       throw new HttpError('Not authenticated', 401);
     }
     const token = authHeader.split(' ')[1];
-    const decodedToken = jwt.verify(token, process.env.AUTH_SECRET);
+    const decodedToken = jwt.verify(token, "univillesecretstring19445");
     if (!decodedToken) {
       throw new HttpError('Not authenticated', 401);
     }

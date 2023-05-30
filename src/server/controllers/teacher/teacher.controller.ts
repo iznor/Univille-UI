@@ -49,7 +49,7 @@ class TeacherController
       }
       const token = jwt.sign(
           { email: teacher.email, userId: teacher._id },
-          process.env.AUTH_SECRET
+          "univillesecretstring19445"
       );
 
       const teacherObj = teacher.toObject({ virtuals: true });

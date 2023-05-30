@@ -28,7 +28,7 @@ class PlayerController
       }
       const hashedPassword = await bcrypt.hash(password, 12);
       const newPlayer = await PlayerModel.createPlayer(
-          {firstName, lastName, username, password: hashedPassword},
+          {firstName, lastName, username, password: hashedPassword,avatar},
           school,
           className
       );
@@ -51,7 +51,7 @@ class PlayerController
       }
       const token = jwt.sign(
           {email: player.email, userId: player._id},
-          process.env.AUTH_SECRET
+          "univillesecretstring19445"
       );
 
       res.status(200).json({

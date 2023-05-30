@@ -4,15 +4,18 @@ import {Box} from '@mui/material';
 import {static_targets} from "../../assets/targets";
 import {arrToObj} from "../../utils";
 import {useSetState} from "react-use";
+import {makeStyles} from 'tss-react/mui';
 import MaterialTable, {Column} from "@material-table/core";
 import {useData, useUi} from "../../store";
 import {useTranslation} from "react-i18next";
+import {PageWrapper} from "../Layout";
 
 interface ILeaderboard {
 }
 
 const Leaderboard = (props: ILeaderboard) => {
     const {} = props;
+    const {classes, cx} = useStyle();
     const {dataActions,dataState} = useData();
     const {uiActions} = useUi()
     const {t} = useTranslation();
@@ -28,7 +31,7 @@ const Leaderboard = (props: ILeaderboard) => {
     }
 
     return (
-        <Box>
+        <PageWrapper page={"Leaderboard"} className={cx(classes.root)}>
             <P>{t("leaderboard.subtitle")}</P>
             <MaterialTable
                 title="Players Achievements"
@@ -43,7 +46,7 @@ const Leaderboard = (props: ILeaderboard) => {
 
 
             />
-        </Box>
+        </PageWrapper>
     );
 };
 
@@ -73,4 +76,11 @@ const achievementColumns: Array<Column<IAchievement>> = [
 
 
 ]
+
+const useStyle = makeStyles()((theme) => ({
+    root: {
+
+    },
+
+}));
 export {Leaderboard};

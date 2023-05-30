@@ -36,7 +36,7 @@ export const palette = {
     shadow:'0px 1px 5px -4px rgba(0,0,0,0.61)',
     bg: colors.neutral[500],
     bgInverse: colors.neutral[600],
-    cardBg: "hsl(212.4deg 100% 89.27%)",
+    cardBg: "hsl(212.4deg 100% 89.27% / 23%)",
     ...colors.app,
   },
   primary: {

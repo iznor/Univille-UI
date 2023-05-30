@@ -9,6 +9,7 @@ import {useData, useUi} from "../../store";
 import {arrToObj} from "../../utils";
 import {static_targets} from "../../assets/targets";
 import moment from "moment";
+import {PageWrapper} from "../Layout";
 
 interface IGameWizard2 {
 
@@ -101,7 +102,7 @@ const GameWizard = (props: IGameWizard2) => {
         dataActions.removeMission(gameId,oldData._id)
     }
     return (
-        <Box className={cx(classes.root)}>
+        <PageWrapper page={"GameWizard"} className={cx(classes.root)}>
             <GamesTable
                 draftGames={dataState.games}
                 onGameAdd={onGameAdd}
@@ -122,7 +123,7 @@ const GameWizard = (props: IGameWizard2) => {
                 />)
             }
             />
-        </Box>
+        </PageWrapper>
     );
 };
 

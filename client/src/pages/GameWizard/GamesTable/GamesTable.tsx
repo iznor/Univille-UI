@@ -61,6 +61,7 @@ export {GamesTable};
 
 const useStyle = makeStyles()((theme) => ({
     root: {
+        width: "100%",
         "&>.MuiPaper-root": {
             backgroundColor: theme.palette.app.bgInverse,
             width: "100%",

@@ -70,12 +70,12 @@ const Signup = (props: ISignup) => {
         });
     };
     return (
-        <PageWrapper>
+        <PageWrapper  page={"Signup"}>
             <Card className={cx(classes.root)}>
                 <Form justifyContent="space-between" spacing={2}>
                     <H3>{t('signup.title')}</H3>
                     <P>{t('signup.subtitle')}</P>
-                    <Row spacing={2}>
+                    <Row spacing={2} justifyContent="space-between">
                         <TextInput
                             name="firstname"
                             id="firstname"
@@ -152,8 +152,8 @@ const Signup = (props: ISignup) => {
                         <P>{t('signup.button')}</P>
                     </Button>
                 </Form>
-                <Button color={'secondary'}>
-                    <P onClick={navigateToLogin}>{t('signup.switch')}</P>
+                <Button color={'primary'} onClick={navigateToLogin}>
+                    <P sx={{color:"primary.main"}}>{t('signup.switch')}</P>
                 </Button>
             </Card>
         </PageWrapper>
@@ -161,7 +161,22 @@ const Signup = (props: ISignup) => {
 };
 const useStyles = makeStyles()((theme) => ({
     root: {
-        backgroundColor: theme.palette.app.cardBg
+        backgroundColor: theme.palette.app.cardBg,
+        [theme.breakpoints.up('xs')]: {
+            width: '80%',
+        },
+        [theme.breakpoints.up('sm')]: {
+            width: '70%',
+        },
+        [theme.breakpoints.up('md')]: {
+            width: '35%',
+        },
+        // [theme.breakpoints.up('lg')]: {
+        //     width: '30%',
+        // },
+        // [theme.breakpoints.up('xl')]: {
+        //     width: '35%',
+        // },
     }
 }));
 export {Signup};

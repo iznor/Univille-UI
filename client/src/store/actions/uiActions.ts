@@ -9,6 +9,12 @@ export const uiActions = {
             payload: uiState,
         };
     },
+    toggleDrawer: (open:boolean|undefined = undefined) => {
+        return {
+            type: ActionTypes.TOGGLE_DRAWER,
+            payload: open,
+        };
+    },
     setLoader: (state) => {
         return {
             type: ActionTypes.SET_LOADER,
