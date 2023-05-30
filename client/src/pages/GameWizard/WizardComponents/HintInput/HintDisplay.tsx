@@ -18,7 +18,7 @@ const {classes, cx} = useStyle();
          title:&nbsp;{hint?.title ?? "title"}
         </P>
         <P variant="subtitle1" color="text.secondary" fontSize={12}>
-         text:&nbsp;{hint?.text ?? "text"}
+         text:&nbsp;{hint?.hint ?? hint?.text ?? `go to ${hint?.title ?? "title"}`}
         </P>
        </CardContent>
       </Box>

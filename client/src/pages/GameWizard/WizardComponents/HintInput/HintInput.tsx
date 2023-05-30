@@ -33,11 +33,11 @@ const {classes, cx} = useStyle();
       <TextInput
           multiline
           rows={4}
-          name="text"
+          name="hint"
           id="hint-text"
           placeholder="Hint Text.."
           onValueChange={handleFormChange}
-          value={value?.text ?? ''}
+          value={value?.hint ?? ''}
           errorMsg={ ''}
           validators={['required']}
           color={"primary"}

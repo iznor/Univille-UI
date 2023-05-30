@@ -89,7 +89,8 @@ declare global {
     }
 
     interface IHint {
-        text: string;
+        hint?: string;
+        text?: string;
         image?: string;
         title?: string
     }
@@ -104,7 +105,7 @@ declare global {
     interface IMission {
         name: string;
         description: string;
-        hint: { text: string; image?: string; title?: string };
+        hint: { hint?: string; text?: string; image?: string; title?: string };
         target: { objectTag: string; image?: string; title?: string, location?: ILocation,id:string };
         image: string;
         score: number;
