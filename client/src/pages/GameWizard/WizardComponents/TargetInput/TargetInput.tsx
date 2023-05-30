@@ -30,6 +30,7 @@ const TargetInput = (props:ITargetInput) => {
             hint:{
                 title:target?.name??target?.title??"",
                 text:`Go to ${target?.name??target?.title??""}`,
+                hint:`Go to ${target?.name??target?.title??""}`,
                 image:target?.mapPhotoUrl??""
             },
             id:Math.random().toString(),
