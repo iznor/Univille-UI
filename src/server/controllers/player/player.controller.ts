@@ -10,7 +10,10 @@ import { CurdController } from '../crud';
 import { IPlayerController } from './player.controller.types';
 import { HttpError } from '../../../utils';
 import { namesQuery } from '../../../database/db.utils';
-
+const isHebrewText = (text) => {
+  const hebrewChars = /[\u0590-\u05FF]/;
+  return hebrewChars.test(text);
+}
 class PlayerController
     extends CurdController<IPlayerModel>
     implements IPlayerController {
@@ -20,17 +23,19 @@ class PlayerController
 
   async playerSignup(req, res, next) {
     try {
-      const {firstName, lastName, username, password, school, className, avatar} =
-          req.body;
+      const {firstName, lastName, username, password, school, className, avatar} =req.body
+      console.log({firstName, lastName, username, password, school, className, avatar})
+
+      req.body;
       const teacher = await PlayerModel.findOne({username});
       if (teacher) {
-        throw new HttpError('this email is already exists', 401);
+        throw new HttpError('this username is already exists', 401);
       }
       const hashedPassword = await bcrypt.hash(password, 12);
       const newPlayer = await PlayerModel.createPlayer(
-          {firstName, lastName, username, password: hashedPassword,avatar},
-          school,
-          className
+          {firstName:firstName.trim(), lastName:lastName.trim(), username:username.trim(), password: hashedPassword,avatar},
+          school.trim(),
+          className.trim()
       );
       res.status(200).json({message: 'success', data: newPlayer});
     } catch (e) {
@@ -41,6 +46,7 @@ class PlayerController
   async playerLogin(req, res, next) {
     try {
       const {username, password} = req.body;
+      console.log( {username, password})
       const player = await PlayerModel.findOne({username});
       if (!player) {
         throw new HttpError('User not exists', 401);
@@ -74,6 +80,7 @@ class PlayerController
 
   async joinGame(req, res, next) {
     console.log('JOIN_GAME');
+    console.log({gameCode:req.params.gameCode, identity:req.params.identity})
     try {
       const game = await GameModel.addPlayerByGameCode(
           req.params.gameCode,

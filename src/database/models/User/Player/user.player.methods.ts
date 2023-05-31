@@ -59,9 +59,13 @@ export const playerStatics: IPlayerStaticMethods = {
     return this.find(formObj);
   },
   async createPlayer(this, playerObj, schoolName, className) {
+    const mock = {
+      schoolName: "בן גוריון",
+      className: "ד2",
+    }
     const newPlayer = new this(playerObj);
-    const school = await SchoolModel.findOne({ name: schoolName });
-    const classDoc = await school.findOrCreateClass(className);
+    const school = await SchoolModel.findOne({ name: mock.schoolName });
+    const classDoc = await school.findOrCreateClass(mock.className);
     classDoc.players.push(newPlayer._id);
     await school.save();
     return newPlayer.save();
