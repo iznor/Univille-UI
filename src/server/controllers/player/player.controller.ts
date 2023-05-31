@@ -22,7 +22,7 @@ class PlayerController
     try {
       const {firstName, lastName, username, password, school, className, avatar} =
           req.body;
-      const teacher = await this.model.findOne({username});
+      const teacher = await PlayerModel.findOne({username});
       if (teacher) {
         throw new HttpError('this email is already exists', 401);
       }
@@ -41,7 +41,7 @@ class PlayerController
   async playerLogin(req, res, next) {
     try {
       const {username, password} = req.body;
-      const player = await this.model.findOne({username});
+      const player = await PlayerModel.findOne({username});
       if (!player) {
         throw new HttpError('User not exists', 401);
       }

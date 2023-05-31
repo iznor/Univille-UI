@@ -6,4 +6,5 @@ export { UserModel } from './User';
 export { PlayerModel } from './User';
 export { TeacherModel } from './User';
 export { LogModel } from './Log';
+export { AchievementModel } from './Achievement';
 export * from './types';
