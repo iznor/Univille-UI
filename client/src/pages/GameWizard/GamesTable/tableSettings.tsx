@@ -29,22 +29,22 @@ export const tableOptions = (selectedGameId: string): Options<IGame> => (
 )
 
 export const tableActions = (t,onPlayClick:(game:IGame)=>void,onSaveClick:(game:IGame)=>void) => ([
-    {
-        icon: () => <Img img={"/svg/play-purple.svg"}/>,
-        tooltip: t("games.play"),
-        onClick: (event, rowData) => {
-            console.log(rowData)
-            onPlayClick(rowData)
-        }
-    },
-    {
-        icon: () => <Img img={"/svg/save-blue.svg"}/>,
-        tooltip: t("games.save"),
-        onClick: (event, rowData) => {
-            console.log(rowData)
-            onSaveClick(rowData)
-        }
-    }
+    // {
+    //     icon: () => <Img img={"/svg/play-purple.svg"}/>,
+    //     tooltip: t("games.play"),
+    //     onClick: (event, rowData) => {
+    //         console.log(rowData)
+    //         onPlayClick(rowData)
+    //     }
+    // },
+    // {
+    //     icon: () => <Img img={"/svg/save-blue.svg"}/>,
+    //     tooltip: t("games.save"),
+    //     onClick: (event, rowData) => {
+    //         console.log(rowData)
+    //         onSaveClick(rowData)
+    //     }
+    // }
 ])
 
 const validateRequired = (value: any, message = "") => {

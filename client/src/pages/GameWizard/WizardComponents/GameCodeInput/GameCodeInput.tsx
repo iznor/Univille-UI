@@ -15,18 +15,18 @@ const {classes, cx} = useStyle();
 
 useEffect(() => {
     if(!value){
-        onChange(idGenerator(5,"A#!"));
+        onChange(idGenerator(5,"A"));
     }
 },[])
 
     const handleClick = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-        onChange(idGenerator(5,"A#!"));
+        // onChange(idGenerator(5,"A"));
     }
 
  return (
   <Row className={cx(classes.root)}>
       <P>{value}</P>
-      <SVG name={"refresh"} onClick={handleClick} size={30}/>
+      {/*<SVG name={"refresh"} onClick={handleClick} size={30}/>*/}
   </Row>
  );
 };

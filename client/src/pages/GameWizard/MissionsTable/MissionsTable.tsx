@@ -80,11 +80,11 @@ const MissionsTable = (props: IMissionsTable) => {
                 }}
                 icons={tableButtons}
                 actions={[
-                    {
-                        icon: () => <Img img={"/svg/save-blue.svg"}/>,
-                        tooltip: t("missions.save"),
-                        onClick: (event, row) => console.log(row)
-                    }
+                    // {
+                    //     icon: () => <Img img={"/svg/save-blue.svg"}/>,
+                    //     tooltip: t("missions.save"),
+                    //     onClick: (event, row) => console.log(row)
+                    // }
                 ]}
                 // cellEditable={{
                 //   cellStyle: {},

@@ -77,6 +77,14 @@ class PlayerController
       next(e);
     }
   }
+  async getPlayers(req, res, next) {
+    try {
+      const players = await PlayerModel.find({}).populate('class').populate('school').populate('achievements');
+      res.status(200).json({message: 'success', data: players});
+    } catch (e) {
+      next(e);
+    }
+  }
 
   async joinGame(req, res, next) {
     console.log('JOIN_GAME');

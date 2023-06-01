@@ -9,6 +9,10 @@ export const dataApi = {
     const res = await serverApi.get(`/api/v2/data/school/${schoolId}`);
     return serverApi.handleResult(res, 'Get School Error');
   },
+  getAllPlayers: async () => {
+    const res = await serverApi.get(`/api/v2/players`);
+    return serverApi.handleResult(res, 'Get players Error');
+  },
   getPlayers: async (schoolId) => {
     const res = await serverApi.get(`/school/${schoolId}/players`);
     return serverApi.handleResult(res, 'Get players Error');

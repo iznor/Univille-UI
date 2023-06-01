@@ -76,9 +76,7 @@ export const dataActions = {
   setPlayers: (players) => {
     return {
       type: ActionTypes.SET_PLAYERS,
-      payload: {
-        players
-      },
+      payload: players,
     };
   },
   setGameMissions: (gameIndex,missions) => {
@@ -134,8 +132,16 @@ export const dataActions = {
       try {
         const { token,user:{school:_id} } = getState().user;
         dispatch(uiActions.setLoader(true));
-        const response = await dataApi.getPlayers(_id);
-        dispatch(dataActions.setPlayers(response.data));
+        const response = await dataApi.getAllPlayers();
+        const processedPlayers = response.data.map(player=>{
+          return ({
+            school:player.school?? {name:"No School"},
+            class:player.class?? {name:"No Class"},
+            achievements:player.achievements??[],
+            ...player
+          })
+        })
+        dispatch(dataActions.setPlayers(processedPlayers));
       } catch (e) {
         dispatch(uiActions.setAlert(e.message));
       } finally {

@@ -37,6 +37,8 @@ declare global {
     interface IPlayer {
         username: string;
         fullName: string;
+        firstName: string;
+        lastName: string;
         group: string;
         school: {
             id: string;

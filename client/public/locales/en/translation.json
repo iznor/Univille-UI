@@ -67,9 +67,17 @@
   },
   "leaderboard": {
     "title": "Leaderboard",
-    "subtitle": "Summary of all games",
+    "subtitle": "Leaderboard",
     "table": {
-      "title": "Leaderboard"
+      "title": "Leaderboard",
+      "username": "Username",
+      "fullName": "Full Name",
+      "school": "School",
+      "class": "Class",
+      "avatar": "Avatar",
+      "score": "Score",
+      "achievementsCount": "Achievements Count",
+      "avgDuration": "Average Duration"
     }
   }
 }

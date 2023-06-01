@@ -67,9 +67,17 @@
   },
   "leaderboard": {
     "title": "טבלת ההישגים",
-    "subtitle": "ספר לכולם על ההישגים שלך",
+    "subtitle": "טבלת הישגים",
     "table": {
-      "title": "הישגים"
+      "title": "הישגים",
+      "username": "שם משתמש",
+      "fullName": "שם מלא",
+      "school": "בית ספר",
+      "class": "כיתה",
+      "avatar": "דמות",
+      "score": "ניקוד",
+      "achievementsCount": "משימות שהושלמו",
+      "avgDuration": "זמן ממוצע לביצוע משימה"
     }
   }
 }

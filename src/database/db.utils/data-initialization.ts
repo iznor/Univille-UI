@@ -7,6 +7,7 @@ import {
   GameModel,
   TeacherModel,
 } from '../models';
+import {mockUpdate} from "./mock-users";
 
 const className = 'Tigers';
 const schoolName = 'Shenkar';
@@ -210,6 +211,7 @@ const createSchools = async () => {
 const dataInitialization = async () => {
   console.log('Data initialization');
   try {
+    // await mockUpdate();
     const schoolsExist = await SchoolModel.find({});
     if(!schoolsExist || schoolsExist.length === 0) {
         await createSchools();

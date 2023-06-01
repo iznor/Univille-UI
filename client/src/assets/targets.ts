@@ -110,6 +110,15 @@ const static_targets = [
     mapPhotoUrl: 'images/locations/101_BusOnStation_game.png',
     location: { x: 32.0837559, y: 34.8012767 },
   },
+  {
+    unityObjectTag: 'BusStation1',
+    id: 'BusStation1',
+    name: 'תחנת אוטובוס',
+    description: 'תחנת אוטובוס',
+    objectPhotoUrl: 'images/locations/BusStation.png',
+    mapPhotoUrl: 'images/locations/BusStation.png',
+    location: { x: 32.0837559, y: 34.8012767 },
+  },
 ];
 
 export { static_targets };

@@ -13,8 +13,8 @@ import { IMission } from '../../Mission';
 export const PlayerSchema = new Schema<IPD, IPM, IPIM, any, any, IPSM>(
   {
     group: { type: {name: String, hex: String, heb: String} },
-    school: { type: Schema.Types.ObjectId, ref: 'School' },
-    class: { type: Schema.Types.ObjectId, ref: 'Tclass' },
+    school: { type: Schema.Types.ObjectId, ref: 'School',autopopulate: true },
+    class: { type: Schema.Types.ObjectId, ref: 'Tclass',autopopulate: true },
     avatar: { type: String },
     score: { type: Number, default: 0 },
     location: {
@@ -25,7 +25,7 @@ export const PlayerSchema = new Schema<IPD, IPM, IPIM, any, any, IPSM>(
         address: '',
       },
     },
-    achievements: [{ type: Schema.Types.ObjectId, ref: 'Achievement' }],
+    achievements: [{ type: Schema.Types.ObjectId, ref: 'Achievement',autopopulate: true }],
     currentGame: {
       game: { type: Schema.Types.ObjectId, ref: 'Game' },
       currentMission: {

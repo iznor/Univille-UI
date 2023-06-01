@@ -14,6 +14,7 @@ export interface IPlayerController {
   playerLogin: IControlFn<{ username: string; password: string }, never>;
   joinGame: IControlFn<never, { identity: string; gameCode: string }>;
   getStatus: IControlFn<never, { identity: string }>;
+  getPlayers: IControlFn<never, never>;
   getPlayer: IControlFn<never, { identity: string }>;
     giveColor: IControlFn<never,{playerId:string,gameCode:string,color:string}>;
   setAchievement: IControlFn<
