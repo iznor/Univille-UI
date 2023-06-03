@@ -29,13 +29,13 @@ class PlayerController
       req.body;
       const teacher = await PlayerModel.findOne({username});
       if (teacher) {
-        throw new HttpError('this username is already exists', 401);
+        throw new HttpError('שם משתמש זה כבר תפוס', 401);
       }
       const hashedPassword = await bcrypt.hash(password, 12);
       const newPlayer = await PlayerModel.createPlayer(
           {firstName:firstName.trim(), lastName:lastName.trim(), username:username.trim(), password: hashedPassword,avatar},
-          school.trim(),
-          className.trim()
+          school,
+          className
       );
       res.status(200).json({message: 'success', data: newPlayer});
     } catch (e) {
@@ -49,11 +49,11 @@ class PlayerController
       console.log( {username, password})
       const player = await PlayerModel.findOne({username});
       if (!player) {
-        throw new HttpError('User not exists', 401);
+        throw new HttpError('משתמש זה אינו קיים', 401);
       }
       const passwordMatch = await bcrypt.compare(password, player.password);
       if (!passwordMatch) {
-        throw new HttpError('Wrong password', 401);
+        throw new HttpError('סיסמה שגויה', 401);
       }
       const token = jwt.sign(
           {email: player.email, userId: player._id},

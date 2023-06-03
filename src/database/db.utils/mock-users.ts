@@ -217,7 +217,10 @@ const oshaData = [
         "userId": "644a168ae350429df0ae353f",
         "score": 1,
         "missionsTimestamp": [
-            "2023-04-27T06:35:25.609945+00:00"
+            "2023-04-27T06:36:01.822156+00:00",
+            "2023-04-27T06:37:30.185548+00:00",
+            "2023-04-27T06:40:30.185548+00:00",
+            "2023-04-27T06:43:50.720616+00:00"
         ],
         "startTime": "2023-04-27T06:30:34.463603+00:00",
         "endTime": ""
@@ -728,78 +731,119 @@ const zomerData = [
     }
 ]
 
-const missions1 = [
+const missions = [
     {
         target: {
-            objectTag: "",
-            image: "",
-            title: "",
-            location: {x: 0, y: 0},
-            id: "",
+            objectTag: "BusStation1",
+            image: "images/locations/BusStation.png",
+            title: "תחנת אוטובוס",
+            location: {x: 32.0837559, y: 34.8012767},
         },
-        name: "",
-        description: "",
+        name: "תחנת אוטובוס",
+        description: "תחנת אוטובוס",
         hint: {
-            title: "",
-            text: "",
-            hint: "",
-            image: "",
+            title: "תחנת אוטובוס",
+            hint: "היום נלך לנקות את גן המלך דוד, עליך להגיע לתחנת האוטובוס הקרובה לקבלת הרמז הבא",
+            image: "images/locations/BusStation.png",
         },
-        image: "",
+        image: "images/locations/BusStation.png",
         score: 1,
     },
     {
         target: {
-            objectTag: "",
-            image: "",
-            title: "",
-            location: {x: 0, y: 0},
-            id: "",
+            objectTag: "100_MosheAvivBuilding",
+            image: "images/locations/100_MosheAvivBuilding_real.png",
+            title: "מגדל משה אביב",
+            location: {x: 32.08391, y: 34.803862},
         },
-        name: "",
-        description: "",
+        name: "מגדל משה אביב",
+        description: "מגדל משה אביב או בשמו השני מגדל אוסיף-אביב על שם החברה שבנתה אותו, הידוע גם בשמו הקודם מגדל שער העיר, הוא גורד שחקים ברח' ז'בוטינסקי 7, סמוך למתחם הבורסה שברמת גן. המגדל בעל 68 הקומות מתנשא לגובה של 235 מטר. המגדל היה גורד השחקים הגבוה בישראל עד בניית מגדל עזריאלי שרונה בשנת 2016, שגבוה ממנו ב-3.5 מטרים. לאחר פטירת היזם שהקים אותו, משה אביב, נקרא המגדל על שמו",
         hint: {
-            title: "",
+            title: "מגדל משה אביב",
             text: "",
-            hint: "",
-            image: "",
+            hint: "ישנם שיבושים בתחבורה הציבורית, הגיעו לבנין הכי גבוה בעיר לקבלת הוראות נוספות",
+            image: "images/locations/100_MosheAvivBuilding_game.png",
         },
-        image: "",
+        image: "images/locations/100_MosheAvivBuilding_real.png",
         score: 1,
     },
     {
         target: {
-            objectTag: "",
-            image: "",
-            title: "",
-            location: {x: 0, y: 0},
-            id: "",
+            objectTag: "101_BusOnStation",
+            image: "images/locations/101_BusOnStation_game.png",
+            title: "אוטובוס",
+            location: {x: 32.0837559, y: 34.8012767},
         },
-        name: "",
-        description: "",
+        name: "אוטובוס",
+        description: "אוטובוס תקוע בצד הכביש, בדרך אל גן דוד המלך",
         hint: {
-            title: "",
+            title: "אוטובוס",
             text: "",
-            hint: "",
-            image: "",
+            hint: "אוטובוס מיוחד ממתין לכם, המשיכו לאורך הכביש הרחב ביותר, עד שתגיעו לאוטובוס",
+            image: "images/locations/101_BusOnStation_game.png",
         },
-        image: "",
+        image: "images/locations/101_BusOnStation_game.png",
+        score: 1,
+    },
+    {
+        target: {
+            objectTag: "102_DavidParkFountain",
+            image: "images/locations/102_DavidParkFountain_real.png",
+            title: "גן דוד המלך",
+            location: {x: 32.0843353, y: 34.8136084},
+        },
+        name: "גן דוד המלך",
+        description: "גן דוד המלך ניטע ב 1928 והוא הגן הראשון של רמת גן ואחד המקומות ההיסטוריים והנוסטלגים בעיר רמת גן.  בנוסף דבק בו הכינוי \"זקן הגנים\" על שם כך שהיה הגן הראשון ברמת גן. בתקופת המנדט הבריטי הגן נקרא בשם \"גן המלך ג'ורג'\" על שם המלך ג'ורג' החמישי",
+        hint: {
+            title: "גן דוד המלך",
+            text: "",
+            hint: "האוטובוס התחמם, הנהג ביקש עזרה בהחלפת המים למנוע. המשיכו באותו כיוון על הכביש עד שתפגשו בשדרת עצים המובילה למזרקה של גן דוד המלך",
+            image: "images/locations/102_DavidParkFountain_game.png",
+        },
+        image: "images/locations/102_DavidParkFountain_real.png",
         score: 1,
     }
 ]
-const game1 = {
-    teacherId: '1',
-    className: '',
-    missions: [],
+
+const game1 = (teacherId,className,code,startTime) => ({
+    teacherId,
+    className,
+    missions: missions,
     metadata: {
-        name: '',
-        duration: '',
-        groupCount: '',
-        colors: '',
-        code: '',
-        startTime: '',
+        name: 'Demo Game',
+        duration: 20,
+        groupCount: 5,
+        colors: [
+            {
+                name: "brown",
+                hex: "#795548",
+                heb: "חום",
+            },
+            {
+                name: "violet",
+                hex: "#9c27b0",
+                heb: "בהיר סגול",
+            },
+            {
+                name: "red",
+                hex: "#f44336",
+                heb: "אדום",
+            },
+            {
+                name: "green",
+                hex: "#4caf50",
+                heb: "ירוק",
+            },
+            {
+                name: "indigo",
+                hex: "#3f51b5",
+                heb: "אינדיגו",
+            }
+        ],
+        code,
+        startTime,
     }
-}
+})
 
 const teacherSignup = async (firstName, lastName, email, password, school) => {
     try {
@@ -851,7 +895,7 @@ const createGame = async (teacherId, className, metadata, missionsArr) => {
         const newMissions = await MissionModel.createMissions(missionsArr);
         const missions = newMissions.map((m) => m._id);
         const newGame = await GameModel.createGame(
-            {...metadata, code: idGenerator(), missions},
+            {...metadata, missions},
             teacherId,
             className
         );
@@ -893,18 +937,83 @@ const giveColor = async (gameCode, playerId) => {
 }
 const setPlayerAchievement = async (gameId, missionId,playerId, startTime,endTimestamp) => {
     const player = await PlayerModel.findById(playerId);
+    const mission = await MissionModel.findById(missionId);
+    const game = await GameModel.findById(gameId);
+    const calculatedScore = mission.score* 100 * (1 - (new Date(endTimestamp).getTime() - new Date(startTime).getTime()) / (game.duration*60*1000));
     const achievement = new AchievementModel({
         player:playerId,
         mission: missionId,
         game: gameId,
-        duration: endTimestamp - new Date(startTime).getTime(),
-        score: 1,
-        playerTotal: player.score + 1,
+        duration: (new Date(endTimestamp).getTime()) - (new Date(startTime).getTime()),
+        score: calculatedScore,
+        playerTotal: player.score + 0 + calculatedScore,
     });
     const savedAchievement = await achievement.save();
     player.score += savedAchievement.score;
     player.achievements.push(savedAchievement);
     await player.save();
+}
+
+export const mockClasses = async () => {
+    const  schools = await SchoolModel.find();
+    const classNames= ['ג1','ג2','ג3','ד1','ד2','ד3','ה1','ה2','ה3','ו1','ו2','ו3','ז1','ז2','ז3'];
+    for(let i=0;i<schools.length;i++){
+        for(let j=0;j<classNames.length;j++){
+            // try {
+
+
+            const classDoc = new ClassModel({name: classNames[j], school: schools[i]});
+            await classDoc.save();
+            schools[i].classes.push(classDoc);
+            await schools[i].save();
+            // }catch (e){
+            //     console.log(`failed class ${classNames[j]} `);
+            // }
+        }
+
+    }
+}
+
+export const mockTeacherAndGame = async (schoolName:string,className:string,teacherName:string,startTime:string,mockData) => {
+    const mock_School = await SchoolModel.findOne({name: schoolName});
+    console.log(`school: ${schoolName}`, mock_School._id);
+    const mock_Class = await ClassModel.findOne({name: className});
+    console.log(`class: ${schoolName} ${className}`, mock_Class._id);
+    const mock_Teacher = await teacherSignup('Test', teacherName, `${teacherName}@univille.com`, '123456', mock_School._id);
+    console.log(`teacher: ${schoolName} ${teacherName}`, mock_Teacher._id);
+    const gameTemplate =game1(mock_Teacher._id,className,idGenerator(5,'A'),startTime)
+    const mock_Game = await createGame(mock_Teacher._id, className, gameTemplate.metadata, gameTemplate.missions);
+    console.log(`game: ${schoolName} ${className} ${teacherName}`, mock_Game._id,mock_Game.code);
+    await mockPlayers(mockData,mock_Class._id,mock_School._id,mock_Game);
+    console.log('players created');
+    return {schoolId:mock_School._id,classId:mock_Class._id,teacherId:mock_Teacher._id}
+}
+
+export const mockData = async () => {
+    await mockTeacherAndGame('אושא','ה1','Teacher1',oshaData[0].startTime,oshaData);
+    console.log('osha done');
+    await mockTeacherAndGame('הבילויים','ו2','Teacher2',zomerData[0].startTime,zomerData);
+    console.log('zomer done');
+}
+
+export const mockPlayers = async (mockData,classId,schoolId,game)=>{
+    for(let value of mockData){
+        console.log('creating user', value.username)
+        let exist = await  PlayerModel.findOne({username: value.username});
+        if(!exist) {
+            let student = await playerSignup(value.username, value.username, value.username, value.username, "Nathan", classId,schoolId);
+            await joinGame(student._id, game.code);
+            await setPlayerAchievement(game._id,game.missions[0], student._id, value.startTime, value.missionsTimestamp[0]);
+            await setPlayerAchievement(game._id,game.missions[1], student._id,value.startTime, value.missionsTimestamp[1]);
+            await setPlayerAchievement(game._id,game.missions[2], student._id,value.startTime,  value.missionsTimestamp[2]);
+            await setPlayerAchievement(game._id,game.missions[3], student._id,value.startTime,  value.missionsTimestamp[3]);
+            await giveColor(game.code, student._id);
+            console.log('student created', value.username);
+        }
+        else {
+            console.log('student exist', value.username)
+        }
+    }
 }
 export const mockUpdate = async () => {
     try {
@@ -960,34 +1069,6 @@ export const mockUpdate = async () => {
                 console.log('student exist', value.username)
             }
         }
-
-        // for(const value in oshaData){
-        //   const student = await playerSignup(value.username, value.username, value.username, value.username, 'אושא','ה2', "Nathan");
-        //   await joinGame(student._id,'OPAPH');
-        //    await setPlayerAchievement('OPAPH',student._id,'647899b8ed34a7cae8a6274c',new Date(value.missionsTimestamp[0]).getTime());
-        //    await setPlayerAchievement('OPAPH',student._id,'647899b8ed34a7cae8a6274c',new Date(value.missionsTimestamp[1]).getTime());
-        //    await setPlayerAchievement('OPAPH',student._id,'647899b8ed34a7cae8a6274c',new Date(value.missionsTimestamp[2]).getTime());
-        //    await setPlayerAchievement('OPAPH',student._id,'647899b8ed34a7cae8a6274c',new Date(value.missionsTimestamp[3]).getTime());
-        //   await giveColor('OPAPH',student._id);
-        // }
-        // for(const value of Object.values(oshaData)){
-        //   const student = await playerSignup(value.username, value.username, value.username, value.username, 'אושא','ה2', "Nathan");
-        //   await joinGame(student._id,'OPAPH');
-        //    await setPlayerAchievement('OPAPH',student._id,'647899b8ed34a7cae8a6274c',new Date(value.missionsTimestamp[0]).getTime());
-        //    await setPlayerAchievement('OPAPH',student._id,'647899b8ed34a7cae8a6274c',new Date(value.missionsTimestamp[1]).getTime());
-        //    await setPlayerAchievement('OPAPH',student._id,'647899b8ed34a7cae8a6274c',new Date(value.missionsTimestamp[2]).getTime());
-        //    await setPlayerAchievement('OPAPH',student._id,'647899b8ed34a7cae8a6274c',new Date(value.missionsTimestamp[3]).getTime());
-        //   await giveColor('OPAPH',student._id);
-        // }
-        // for(const value of Object.values(zomerData)){
-        //   const student = await playerSignup(value.username, value.username, value.username, value.username, 'זומר','ה1', "Nathan");
-        //   await joinGame(student._id,'OPAPH');
-        //    await setPlayerAchievement('OPAPH',student._id,'647899b8ed34a7cae8a6274c',new Date(value.missionsTimestamp[0]).getTime());
-        //    await setPlayerAchievement('OPAPH',student._id,'647899b8ed34a7cae8a6274c',new Date(value.missionsTimestamp[1]).getTime());
-        //    await setPlayerAchievement('OPAPH',student._id,'647899b8ed34a7cae8a6274c',new Date(value.missionsTimestamp[2]).getTime());
-        //    await setPlayerAchievement('OPAPH',student._id,'647899b8ed34a7cae8a6274c',new Date(value.missionsTimestamp[3]).getTime());
-        //   await giveColor('OPAPH',student._id);
-        // }
 
     } catch (e) {
 

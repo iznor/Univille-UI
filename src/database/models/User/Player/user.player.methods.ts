@@ -64,10 +64,10 @@ export const playerStatics: IPlayerStaticMethods = {
       className: "ד2",
     }
     const newPlayer = new this(playerObj);
-    const school = await SchoolModel.findOne({ name: schoolName });
-    const classDoc = await school.findOrCreateClass(className);
+    // const school = await SchoolModel.findOne({ name: schoolName });
+    const classDoc = await ClassModel.findById(className);
     classDoc.players.push(newPlayer._id);
-    await school.save();
+    // await school.save();
     return newPlayer.save();
   },
   async givePoints(this, identity, amount) {

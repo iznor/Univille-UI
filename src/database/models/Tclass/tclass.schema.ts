@@ -10,7 +10,7 @@ import type {
 export const ClassSchema = new Schema<IPD, IPM, IPIM, any, any, IPSM>(
   {
     id: { type: String },
-    name: { type: String, required: true},
+    name: { type: String,unique:false},
     score: { type: Number, default: 0 },
     teachers: { type: [Schema.Types.ObjectId], default: [], ref: 'Teacher' },
     players: { type: [Schema.Types.ObjectId], default: [], ref: 'Player' },

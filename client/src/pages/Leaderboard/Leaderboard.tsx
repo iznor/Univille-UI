@@ -15,7 +15,7 @@ interface ILeaderboard {
 }
 const calcAvgAchievementCompletionTime = (achievements:IAchievement[]):string => {
     const total = achievements.reduce((acc,curr) => acc + curr.duration,0)
-    return total === 0 ? "N/A" : `${(total/achievements.length)/1000} seconds`
+    return total === 0 ? "N/A" : `${((total/achievements.length)/1000).toFixed(2)} seconds`
 }
 const Leaderboard = (props: ILeaderboard) => {
     const {} = props;
@@ -51,11 +51,11 @@ const Leaderboard = (props: ILeaderboard) => {
 
 const playerColumns = (t: TFunction<"translation", undefined, "translation">): Array<Col<IPlayer>>  => [
     {title:t('leaderboard.table.username'), field: 'username',type:'string',align:'center'},
-    {title:t('leaderboard.table.fullName'), field: 'fullName',type:'string',align:'center',render: (rowData) => `${rowData.firstName} ${rowData.lastName}`},
+    {title:t('leaderboard.table.fullName'), field: 'fullName',type:'string',align:'center',render: (rowData) => rowData.firstName===rowData.lastName?rowData.lastName:`${rowData.firstName} ${rowData.lastName}`},
     {title:t('leaderboard.table.school') ,field: 'school',render: (rowData) => rowData.school.name,align:'center'},
     {title:t('leaderboard.table.class'), field: 'class',render: (rowData) => rowData.class.name,align:'center'},
     {title:t('leaderboard.table.avatar'), field: 'avatar',align:'center'},
-    {title:t('leaderboard.table.score'), field: 'score',type:'numeric',align:'center'},
+    {title:t('leaderboard.table.score'), field: 'score',type:'numeric',align:'center',render: (rowData) => rowData.score.toFixed(0)},
     {title:t('leaderboard.table.achievementsCount'), field: 'achievements',render: (rowData) => rowData.achievements.length,align:'center'},
     {title:t('leaderboard.table.avgDuration'), field: 'achievements',render: (rowData) => calcAvgAchievementCompletionTime(rowData.achievements),align:'center'},
     {title:'id', field: '_id',hidden:true},
