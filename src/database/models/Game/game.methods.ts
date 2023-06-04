@@ -76,7 +76,7 @@ export const statics: IGameStaticMethods = {
     const game = await this.findOne({ code: gameCode });
     const player = await PlayerModel.findOneByIdentity(playerIdentity);
     const mission = await MissionModel.findById(missionIdentity);
-    const achievement = await AchievementModel.createOne({
+    const achievement = new AchievementModel({
       player,
       mission: mission._id,
       game: game._id,
@@ -84,12 +84,14 @@ export const statics: IGameStaticMethods = {
       score: mission.score,
       playerTotal: player.score + mission.score,
     });
-    await player.addNewAchievement(achievement);
+    const savedAchievement = await achievement.save();
+    await player.addNewAchievement(savedAchievement);
     return achievement;
   },
   async giveColor(this, gameCode, playerIdentity) {
     const game = await this.findOne({ code: gameCode });
     const player = await PlayerModel.findById(playerIdentity);
+    console.log('player', player)
     const randomColorIndex = Math.floor(Math.random() * game.colors.length);
     const color = game.colors[randomColorIndex];
     player.group = color;

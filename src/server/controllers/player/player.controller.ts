@@ -128,7 +128,7 @@ class PlayerController
     try {
       const color = await GameModel.giveColor(
           req.params.gameCode,
-          req.params.playerId
+          req.params.identity
       );
       res.status(200).json({message: 'success', data: color});
     } catch (e) {
