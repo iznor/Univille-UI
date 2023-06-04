@@ -49,7 +49,7 @@ class GameController
       const newMissions = await MissionModel.createMissions(missionsArr);
       const missions = newMissions.map((m) => m._id);
       const newGame = await GameModel.createGame(
-          { ...metadata, code: idGenerator(), missions },
+          { ...metadata, code: idGenerator(5,'A'), missions },
           teacherId,
           className
       );
