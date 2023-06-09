@@ -6,4 +6,5 @@ export const TargetSchema = new Schema<ITarget>({
   location: { x: { type: Number }, y: { type: Number } },
   image: { type: String },
   objectTag: { type: String },
+    address: { heb: { type: String }, eng: { type: String } },
 });

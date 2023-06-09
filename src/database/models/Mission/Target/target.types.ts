@@ -3,4 +3,5 @@ export interface ITarget {
   location: { x: number; y: number };
   image: string;
   objectTag: string;
+  address:{heb:string,eng:string};
 }

@@ -23,6 +23,7 @@ const TargetInput = (props:ITargetInput) => {
                 image:target?.objectPhotoUrl??"",
                 title:target?.name??target?.title??"",
                 location:target?.location??{x:0,y:0},
+                address:{heb:target?.address?.heb??"",eng:target?.address?.eng??""},
                 id:target?.id??"",
             },
             name:target?.name??target?.title??"",

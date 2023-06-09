@@ -15,10 +15,11 @@ export interface IPlayerController {
   joinGame: IControlFn<never, { identity: string; gameCode: string }>;
   getStatus: IControlFn<never, { identity: string }>;
   getPlayers: IControlFn<never, never>;
+  getLeaderboardPlayers: IControlFn<never, {limit:number}>;
   getPlayer: IControlFn<never, { identity: string }>;
     giveColor: IControlFn<never,{playerId:string,gameCode:string,color:string}>;
   setAchievement: IControlFn<
-    never,
+      { missionDuration: number},
     { identity: string; gameCode: string; missionId: string }
   >;
 }

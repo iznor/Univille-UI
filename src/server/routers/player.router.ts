@@ -17,7 +17,8 @@ class PlayerRouter {
 
     this.router.get('/', playerController.getPlayers);
     this.router.get('/join/:identity/:gameCode', playerController.joinGame);
-    this.router.get('/achieve/:identity/:gameCode/:missionId', playerController.setAchievement);
+    this.router.get('/leaderboard/:limit', playerController.getLeaderboardPlayers);
+    this.router.get('/achieve/:identity/:gameCode/:missionId/:missionDuration', playerController.setAchievement);
     this.router.get('/color/:identity/:gameCode', playerController.giveColor);
     this.router.get('/:identity', playerController.getPlayer);
     /** ****************OLD*********************** */

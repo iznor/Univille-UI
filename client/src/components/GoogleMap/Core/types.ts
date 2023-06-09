@@ -45,4 +45,5 @@ export interface IStaticTarget extends IListItem,IMarkerItem{
     description?:string;
     objectPhotoUrl?:string;
     mapPhotoUrl?:string;
+    address:{heb:string;eng:string}
 }

@@ -8,6 +8,7 @@ const static_targets = [
     objectPhotoUrl: 'images/locations/100_MosheAvivBuilding_real.png',
     mapPhotoUrl: 'images/locations/100_MosheAvivBuilding_game.png',
     location: { x: 32.083910, y: 34.803862 },
+    address: {heb:'דרך אבא הלל 2, רמת גן, ישראל',eng:'Abba Hillel Silver Rd 2, Ramat Gan, Israel'},
   },
   {
     unityObjectTag: '102_DavidParkFountain',
@@ -18,6 +19,7 @@ const static_targets = [
     objectPhotoUrl: 'images/locations/102_DavidParkFountain_real.png',
     mapPhotoUrl: 'images/locations/102_DavidParkFountain_game.png',
     location: { x: 32.0843353, y: 34.8136084 },
+    address: {heb:'ביאליק 54, רמת גן, ישראל',eng:'Bialik St 54, Ramat Gan, Israel'}
   },
   {
     unityObjectTag: '202_UshaSchool',
@@ -27,6 +29,7 @@ const static_targets = [
     objectPhotoUrl: 'images/locations/202_UshaSchool_real.png',
     mapPhotoUrl: 'images/locations/202_UshaSchool_game.png',
     location: { x: 32.0901953, y: 34.8126704 },
+    address: {heb:'חרות 24, רמת גן, ישראל',eng:'Kherut St 24, Ramat Gan, Israel'}
   },
 
   {
@@ -38,6 +41,7 @@ const static_targets = [
     objectPhotoUrl: 'images/locations/102_ZomerSchool_real.png',
     mapPhotoUrl: 'images/locations/200_ShenkarCollage_real.png',
     location: { x: 32.0863098, y: 34.8116064 },
+    address: {heb:'רחוב זאב ז\'בוטינסקי 59, רמת גן, ישראל',eng:'Zeev Jabotinsky St 59, Ramat Gan, Israel'}
   },
 
   {
@@ -49,6 +53,7 @@ const static_targets = [
     objectPhotoUrl: 'images/locations/200_ShenkarCollage_real.png',
     mapPhotoUrl: 'images/locations/200_ShenkarCollage_game.png',
     location: { x: 32.0899255, y: 34.8003916 },
+    address: {heb:'ביאליק 157, רמת גן, ישראל',eng:'Bialik St 157, Ramat Gan, Israel'}
   },
   {
     unityObjectTag: '102_BeitHachayal',
@@ -59,6 +64,7 @@ const static_targets = [
     objectPhotoUrl: 'images/locations/102_BeitHachayal_real.png',
     mapPhotoUrl: 'images/locations/102_BeitHachayal_game.png',
     location: { x: 32.0836248, y: 34.8142604 },
+    address: {heb:'ביאליק 43, רמת גן, ישראל',eng:'Bialik St 43, Ramat Gan, Israel'}
   },
 
   {
@@ -70,6 +76,7 @@ const static_targets = [
     objectPhotoUrl: 'images/locations/2_RamatGanMunicipality_real.png',
     mapPhotoUrl: 'images/locations/2_RamatGanMunicipality_game.png',
     location: { x: 32.0825477, y: 34.8116891 },
+    address: {heb:'המעגל 12ב, רמת גן, ישראל',eng:'Ha-Ma\'agal St 12ב, Ramat Gan, Israel'}
   },
 
   {
@@ -80,6 +87,7 @@ const static_targets = [
     objectPhotoUrl: 'images/locations/200_CommunityCenterHarozim_real.png',
     mapPhotoUrl: 'images/locations/200_CommunityCenterHarozim_game.png',
     location: { x: 32.0884609, y: 34.802339 },
+    address: {heb:'הבונים 14, רמת גן, ישראל',eng:'HaBonim St 14, Ramat Gan, Israel'}
   },
   {
     unityObjectTag: '101_BialikMall',
@@ -90,6 +98,7 @@ const static_targets = [
     objectPhotoUrl: 'images/locations/101_BialikMall_real.png',
     mapPhotoUrl: 'images/locations/101_BialikMall_game.png',
     location: { x: 32.0858829, y: 34.808831 },
+    address: {heb:'אלעזר ויינשל 5, רמת גן, ישראל',eng:'Elazar WeinShall St 5, Ramat Gan, Israel'}
   },
   {
     unityObjectTag: '2_location_monky',
@@ -100,6 +109,7 @@ const static_targets = [
     objectPhotoUrl: 'images/locations/2_location_monky_game.png',
     mapPhotoUrl: 'images/locations/2_location_monky_game.png',
     location: { x: 32.0817405, y: 34.8096094 },
+    address: {heb:'החשמונאים 20, רמת גן, ישראל',eng:'HaHashmona\'im St 20, Ramat Gan, Israel'}
   },
   {
     unityObjectTag: '101_BusOnStation',
@@ -109,6 +119,8 @@ const static_targets = [
     objectPhotoUrl: 'images/locations/101_BusOnStation_game.png',
     mapPhotoUrl: 'images/locations/101_BusOnStation_game.png',
     location: { x: 32.0837559, y: 34.8012767 },
+    address: {heb:'',eng:''},
+
   },
   {
     unityObjectTag: 'BusStation1',
@@ -118,6 +130,7 @@ const static_targets = [
     objectPhotoUrl: 'images/locations/BusStation.png',
     mapPhotoUrl: 'images/locations/BusStation.png',
     location: { x: 32.0837559, y: 34.8012767 },
+    address: {heb:'',eng:''},
   },
 ];
 

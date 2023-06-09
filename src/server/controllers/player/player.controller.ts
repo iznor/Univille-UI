@@ -115,7 +115,8 @@ class PlayerController
       const achievement = await GameModel.setPlayerAchievement(
           req.params.gameCode,
           req.params.identity,
-          req.params.missionId
+          req.params.missionId,
+          req.params.missionDuration
       );
       res.status(200).json({message: 'success', data: achievement});
     } catch (e) {
@@ -131,6 +132,37 @@ class PlayerController
           req.params.identity
       );
       res.status(200).json({message: 'success', data: color});
+    } catch (e) {
+      next(e);
+    }
+  }
+  async getLeaderboardPlayers(req, res, next) {
+    try {
+      /*
+      get the top {req.params.limit} players , sorted by score, also populate achievements and get the shortest duration from the achievements array, and return only the fields: username, score, avatar, duration
+       */
+      const players = await PlayerModel.find({})
+          .populate('achievements')
+          .sort({score: -1})
+          .limit(parseInt(req.params.limit))
+          .select('username score avatar achievements')
+          .lean();
+      const playersWithShortestDuration = players.map((player) => {
+        const shortestDuration = player.achievements.reduce(
+            (acc, curr) => (acc < curr.duration ? acc : curr.duration),
+            player.achievements[0].duration
+        );
+        return {
+          username:player.username,
+          avatar:player.avatar,
+          score:player.score.toFixed(0),
+          duration: shortestDuration
+        };
+      });
+
+      res.status(200).json({message: 'success', data: playersWithShortestDuration});
+
+
     } catch (e) {
       next(e);
     }

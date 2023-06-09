@@ -72,16 +72,18 @@ export const statics: IGameStaticMethods = {
 
 
 
-  async setPlayerAchievement(this, gameCode, playerIdentity, missionIdentity) {
+  async setPlayerAchievement(this, gameCode, playerIdentity, missionIdentity, missionDuration=1) {
     const game = await this.findOne({ code: gameCode });
     const player = await PlayerModel.findOneByIdentity(playerIdentity);
     const mission = await MissionModel.findById(missionIdentity);
+    const gameDuration = game.duration;
+    const score = mission.score * (1 - missionDuration / gameDuration) * 1000;
     const achievement = new AchievementModel({
       player,
       mission: mission._id,
       game: game._id,
-      duration: Date.now() - game.startTime.getTime(),
-      score: mission.score,
+      duration: missionDuration,
+      score: score,
       playerTotal: player.score + mission.score,
     });
     const savedAchievement = await achievement.save();

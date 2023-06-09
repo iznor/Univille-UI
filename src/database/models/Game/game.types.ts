@@ -50,7 +50,8 @@ export interface IGameStaticMethods {
     this: IGameModel,
     gameCode: string,
     playerIdentity: string,
-    missionIdentity: Schema.Types.ObjectId
+    missionIdentity: Schema.Types.ObjectId,
+    missionDuration?: number
   ) => Promise<IAchievement>;
   deleteGame: (this: IGameModel, gameId: string) => Promise<void>;
   createMission: (
