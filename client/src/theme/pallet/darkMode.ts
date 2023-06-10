@@ -31,7 +31,7 @@ export const palette = {
   app: {
     main: colors.app[500],
     bg: colors.blue[1000],
-    bgInverse: colors.dark[500],
+    bgInverse: '#1d344f',
     cardBg: "hsl(212.4deg 32.24% 21.27%)",
     border: 'rgba(255,255,255,0.12)',
     shadow:'0px 1px 5px -4px rgba(255,255,255,0.61)',
