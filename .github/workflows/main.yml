@@ -1,0 +1,73 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Cache yarn dependencies
+        uses: actions/cache@v2
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+
+      - name: Install server dependencies
+        run: |
+          yarn install
+
+      - name: Build server
+        run: yarn build
+
+      - name: Install client dependencies
+        run: |
+          cd client
+          yarn install
+
+      - name: Build client
+        run: |
+          cd client
+          yarn build
+
+      - name: Fetch version
+        id: package
+        run: echo "::set-output name=version::$(node -p "require('./package.json').version")"
+
+      - name: Deploy
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SERVER_IP }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            if [ ! -d "/root/apps/univille" ] ; then
+              git clone https://github.com/OferElfassi/univille-fs.git /root/apps/univille
+            fi
+            cd /root/apps/univille
+            git pull
+            yarn install
+            yarn build
+            cd /root/apps/univille/client
+            yarn install
+            rm .prettierrc.json
+            rm .eslintrc.json
+            rm .eslintignore
+            npm run build
+            if ! pm2 describe univille-fs >/dev/null 2>&1 ; then
+                pm2 start /root/apps/univille/build/index.js --name "univille-fs"
+            else
+                pm2 restart univille-fs
+            fi
+            sed -i "/UNIVILLE_VERSION=/c\UNIVILLE_VERSION=${{ steps.package.outputs.version }}" /etc/environment

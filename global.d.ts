@@ -1,78 +1,38 @@
-import { Theme } from '@mui/system';
-import { IUserState } from './src/store/reducers';
+import { NextFunction, Request, Response } from 'express';
+
+declare module 'express' {
+  interface Request<P, ResBody, ReqBody, ReqQuery, Locals> {
+    body: ReqBody;
+    params: ReqQuery;
+  }
+
+  interface Response<
+    ResBody = any,
+    Locals extends Record<string, any> = Record<string, any>,
+    StatusCode extends number = number
+  > {
+    status(code: StatusCode): this;
+    sendFile(path: string): this;
+
+    json: (res: ResBody) => any;
+  }
+}
 
 declare global {
-  type themeFunc = (theme: Theme) => string;
-  type colorProp = themeFunc | string;
-  type TypeNumColors = {
-    [key: number]: string;
-  };
-
-  interface IGameState {
-    games: IGame[];
-  }
-
-  interface IGame {
-    id: string;
-    name: string;
-    duration: number;
-    groupCount: number;
-    colors: string[];
-    code: string[];
-    startTime: number;
-    missions: IMission[];
-    players: IUserState[];
-    teacher: ITeacher;
-    class: IClass;
-  }
-
-  interface IPlayer {
-    username: string;
-    fullName: string;
-    group: string;
-    school: {
-      id: string;
-      name: string;
-      city: string;
-      address: string;
-    };
-    class: {
-      id: string;
-      name: string;
-      score: string;
-    };
-    avatar: string;
-    score: number;
-    achievements: IAchievement[];
-    currentGame: {
-      game: IGame;
-      currentMission: {
-        mission: IMission;
-        startTime: Date;
-        endTime: Date;
-      };
-    };
-  }
-
-  interface IAchievement {
-    id: string;
-    game: IGame;
-    mission: IMission;
-    player: IPlayer;
-    duration: number;
-    score: number;
-    playerTotal: number;
-  }
+  type IControlFn<Tbody = any, Tparams = any> = (
+    req: Request<never, never, Tbody, Tparams>,
+    res: Response,
+    next: NextFunction
+  ) => Promise<void>;
 
   interface IGameMeta {
     name: string;
     duration: number;
     groupCount: number;
-    colors: string[];
+    colors: IGroupColor[];
     code: string[];
     startTime: number;
   }
-
   interface IGameParams {
     teacherId: string;
     className: string;
@@ -80,7 +40,7 @@ declare global {
     metadata: Partial<IGameMeta>;
   }
 
-  interface IMission {
+  export interface IMission {
     name: string;
     description: string;
     hint: { text: string; image?: string; title?: string };
@@ -88,33 +48,10 @@ declare global {
     image: string;
     score: number;
   }
-
-  interface ISchool {
+  interface IGroupColor {
     name: string;
-    city: string;
-    address: string;
-    location: { x: number; y: number };
-    classes: string[] | IClass[] | any[];
-    teachers: string[] | ITeacher[];
-  }
-
-  interface IClass {
-    id: string;
-    name: string;
-    score: number;
-    teachers: any[];
-    players: any[];
-    school: any;
-  }
-
-  interface ITeacher {
-    school: ISchool | string;
-    class: IClass | string;
-    fullName: string;
-    firstName: string;
-    lastName: string;
-    email: string;
-    password: string;
+    hex: string;
+    heb: string;
   }
 }
 

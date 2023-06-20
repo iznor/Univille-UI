@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="floppydisc"  viewBox="0 0 200 208" enable-background="new 0 0 200 208" xml:space="preserve"  height="15px" width="15px">
+<g>
+	<rect x="52" y="20" fill="#D0E8FF" width="12" height="24"/>
+	<path fill="#D0E8FF" d="M32,120v80h136v-80H32z M156,172H44v-8h112V172z M156,156H44v-8h112V156z M156,140H44v-8h112V140z"/>
+	<path fill="#D0E8FF" d="M156,56V8H40v48H156z M44,12h28v40H44V12z"/>
+	<path fill="#5CB0FF" d="M164,8.0127V64H32V8H8v192h16v-88h152v88h16V36.2441C192,20.7529,179.46,8.1465,164,8.0127z"/>
+	<path fill="#1C71DA" d="M164,0.0127V0h-0.2461H32H0v208h24h152h24V36.2441C200,16.3428,183.8704,0.147,164,0.0127z M156,8v48H40V8   H156z M32,200v-80h136v80H32z M192,200h-16v-88H24v88H8V8h24v56h132V8.0127c15.46,0.1338,28,12.7402,28,28.2314V200z"/>
+	<path fill="#1C71DA" d="M72,12H44v40h28V12z M64,44H52V20h12V44z"/>
+	<rect x="44" y="132" fill="#1C71DA" width="112" height="8"/>
+	<rect x="44" y="148" fill="#1C71DA" width="112" height="8"/>
+	<rect x="44" y="164" fill="#1C71DA" width="112" height="8"/>
+</g>
+</svg>

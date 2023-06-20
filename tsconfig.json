@@ -1,29 +1,25 @@
 {
-  "compilerOptions": {
-    "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
+    "compilerOptions": {
+        "target": "es6",
+        "module": "CommonJS",
+        "noImplicitAny": false,
+        "skipLibCheck": true,
+        "allowJs": true,
+        "strict": false,
+        "moduleResolution": "node",
+        "esModuleInterop": true,
+        "declaration": false,
+        "baseUrl": ".",
+        "forceConsistentCasingInFileNames": false,
+        "outDir": "build"
+    },
+    "include": [
+        "src/**/*",
+        "global.d.ts",
+        "./node_modules/@types"
     ],
-    "baseUrl": "src",
-    "allowJs": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "strict": false,
-    "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
-    "noImplicitAny": false,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react-jsx"
-  },
-  "include": [
-    "src/",
-    "global.d.ts"
-  ]
+    "exclude": [
+        "node_modules",
+        "client"
+    ]
 }

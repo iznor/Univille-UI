@@ -1,0 +1,6 @@
+
+{
+  "extends": "./tsconfig.json",
+  "include": ["src/**/*.ts","global.d.ts",
+    "./node_modules/@types"],
+}

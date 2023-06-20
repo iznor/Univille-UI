@@ -1,0 +1,866 @@
+PS C:\projects\dum_univille> heroku logs
+2023-04-26T23:27:12.289257+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=univille2.herokuapp.com request_id=d8bacf59-e7f7-4fa5-ad8e-e30c820aea25 fwd="79.176.193.121" dyno= connect= service= status=503 bytes= protocol=https
+2023-04-26T23:27:23.373026+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=univille2.herokuapp.com request_id=14c7372e-b9ac-45f9-a573-b5c35ea05ea5 fwd="79.176.193.121" dyno= connect= service= status=503 bytes= protocol=https
+2023-04-26T23:29:17.000000+00:00 app[api]: Build started by user ofer2212@gmail.com
+2023-04-26T23:29:36.140154+00:00 app[api]: Deploy 12b73c08 by user ofer2212@gmail.com
+2023-04-26T23:29:36.140154+00:00 app[api]: Release v19 created by user ofer2212@gmail.com
+2023-04-26T23:29:36.431080+00:00 heroku[web.1]: State changed from crashed to starting
+2023-04-26T23:29:38.000000+00:00 app[api]: Build succeeded
+2023-04-26T23:29:39.055517+00:00 heroku[web.1]: Starting process with command `npm start`
+2023-04-26T23:29:42.029587+00:00 app[web.1]:
+2023-04-26T23:29:42.029622+00:00 app[web.1]: > dum_univille@1.0.0 start
+2023-04-26T23:29:42.029622+00:00 app[web.1]: > node index.js
+2023-04-26T23:29:42.029622+00:00 app[web.1]:
+2023-04-26T23:29:42.663290+00:00 app[web.1]: Data initialization
+2023-04-26T23:29:42.792632+00:00 app[web.1]: data already initialized
+2023-04-26T23:29:42.793033+00:00 app[web.1]: undefined
+2023-04-26T23:29:44.818049+00:00 heroku[web.1]: State changed from starting to up
+2023-04-26T23:29:46.677190+00:00 heroku[router]: at=info method=GET path="/" host=univille2.herokuapp.com request_id=95bf68e2-aa60-488b-8a31-5fe3afa4974c fwd="79.176.193.121" dyno=web.1 connect=0ms service=5ms status=200 bytes=276 protocol=https
+2023-04-26T23:30:30.008982+00:00 app[web.1]: GET_OBJECT_TAG
+2023-04-26T23:30:30.009460+00:00 heroku[router]: at=info method=GET path="/api/v1/game/dummyApi/missions" host=univille2.herokuapp.com request_id=cb8f836c-f2dc-4c09-a0a3-23bcabe23eaa fwd="79.176.193.121" dyno=web.1 connect=0ms service=3ms status=200 bytes=1104 protocol=https
+2023-04-26T23:30:30.026161+00:00 app[web.1]: GET_OR_ADD_PLAYER
+2023-04-26T23:30:30.049285+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getOrAdd/V_1578556686" host=univille2.herokuapp.com request_id=038b22a0-ec74-48ba-9cbe-3d8705cb8fb3 fwd="79.176.193.121" dyno=web.1 connect=0ms service=24ms status=200 bytes=529 protocol=https
+2023-04-26T23:30:53.939291+00:00 app[web.1]: GIVE_POINTS
+2023-04-26T23:30:53.949776+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/6449b416e350429df0d6ee29" host=univille2.herokuapp.com request_id=f30ce3df-6f5d-475c-ae4f-7de0ea3c1783 fwd="79.176.193.121" dyno=web.1 connect=0ms service=177ms status=200 bytes=529 protocol=https
+2023-04-26T23:32:09.703866+00:00 app[web.1]: GIVE_POINTS
+2023-04-26T23:32:09.729015+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/6449b416e350429df0d6ee29" host=univille2.herokuapp.com request_id=37f50798-218f-4563-8def-f72c9f2c07d6 fwd="79.176.193.121" dyno=web.1 connect=0ms service=162ms status=200 bytes=529 protocol=https
+2023-04-26T23:34:16.687154+00:00 app[web.1]: GIVE_POINTS
+2023-04-26T23:34:16.709315+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/6449b416e350429df0d6ee29" host=univille2.herokuapp.com request_id=00c99c5b-d060-48db-a0d1-66af1caef572 fwd="79.176.193.121" dyno=web.1 connect=0ms service=179ms status=200 bytes=529 protocol=https
+2023-04-26T23:36:51.444380+00:00 app[web.1]: GIVE_POINTS
+2023-04-26T23:36:51.471516+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/6449b416e350429df0d6ee29" host=univille2.herokuapp.com request_id=a5f02dba-2559-4d0e-b0a0-040689cee0d3 fwd="79.176.193.121" dyno=web.1 connect=0ms service=171ms status=200 bytes=529 protocol=https
+2023-04-26T23:36:54.096141+00:00 app[web.1]: GET_RANDOM_COLOR
+2023-04-26T23:36:54.106555+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getRandomColor/6449b416e350429df0d6ee29/5" host=univille2.herokuapp.com request_id=1a880f8e-95f7-4de1-8edd-15a9b2d215b2 fwd="79.176.193.121" dyno=web.1 connect=0ms service=12ms status=200 bytes=544 protocol=https
+2023-04-26T23:36:56.415015+00:00 app[web.1]: GET_RANDOM_COLOR
+2023-04-26T23:36:56.423473+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getRandomColor/6449b416e350429df0d6ee29/5" host=univille2.herokuapp.com request_id=fe80ad53-f901-404c-87e9-bd8025432cec fwd="79.176.193.121" dyno=web.1 connect=0ms service=9ms status=200 bytes=546 protocol=https
+2023-04-26T23:37:03.160015+00:00 app[web.1]: GET_RANDOM_COLOR
+2023-04-26T23:37:03.170162+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getRandomColor/6449b416e350429df0d6ee29/5" host=univille2.herokuapp.com request_id=b5a532c4-5211-49b8-87b9-54f8384014ac fwd="79.176.193.121" dyno=web.1 connect=0ms service=11ms status=200 bytes=543 protocol=https
+2023-04-26T23:37:08.817173+00:00 app[web.1]: GET_RANDOM_COLOR
+2023-04-26T23:37:08.826923+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getRandomColor/6449b416e350429df0d6ee29/5" host=univille2.herokuapp.com request_id=ef98f9a7-96a6-47b1-9b5d-d18c465c150e fwd="79.176.193.121" dyno=web.1 connect=1ms service=10ms status=200 bytes=545 protocol=https
+2023-04-26T23:39:36.202396+00:00 app[web.1]: /logs
+2023-04-26T23:39:36.204677+00:00 app[web.1]: /app/server/controllers/log/log.controller.js:84
+2023-04-26T23:39:36.204678+00:00 app[web.1]: throw new _utils.HttpError("Unable to scan directory: ".concat(err), 401);
+2023-04-26T23:39:36.204679+00:00 app[web.1]: ^
+2023-04-26T23:39:36.204680+00:00 app[web.1]:
+2023-04-26T23:39:36.204680+00:00 app[web.1]: HttpError: Unable to scan directory: Error: ENOENT: no such file or directory, scandir '/logs'
+2023-04-26T23:39:36.204680+00:00 app[web.1]: at /app/server/controllers/log/log.controller.js:84:27
+2023-04-26T23:39:36.204680+00:00 app[web.1]: at FSReqCallback.oncomplete (node:fs:198:23) {
+2023-04-26T23:39:36.204681+00:00 app[web.1]: statusCode: 401,
+2023-04-26T23:39:36.204681+00:00 app[web.1]: data: null
+2023-04-26T23:39:36.204681+00:00 app[web.1]: }
+2023-04-26T23:39:36.204681+00:00 app[web.1]:
+2023-04-26T23:39:36.204681+00:00 app[web.1]: Node.js v18.16.0
+2023-04-26T23:39:36.210082+00:00 heroku[router]: at=error code=H13 desc="Connection closed without response" method=GET path="/api/v2/log/logfiles" host=univille2.herokuapp.com request_id=39be122f-7a4c-4855-924a-48809454a111 fwd="79.176.193.121" dyno=web.1 connect=0ms service=9ms status=503 bytes=0 protocol=https
+2023-04-26T23:39:36.213093+00:00 app[web.1]: npm notice
+2023-04-26T23:39:36.213149+00:00 app[web.1]: npm notice New minor version of npm available! 9.5.1 -> 9.6.5
+2023-04-26T23:39:36.213299+00:00 app[web.1]: npm notice Changelog: <https://github.com/npm/cli/releases/tag/v9.6.5>
+2023-04-26T23:39:36.213339+00:00 app[web.1]: npm notice Run `npm install -g npm@9.6.5` to update!
+2023-04-26T23:39:36.213479+00:00 app[web.1]: npm notice
+2023-04-26T23:39:36.359839+00:00 heroku[web.1]: Process exited with status 1
+2023-04-26T23:39:36.398378+00:00 heroku[web.1]: State changed from up to crashed
+2023-04-26T23:39:36.401507+00:00 heroku[web.1]: State changed from crashed to starting
+2023-04-26T23:39:39.979134+00:00 heroku[web.1]: Starting process with command `npm start`
+2023-04-26T23:39:41.421786+00:00 app[web.1]:
+2023-04-26T23:39:41.421793+00:00 app[web.1]: > dum_univille@1.0.0 start
+2023-04-26T23:39:41.421793+00:00 app[web.1]: > node index.js
+2023-04-26T23:39:41.421793+00:00 app[web.1]:
+2023-04-26T23:39:41.961833+00:00 app[web.1]: Data initialization
+2023-04-26T23:39:42.083724+00:00 app[web.1]: data already initialized
+2023-04-26T23:39:42.084127+00:00 app[web.1]: undefined
+2023-04-26T23:39:44.430197+00:00 heroku[web.1]: State changed from starting to up
+2023-04-27T05:20:12.441539+00:00 app[web.1]: GET_OBJECT_TAG
+2023-04-27T05:20:12.441924+00:00 heroku[router]: at=info method=GET path="/api/v1/game/dummyApi/missions" host=univille2.herokuapp.com request_id=58c30f63-4d50-4402-ba08-8a837884c62a fwd="77.137.44.162" dyno=web.1 connect=0ms service=9ms status=200 bytes=1104 protocol=https
+2023-04-27T05:20:12.468203+00:00 app[web.1]: GET_OR_ADD_PLAYER
+2023-04-27T05:20:12.508460+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getOrAdd/V_931176719" host=univille2.herokuapp.com request_id=13968dbf-1fd3-410b-8d1c-c1945446bd30 fwd="77.137.27.194" dyno=web.1 connect=0ms service=40ms status=200 bytes=527 protocol=https
+2023-04-27T05:21:15.333980+00:00 app[web.1]: GIVE_POINTS
+2023-04-27T05:21:15.349889+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/644a060ce350429df08a2ea4" host=univille2.herokuapp.com request_id=15c852f0-1324-4af4-9040-cbd3a03cd0cd fwd="77.137.44.162" dyno=web.1 connect=0ms service=163ms status=200 bytes=527 protocol=https
+2023-04-27T05:39:35.624773+00:00 app[web.1]: GET_OBJECT_TAG
+2023-04-27T05:39:35.625936+00:00 heroku[router]: at=info method=GET path="/api/v1/game/dummyApi/missions" host=univille2.herokuapp.com request_id=a0ffb022-c842-4ece-b6e8-7372de68f347 fwd="77.137.44.162" dyno=web.1 connect=0ms service=2ms status=200 bytes=1104 protocol=https
+2023-04-27T05:39:35.660603+00:00 app[web.1]: GET_OR_ADD_PLAYER
+2023-04-27T05:39:35.686831+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getOrAdd/V_-310992135" host=univille2.herokuapp.com request_id=b87dfdb2-c7e2-4094-aca1-efc16e536c4b fwd="77.137.27.194" dyno=web.1 connect=2ms service=26ms status=200 bytes=529 protocol=https
+2023-04-27T05:39:41.082899+00:00 app[web.1]: GET_OR_ADD_PLAYER
+2023-04-27T05:39:41.095523+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getOrAdd/V_-248696813" host=univille2.herokuapp.com request_id=dbee31dd-28f2-4cee-bdcb-52de681c0256 fwd="62.90.77.236" dyno=web.1 connect=0ms service=12ms status=200 bytes=529 protocol=https
+2023-04-27T05:39:41.103844+00:00 app[web.1]: GET_OBJECT_TAG
+2023-04-27T05:39:41.104691+00:00 heroku[router]: at=info method=GET path="/api/v1/game/dummyApi/missions" host=univille2.herokuapp.com request_id=3602ab60-dd0d-4cd6-9779-097786accf36 fwd="62.90.77.236" dyno=web.1 connect=1ms service=1ms status=200 bytes=1104 protocol=https
+2023-04-27T05:39:47.027426+00:00 app[web.1]: GET_OBJECT_TAG
+2023-04-27T05:39:47.028888+00:00 heroku[router]: at=info method=GET path="/api/v1/game/dummyApi/missions" host=univille2.herokuapp.com request_id=3453f5f0-489a-47cb-9cad-209525334a4e fwd="77.137.27.194" dyno=web.1 connect=0ms service=1ms status=200 bytes=1104 protocol=https
+2023-04-27T05:39:47.036675+00:00 app[web.1]: GET_OR_ADD_PLAYER
+2023-04-27T05:39:47.047857+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getOrAdd/V_-192812638" host=univille2.herokuapp.com request_id=358d44e4-8c76-45a0-baa2-031d1fea72f2 fwd="77.137.44.162" dyno=web.1 connect=0ms service=11ms status=200 bytes=529 protocol=https
+2023-04-27T05:39:49.784441+00:00 app[web.1]: GET_OBJECT_TAG
+2023-04-27T05:39:49.785940+00:00 heroku[router]: at=info method=GET path="/api/v1/game/dummyApi/missions" host=univille2.herokuapp.com request_id=b6b319fd-db31-4273-a141-f34a3512e9b8 fwd="77.137.44.162" dyno=web.1 connect=0ms service=1ms status=200 bytes=1104 protocol=https
+2023-04-27T05:39:49.814979+00:00 app[web.1]: GET_OR_ADD_PLAYER
+2023-04-27T05:39:49.823896+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getOrAdd/V_-169103867" host=univille2.herokuapp.com request_id=04294f43-3efa-4f76-988a-be372059f851 fwd="77.137.27.194" dyno=web.1 connect=0ms service=10ms status=200 bytes=529 protocol=https
+2023-04-27T05:42:39.431500+00:00 app[web.1]: GET_OBJECT_TAG
+2023-04-27T05:42:39.433553+00:00 heroku[router]: at=info method=GET path="/api/v1/game/dummyApi/missions" host=univille2.herokuapp.com request_id=173a4299-8226-413f-ae86-baa4eb4eadf6 fwd="77.137.44.162" dyno=web.1 connect=0ms service=1ms status=200 bytes=1104 protocol=https
+2023-04-27T05:42:39.461361+00:00 app[web.1]: GET_OR_ADD_PLAYER
+2023-04-27T05:42:39.486498+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getOrAdd/V_1526744780" host=univille2.herokuapp.com request_id=5ce23e50-6245-4930-bd3d-ee57563911c9 fwd="62.90.77.236" dyno=web.1 connect=0ms service=25ms status=200 bytes=529 protocol=https
+2023-04-27T05:53:04.273834+00:00 app[web.1]: GET_OR_ADD_PLAYER
+2023-04-27T05:53:04.296008+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getOrAdd/V_-818791392" host=univille2.herokuapp.com request_id=7a5ac6ef-f718-4e4c-8800-65a78072ea8f fwd="62.90.77.236" dyno=web.1 connect=0ms service=22ms status=200 bytes=529 protocol=https
+2023-04-27T05:53:04.299021+00:00 heroku[router]: at=info method=GET path="/api/v1/game/dummyApi/missions" host=univille2.herokuapp.com request_id=6c9527fe-f39b-465e-8268-09ebd87f01bc fwd="77.137.44.162" dyno=web.1 connect=0ms service=1ms status=200 bytes=1104 protocol=https
+2023-04-27T05:53:04.302712+00:00 app[web.1]: GET_OBJECT_TAG
+2023-04-27T05:53:34.922810+00:00 app[web.1]: GIVE_POINTS
+2023-04-27T05:53:34.928956+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/644a0dc0e350429df09b0e96" host=univille2.herokuapp.com request_id=b196afce-f08c-43fa-b029-ec58cb467df8 fwd="77.137.44.162" dyno=web.1 connect=0ms service=156ms status=200 bytes=529 protocol=https
+PS C:\projects\dum_univille> heroku logs
+2023-04-26T23:27:12.289257+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=univille2.herokuapp.com request_id=d8bacf59-e7f7-4fa5-ad8e-e30c820aea25 fwd="79.176.193.121" dyno= connect= service= status=503 bytes= protocol=https
+2023-04-26T23:27:23.373026+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=univille2.herokuapp.com request_id=14c7372e-b9ac-45f9-a573-b5c35ea05ea5 fwd="79.176.193.121" dyno= connect= service= status=503 bytes= protocol=https
+2023-04-26T23:29:17.000000+00:00 app[api]: Build started by user ofer2212@gmail.com
+2023-04-26T23:29:36.140154+00:00 app[api]: Deploy 12b73c08 by user ofer2212@gmail.com
+2023-04-26T23:29:36.140154+00:00 app[api]: Release v19 created by user ofer2212@gmail.com
+2023-04-26T23:29:36.431080+00:00 heroku[web.1]: State changed from crashed to starting
+2023-04-26T23:29:38.000000+00:00 app[api]: Build succeeded
+2023-04-26T23:29:39.055517+00:00 heroku[web.1]: Starting process with command `npm start`
+2023-04-26T23:29:42.029587+00:00 app[web.1]:
+2023-04-26T23:29:42.029622+00:00 app[web.1]: > dum_univille@1.0.0 start
+2023-04-26T23:29:42.029622+00:00 app[web.1]: > node index.js
+2023-04-26T23:29:42.029622+00:00 app[web.1]:
+2023-04-26T23:29:42.663290+00:00 app[web.1]: Data initialization
+2023-04-26T23:29:42.792632+00:00 app[web.1]: data already initialized
+2023-04-26T23:29:42.793033+00:00 app[web.1]: undefined
+2023-04-26T23:29:44.818049+00:00 heroku[web.1]: State changed from starting to up
+2023-04-26T23:29:46.677190+00:00 heroku[router]: at=info method=GET path="/" host=univille2.herokuapp.com request_id=95bf68e2-aa60-488b-8a31-5fe3afa4974c fwd="79.176.193.121" dyno=web.1 connect=0ms service=5ms status=200 bytes=276 protocol=https
+2023-04-26T23:30:30.008982+00:00 app[web.1]: GET_OBJECT_TAG
+2023-04-26T23:30:30.009460+00:00 heroku[router]: at=info method=GET path="/api/v1/game/dummyApi/missions" host=univille2.herokuapp.com request_id=cb8f836c-f2dc-4c09-a0a3-23bcabe23eaa fwd="79.176.193.121" dyno=web.1 connect=0ms service=3ms status=200 bytes=1104 protocol=https
+2023-04-26T23:30:30.026161+00:00 app[web.1]: GET_OR_ADD_PLAYER
+2023-04-26T23:30:30.049285+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getOrAdd/V_1578556686" host=univille2.herokuapp.com request_id=038b22a0-ec74-48ba-9cbe-3d8705cb8fb3 fwd="79.176.193.121" dyno=web.1 connect=0ms service=24ms status=200 bytes=529 protocol=https
+2023-04-26T23:30:53.939291+00:00 app[web.1]: GIVE_POINTS
+2023-04-26T23:30:53.949776+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/6449b416e350429df0d6ee29" host=univille2.herokuapp.com request_id=f30ce3df-6f5d-475c-ae4f-7de0ea3c1783 fwd="79.176.193.121" dyno=web.1 connect=0ms service=177ms status=200 bytes=529 protocol=https
+2023-04-26T23:32:09.703866+00:00 app[web.1]: GIVE_POINTS
+2023-04-26T23:32:09.729015+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/6449b416e350429df0d6ee29" host=univille2.herokuapp.com request_id=37f50798-218f-4563-8def-f72c9f2c07d6 fwd="79.176.193.121" dyno=web.1 connect=0ms service=162ms status=200 bytes=529 protocol=https
+2023-04-26T23:34:16.687154+00:00 app[web.1]: GIVE_POINTS
+2023-04-26T23:34:16.709315+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/6449b416e350429df0d6ee29" host=univille2.herokuapp.com request_id=00c99c5b-d060-48db-a0d1-66af1caef572 fwd="79.176.193.121" dyno=web.1 connect=0ms service=179ms status=200 bytes=529 protocol=https
+2023-04-26T23:36:51.444380+00:00 app[web.1]: GIVE_POINTS
+2023-04-26T23:36:51.471516+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/6449b416e350429df0d6ee29" host=univille2.herokuapp.com request_id=a5f02dba-2559-4d0e-b0a0-040689cee0d3 fwd="79.176.193.121" dyno=web.1 connect=0ms service=171ms status=200 bytes=529 protocol=https
+2023-04-26T23:36:54.096141+00:00 app[web.1]: GET_RANDOM_COLOR
+2023-04-26T23:36:54.106555+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getRandomColor/6449b416e350429df0d6ee29/5" host=univille2.herokuapp.com request_id=1a880f8e-95f7-4de1-8edd-15a9b2d215b2 fwd="79.176.193.121" dyno=web.1 connect=0ms service=12ms status=200 bytes=544 protocol=https
+2023-04-26T23:36:56.415015+00:00 app[web.1]: GET_RANDOM_COLOR
+2023-04-26T23:36:56.423473+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getRandomColor/6449b416e350429df0d6ee29/5" host=univille2.herokuapp.com request_id=fe80ad53-f901-404c-87e9-bd8025432cec fwd="79.176.193.121" dyno=web.1 connect=0ms service=9ms status=200 bytes=546 protocol=https
+2023-04-26T23:37:03.160015+00:00 app[web.1]: GET_RANDOM_COLOR
+2023-04-26T23:37:03.170162+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getRandomColor/6449b416e350429df0d6ee29/5" host=univille2.herokuapp.com request_id=b5a532c4-5211-49b8-87b9-54f8384014ac fwd="79.176.193.121" dyno=web.1 connect=0ms service=11ms status=200 bytes=543 protocol=https
+2023-04-26T23:37:08.817173+00:00 app[web.1]: GET_RANDOM_COLOR
+2023-04-26T23:37:08.826923+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getRandomColor/6449b416e350429df0d6ee29/5" host=univille2.herokuapp.com request_id=ef98f9a7-96a6-47b1-9b5d-d18c465c150e fwd="79.176.193.121" dyno=web.1 connect=1ms service=10ms status=200 bytes=545 protocol=https
+2023-04-26T23:39:36.202396+00:00 app[web.1]: /logs
+2023-04-26T23:39:36.204677+00:00 app[web.1]: /app/server/controllers/log/log.controller.js:84
+2023-04-26T23:39:36.204678+00:00 app[web.1]: throw new _utils.HttpError("Unable to scan directory: ".concat(err), 401);
+2023-04-26T23:39:36.204679+00:00 app[web.1]: ^
+2023-04-26T23:39:36.204680+00:00 app[web.1]:
+2023-04-26T23:39:36.204680+00:00 app[web.1]: HttpError: Unable to scan directory: Error: ENOENT: no such file or directory, scandir '/logs'
+2023-04-26T23:39:36.204680+00:00 app[web.1]: at /app/server/controllers/log/log.controller.js:84:27
+2023-04-26T23:39:36.204680+00:00 app[web.1]: at FSReqCallback.oncomplete (node:fs:198:23) {
+2023-04-26T23:39:36.204681+00:00 app[web.1]: statusCode: 401,
+2023-04-26T23:39:36.204681+00:00 app[web.1]: data: null
+2023-04-26T23:39:36.204681+00:00 app[web.1]: }
+2023-04-26T23:39:36.204681+00:00 app[web.1]:
+2023-04-26T23:39:36.204681+00:00 app[web.1]: Node.js v18.16.0
+2023-04-26T23:39:36.210082+00:00 heroku[router]: at=error code=H13 desc="Connection closed without response" method=GET path="/api/v2/log/logfiles" host=univille2.herokuapp.com request_id=39be122f-7a4c-4855-924a-48809454a111 fwd="79.176.193.121" dyno=web.1 connect=0ms service=9ms status=503 bytes=0 protocol=https
+2023-04-26T23:39:36.213093+00:00 app[web.1]: npm notice
+2023-04-26T23:39:36.213149+00:00 app[web.1]: npm notice New minor version of npm available! 9.5.1 -> 9.6.5
+2023-04-26T23:39:36.213299+00:00 app[web.1]: npm notice Changelog: <https://github.com/npm/cli/releases/tag/v9.6.5>
+2023-04-26T23:39:36.213339+00:00 app[web.1]: npm notice Run `npm install -g npm@9.6.5` to update!
+2023-04-26T23:39:36.213479+00:00 app[web.1]: npm notice
+2023-04-26T23:39:36.359839+00:00 heroku[web.1]: Process exited with status 1
+2023-04-26T23:39:36.398378+00:00 heroku[web.1]: State changed from up to crashed
+2023-04-26T23:39:36.401507+00:00 heroku[web.1]: State changed from crashed to starting
+2023-04-26T23:39:39.979134+00:00 heroku[web.1]: Starting process with command `npm start`
+2023-04-26T23:39:41.421786+00:00 app[web.1]:
+2023-04-26T23:39:41.421793+00:00 app[web.1]: > dum_univille@1.0.0 start
+2023-04-26T23:39:41.421793+00:00 app[web.1]: > node index.js
+2023-04-26T23:39:41.421793+00:00 app[web.1]:
+2023-04-26T23:39:41.961833+00:00 app[web.1]: Data initialization
+2023-04-26T23:39:42.083724+00:00 app[web.1]: data already initialized
+2023-04-26T23:39:42.084127+00:00 app[web.1]: undefined
+2023-04-26T23:39:44.430197+00:00 heroku[web.1]: State changed from starting to up
+2023-04-27T05:20:12.441539+00:00 app[web.1]: GET_OBJECT_TAG
+2023-04-27T05:20:12.441924+00:00 heroku[router]: at=info method=GET path="/api/v1/game/dummyApi/missions" host=univille2.herokuapp.com request_id=58c30f63-4d50-4402-ba08-8a837884c62a fwd="77.137.44.162" dyno=web.1 connect=0ms service=9ms status=200 bytes=1104 protocol=https
+2023-04-27T05:20:12.468203+00:00 app[web.1]: GET_OR_ADD_PLAYER
+2023-04-27T05:20:12.508460+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getOrAdd/V_931176719" host=univille2.herokuapp.com request_id=13968dbf-1fd3-410b-8d1c-c1945446bd30 fwd="77.137.27.194" dyno=web.1 connect=0ms service=40ms status=200 bytes=527 protocol=https
+2023-04-27T05:21:15.333980+00:00 app[web.1]: GIVE_POINTS
+2023-04-27T05:21:15.349889+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/644a060ce350429df08a2ea4" host=univille2.herokuapp.com request_id=15c852f0-1324-4af4-9040-cbd3a03cd0cd fwd="77.137.44.162" dyno=web.1 connect=0ms service=163ms status=200 bytes=527 protocol=https
+2023-04-27T05:39:35.624773+00:00 app[web.1]: GET_OBJECT_TAG
+2023-04-27T05:39:35.625936+00:00 heroku[router]: at=info method=GET path="/api/v1/game/dummyApi/missions" host=univille2.herokuapp.com request_id=a0ffb022-c842-4ece-b6e8-7372de68f347 fwd="77.137.44.162" dyno=web.1 connect=0ms service=2ms status=200 bytes=1104 protocol=https
+2023-04-27T05:39:35.660603+00:00 app[web.1]: GET_OR_ADD_PLAYER
+2023-04-27T05:39:35.686831+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getOrAdd/V_-310992135" host=univille2.herokuapp.com request_id=b87dfdb2-c7e2-4094-aca1-efc16e536c4b fwd="77.137.27.194" dyno=web.1 connect=2ms service=26ms status=200 bytes=529 protocol=https
+2023-04-27T05:39:41.082899+00:00 app[web.1]: GET_OR_ADD_PLAYER
+2023-04-27T05:39:41.095523+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getOrAdd/V_-248696813" host=univille2.herokuapp.com request_id=dbee31dd-28f2-4cee-bdcb-52de681c0256 fwd="62.90.77.236" dyno=web.1 connect=0ms service=12ms status=200 bytes=529 protocol=https
+2023-04-27T05:39:41.103844+00:00 app[web.1]: GET_OBJECT_TAG
+2023-04-27T05:39:41.104691+00:00 heroku[router]: at=info method=GET path="/api/v1/game/dummyApi/missions" host=univille2.herokuapp.com request_id=3602ab60-dd0d-4cd6-9779-097786accf36 fwd="62.90.77.236" dyno=web.1 connect=1ms service=1ms status=200 bytes=1104 protocol=https
+2023-04-27T05:39:47.027426+00:00 app[web.1]: GET_OBJECT_TAG
+2023-04-27T05:39:47.028888+00:00 heroku[router]: at=info method=GET path="/api/v1/game/dummyApi/missions" host=univille2.herokuapp.com request_id=3453f5f0-489a-47cb-9cad-209525334a4e fwd="77.137.27.194" dyno=web.1 connect=0ms service=1ms status=200 bytes=1104 protocol=https
+2023-04-27T05:39:47.036675+00:00 app[web.1]: GET_OR_ADD_PLAYER
+2023-04-27T05:39:47.047857+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getOrAdd/V_-192812638" host=univille2.herokuapp.com request_id=358d44e4-8c76-45a0-baa2-031d1fea72f2 fwd="77.137.44.162" dyno=web.1 connect=0ms service=11ms status=200 bytes=529 protocol=https
+2023-04-27T05:39:49.784441+00:00 app[web.1]: GET_OBJECT_TAG
+2023-04-27T05:39:49.785940+00:00 heroku[router]: at=info method=GET path="/api/v1/game/dummyApi/missions" host=univille2.herokuapp.com request_id=b6b319fd-db31-4273-a141-f34a3512e9b8 fwd="77.137.44.162" dyno=web.1 connect=0ms service=1ms status=200 bytes=1104 protocol=https
+2023-04-27T05:39:49.814979+00:00 app[web.1]: GET_OR_ADD_PLAYER
+2023-04-27T05:39:49.823896+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getOrAdd/V_-169103867" host=univille2.herokuapp.com request_id=04294f43-3efa-4f76-988a-be372059f851 fwd="77.137.27.194" dyno=web.1 connect=0ms service=10ms status=200 bytes=529 protocol=https
+2023-04-27T05:42:39.431500+00:00 app[web.1]: GET_OBJECT_TAG
+2023-04-27T05:42:39.433553+00:00 heroku[router]: at=info method=GET path="/api/v1/game/dummyApi/missions" host=univille2.herokuapp.com request_id=173a4299-8226-413f-ae86-baa4eb4eadf6 fwd="77.137.44.162" dyno=web.1 connect=0ms service=1ms status=200 bytes=1104 protocol=https
+2023-04-27T05:42:39.461361+00:00 app[web.1]: GET_OR_ADD_PLAYER
+2023-04-27T05:42:39.486498+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getOrAdd/V_1526744780" host=univille2.herokuapp.com request_id=5ce23e50-6245-4930-bd3d-ee57563911c9 fwd="62.90.77.236" dyno=web.1 connect=0ms service=25ms status=200 bytes=529 protocol=https
+2023-04-27T05:53:04.273834+00:00 app[web.1]: GET_OR_ADD_PLAYER
+2023-04-27T05:53:04.296008+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getOrAdd/V_-818791392" host=univille2.herokuapp.com request_id=7a5ac6ef-f718-4e4c-8800-65a78072ea8f fwd="62.90.77.236" dyno=web.1 connect=0ms service=22ms status=200 bytes=529 protocol=https
+2023-04-27T05:53:04.299021+00:00 heroku[router]: at=info method=GET path="/api/v1/game/dummyApi/missions" host=univille2.herokuapp.com request_id=6c9527fe-f39b-465e-8268-09ebd87f01bc fwd="77.137.44.162" dyno=web.1 connect=0ms service=1ms status=200 bytes=1104 protocol=https
+2023-04-27T05:53:04.302712+00:00 app[web.1]: GET_OBJECT_TAG
+2023-04-27T05:53:34.922810+00:00 app[web.1]: GIVE_POINTS
+2023-04-27T05:53:34.928956+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/644a0dc0e350429df09b0e96" host=univille2.herokuapp.com request_id=b196afce-f08c-43fa-b029-ec58cb467df8 fwd="77.137.44.162" dyno=web.1 connect=0ms service=156ms status=200 bytes=529 protocol=https
+PS C:\projects\dum_univille> heroku logs
+2023-04-26T23:29:38.000000+00:00 app[api]: Build succeeded
+2023-04-26T23:29:39.055517+00:00 heroku[web.1]: Starting process with command `npm start`
+2023-04-26T23:29:42.029587+00:00 app[web.1]:
+2023-04-26T23:29:42.029622+00:00 app[web.1]: > dum_univille@1.0.0 start
+2023-04-26T23:29:42.029622+00:00 app[web.1]: > node index.js
+2023-04-26T23:29:42.029622+00:00 app[web.1]:
+2023-04-26T23:29:42.663290+00:00 app[web.1]: Data initialization
+2023-04-26T23:29:42.792632+00:00 app[web.1]: data already initialized
+2023-04-26T23:29:42.793033+00:00 app[web.1]: undefined
+2023-04-26T23:29:44.818049+00:00 heroku[web.1]: State changed from starting to up
+2023-04-26T23:29:46.677190+00:00 heroku[router]: at=info method=GET path="/" host=univille2.herokuapp.com request_id=95bf68e2-aa60-488b-8a31-5fe3afa4974c fwd="79.176.193.121" dyno=web.1 connect=0ms service=5ms status=200 bytes=276 protocol=https
+2023-04-26T23:30:30.008982+00:00 app[web.1]: GET_OBJECT_TAG
+2023-04-26T23:30:30.009460+00:00 heroku[router]: at=info method=GET path="/api/v1/game/dummyApi/missions" host=univille2.herokuapp.com request_id=cb8f836c-f2dc-4c09-a0a3-23bcabe23eaa fwd="79.176.193.121" dyno=web.1 connect=0ms service=3ms status=200 bytes=1104 protocol=https
+2023-04-26T23:30:30.026161+00:00 app[web.1]: GET_OR_ADD_PLAYER
+2023-04-26T23:30:30.049285+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getOrAdd/V_1578556686" host=univille2.herokuapp.com request_id=038b22a0-ec74-48ba-9cbe-3d8705cb8fb3 fwd="79.176.193.121" dyno=web.1 connect=0ms service=24ms status=200 bytes=529 protocol=https
+2023-04-26T23:30:53.939291+00:00 app[web.1]: GIVE_POINTS
+2023-04-26T23:30:53.949776+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/6449b416e350429df0d6ee29" host=univille2.herokuapp.com request_id=f30ce3df-6f5d-475c-ae4f-7de0ea3c1783 fwd="79.176.193.121" dyno=web.1 connect=0ms service=177ms status=200 bytes=529 protocol=https
+2023-04-26T23:32:09.703866+00:00 app[web.1]: GIVE_POINTS
+2023-04-26T23:32:09.729015+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/6449b416e350429df0d6ee29" host=univille2.herokuapp.com request_id=37f50798-218f-4563-8def-f72c9f2c07d6 fwd="79.176.193.121" dyno=web.1 connect=0ms service=162ms status=200 bytes=529 protocol=https
+2023-04-26T23:34:16.687154+00:00 app[web.1]: GIVE_POINTS
+2023-04-26T23:34:16.709315+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/6449b416e350429df0d6ee29" host=univille2.herokuapp.com request_id=00c99c5b-d060-48db-a0d1-66af1caef572 fwd="79.176.193.121" dyno=web.1 connect=0ms service=179ms status=200 bytes=529 protocol=https
+2023-04-26T23:36:51.444380+00:00 app[web.1]: GIVE_POINTS
+2023-04-26T23:36:51.471516+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/6449b416e350429df0d6ee29" host=univille2.herokuapp.com request_id=a5f02dba-2559-4d0e-b0a0-040689cee0d3 fwd="79.176.193.121" dyno=web.1 connect=0ms service=171ms status=200 bytes=529 protocol=https
+2023-04-26T23:36:54.096141+00:00 app[web.1]: GET_RANDOM_COLOR
+2023-04-26T23:36:54.106555+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getRandomColor/6449b416e350429df0d6ee29/5" host=univille2.herokuapp.com request_id=1a880f8e-95f7-4de1-8edd-15a9b2d215b2 fwd="79.176.193.121" dyno=web.1 connect=0ms service=12ms status=200 bytes=544 protocol=https
+2023-04-26T23:36:56.415015+00:00 app[web.1]: GET_RANDOM_COLOR
+2023-04-26T23:36:56.423473+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getRandomColor/6449b416e350429df0d6ee29/5" host=univille2.herokuapp.com request_id=fe80ad53-f901-404c-87e9-bd8025432cec fwd="79.176.193.121" dyno=web.1 connect=0ms service=9ms status=200 bytes=546 protocol=https
+2023-04-26T23:37:03.160015+00:00 app[web.1]: GET_RANDOM_COLOR
+2023-04-26T23:37:03.170162+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getRandomColor/6449b416e350429df0d6ee29/5" host=univille2.herokuapp.com request_id=b5a532c4-5211-49b8-87b9-54f8384014ac fwd="79.176.193.121" dyno=web.1 connect=0ms service=11ms status=200 bytes=543 protocol=https
+2023-04-26T23:37:08.817173+00:00 app[web.1]: GET_RANDOM_COLOR
+2023-04-26T23:37:08.826923+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getRandomColor/6449b416e350429df0d6ee29/5" host=univille2.herokuapp.com request_id=ef98f9a7-96a6-47b1-9b5d-d18c465c150e fwd="79.176.193.121" dyno=web.1 connect=1ms service=10ms status=200 bytes=545 protocol=https
+2023-04-26T23:39:36.202396+00:00 app[web.1]: /logs
+2023-04-26T23:39:36.204677+00:00 app[web.1]: /app/server/controllers/log/log.controller.js:84
+2023-04-26T23:39:36.204678+00:00 app[web.1]: throw new _utils.HttpError("Unable to scan directory: ".concat(err), 401);
+2023-04-26T23:39:36.204679+00:00 app[web.1]: ^
+2023-04-26T23:39:36.204680+00:00 app[web.1]:
+2023-04-26T23:39:36.204680+00:00 app[web.1]: HttpError: Unable to scan directory: Error: ENOENT: no such file or directory, scandir '/logs'
+2023-04-26T23:39:36.204680+00:00 app[web.1]: at /app/server/controllers/log/log.controller.js:84:27
+2023-04-26T23:39:36.204680+00:00 app[web.1]: at FSReqCallback.oncomplete (node:fs:198:23) {
+2023-04-26T23:39:36.204681+00:00 app[web.1]: statusCode: 401,
+2023-04-26T23:39:36.204681+00:00 app[web.1]: data: null
+2023-04-26T23:39:36.204681+00:00 app[web.1]: }
+2023-04-26T23:39:36.204681+00:00 app[web.1]:
+2023-04-26T23:39:36.204681+00:00 app[web.1]: Node.js v18.16.0
+2023-04-26T23:39:36.210082+00:00 heroku[router]: at=error code=H13 desc="Connection closed without response" method=GET path="/api/v2/log/logfiles" host=univille2.herokuapp.com request_id=39be122f-7a4c-4855-924a-48809454a111 fwd="79.176.193.121" dyno=web.1 connect=0ms service=9ms status=503 bytes=0 protocol=https
+2023-04-26T23:39:36.213093+00:00 app[web.1]: npm notice
+2023-04-26T23:39:36.213149+00:00 app[web.1]: npm notice New minor version of npm available! 9.5.1 -> 9.6.5
+2023-04-26T23:39:36.213299+00:00 app[web.1]: npm notice Changelog: <https://github.com/npm/cli/releases/tag/v9.6.5>
+2023-04-26T23:39:36.213339+00:00 app[web.1]: npm notice Run `npm install -g npm@9.6.5` to update!
+2023-04-26T23:39:36.213479+00:00 app[web.1]: npm notice
+2023-04-26T23:39:36.359839+00:00 heroku[web.1]: Process exited with status 1
+2023-04-26T23:39:36.398378+00:00 heroku[web.1]: State changed from up to crashed
+2023-04-26T23:39:36.401507+00:00 heroku[web.1]: State changed from crashed to starting
+2023-04-26T23:39:39.979134+00:00 heroku[web.1]: Starting process with command `npm start`
+2023-04-26T23:39:41.421786+00:00 app[web.1]:
+2023-04-26T23:39:41.421793+00:00 app[web.1]: > dum_univille@1.0.0 start
+2023-04-26T23:39:41.421793+00:00 app[web.1]: > node index.js
+2023-04-26T23:39:41.421793+00:00 app[web.1]:
+2023-04-26T23:39:41.961833+00:00 app[web.1]: Data initialization
+2023-04-26T23:39:42.083724+00:00 app[web.1]: data already initialized
+2023-04-26T23:39:42.084127+00:00 app[web.1]: undefined
+2023-04-26T23:39:44.430197+00:00 heroku[web.1]: State changed from starting to up
+2023-04-27T05:20:12.441539+00:00 app[web.1]: GET_OBJECT_TAG
+2023-04-27T05:20:12.441924+00:00 heroku[router]: at=info method=GET path="/api/v1/game/dummyApi/missions" host=univille2.herokuapp.com request_id=58c30f63-4d50-4402-ba08-8a837884c62a fwd="77.137.44.162" dyno=web.1 connect=0ms service=9ms status=200 bytes=1104 protocol=https
+2023-04-27T05:20:12.468203+00:00 app[web.1]: GET_OR_ADD_PLAYER
+2023-04-27T05:20:12.508460+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getOrAdd/V_931176719" host=univille2.herokuapp.com request_id=13968dbf-1fd3-410b-8d1c-c1945446bd30 fwd="77.137.27.194" dyno=web.1 connect=0ms service=40ms status=200 bytes=527 protocol=https
+2023-04-27T05:21:15.333980+00:00 app[web.1]: GIVE_POINTS
+2023-04-27T05:21:15.349889+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/644a060ce350429df08a2ea4" host=univille2.herokuapp.com request_id=15c852f0-1324-4af4-9040-cbd3a03cd0cd fwd="77.137.44.162" dyno=web.1 connect=0ms service=163ms status=200 bytes=527 protocol=https
+2023-04-27T05:39:35.624773+00:00 app[web.1]: GET_OBJECT_TAG
+2023-04-27T05:39:35.625936+00:00 heroku[router]: at=info method=GET path="/api/v1/game/dummyApi/missions" host=univille2.herokuapp.com request_id=a0ffb022-c842-4ece-b6e8-7372de68f347 fwd="77.137.44.162" dyno=web.1 connect=0ms service=2ms status=200 bytes=1104 protocol=https
+2023-04-27T05:39:35.660603+00:00 app[web.1]: GET_OR_ADD_PLAYER
+2023-04-27T05:39:35.686831+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getOrAdd/V_-310992135" host=univille2.herokuapp.com request_id=b87dfdb2-c7e2-4094-aca1-efc16e536c4b fwd="77.137.27.194" dyno=web.1 connect=2ms service=26ms status=200 bytes=529 protocol=https
+2023-04-27T05:39:41.082899+00:00 app[web.1]: GET_OR_ADD_PLAYER
+2023-04-27T05:39:41.095523+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getOrAdd/V_-248696813" host=univille2.herokuapp.com request_id=dbee31dd-28f2-4cee-bdcb-52de681c0256 fwd="62.90.77.236" dyno=web.1 connect=0ms service=12ms status=200 bytes=529 protocol=https
+2023-04-27T05:39:41.103844+00:00 app[web.1]: GET_OBJECT_TAG
+2023-04-27T05:39:41.104691+00:00 heroku[router]: at=info method=GET path="/api/v1/game/dummyApi/missions" host=univille2.herokuapp.com request_id=3602ab60-dd0d-4cd6-9779-097786accf36 fwd="62.90.77.236" dyno=web.1 connect=1ms service=1ms status=200 bytes=1104 protocol=https
+2023-04-27T05:39:47.027426+00:00 app[web.1]: GET_OBJECT_TAG
+2023-04-27T05:39:47.028888+00:00 heroku[router]: at=info method=GET path="/api/v1/game/dummyApi/missions" host=univille2.herokuapp.com request_id=3453f5f0-489a-47cb-9cad-209525334a4e fwd="77.137.27.194" dyno=web.1 connect=0ms service=1ms status=200 bytes=1104 protocol=https
+2023-04-27T05:39:47.036675+00:00 app[web.1]: GET_OR_ADD_PLAYER
+2023-04-27T05:39:47.047857+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getOrAdd/V_-192812638" host=univille2.herokuapp.com request_id=358d44e4-8c76-45a0-baa2-031d1fea72f2 fwd="77.137.44.162" dyno=web.1 connect=0ms service=11ms status=200 bytes=529 protocol=https
+2023-04-27T05:39:49.784441+00:00 app[web.1]: GET_OBJECT_TAG
+2023-04-27T05:39:49.785940+00:00 heroku[router]: at=info method=GET path="/api/v1/game/dummyApi/missions" host=univille2.herokuapp.com request_id=b6b319fd-db31-4273-a141-f34a3512e9b8 fwd="77.137.44.162" dyno=web.1 connect=0ms service=1ms status=200 bytes=1104 protocol=https
+2023-04-27T05:39:49.814979+00:00 app[web.1]: GET_OR_ADD_PLAYER
+2023-04-27T05:39:49.823896+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getOrAdd/V_-169103867" host=univille2.herokuapp.com request_id=04294f43-3efa-4f76-988a-be372059f851 fwd="77.137.27.194" dyno=web.1 connect=0ms service=10ms status=200 bytes=529 protocol=https
+2023-04-27T05:42:39.431500+00:00 app[web.1]: GET_OBJECT_TAG
+2023-04-27T05:42:39.433553+00:00 heroku[router]: at=info method=GET path="/api/v1/game/dummyApi/missions" host=univille2.herokuapp.com request_id=173a4299-8226-413f-ae86-baa4eb4eadf6 fwd="77.137.44.162" dyno=web.1 connect=0ms service=1ms status=200 bytes=1104 protocol=https
+2023-04-27T05:42:39.461361+00:00 app[web.1]: GET_OR_ADD_PLAYER
+2023-04-27T05:42:39.486498+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getOrAdd/V_1526744780" host=univille2.herokuapp.com request_id=5ce23e50-6245-4930-bd3d-ee57563911c9 fwd="62.90.77.236" dyno=web.1 connect=0ms service=25ms status=200 bytes=529 protocol=https
+2023-04-27T05:53:04.273834+00:00 app[web.1]: GET_OR_ADD_PLAYER
+2023-04-27T05:53:04.296008+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getOrAdd/V_-818791392" host=univille2.herokuapp.com request_id=7a5ac6ef-f718-4e4c-8800-65a78072ea8f fwd="62.90.77.236" dyno=web.1 connect=0ms service=22ms status=200 bytes=529 protocol=https
+2023-04-27T05:53:04.299021+00:00 heroku[router]: at=info method=GET path="/api/v1/game/dummyApi/missions" host=univille2.herokuapp.com request_id=6c9527fe-f39b-465e-8268-09ebd87f01bc fwd="77.137.44.162" dyno=web.1 connect=0ms service=1ms status=200 bytes=1104 protocol=https
+2023-04-27T05:53:04.302712+00:00 app[web.1]: GET_OBJECT_TAG
+2023-04-27T05:53:34.922810+00:00 app[web.1]: GIVE_POINTS
+2023-04-27T05:53:34.928956+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/644a0dc0e350429df09b0e96" host=univille2.herokuapp.com request_id=b196afce-f08c-43fa-b029-ec58cb467df8 fwd="77.137.44.162" dyno=web.1 connect=0ms service=156ms status=200 bytes=529 protocol=https
+2023-04-27T05:58:20.453396+00:00 app[web.1]: GET_OR_ADD_PLAYER
+2023-04-27T05:58:20.473908+00:00 app[web.1]: GET_OBJECT_TAG
+2023-04-27T05:58:20.475571+00:00 heroku[router]: at=info method=GET path="/api/v1/game/dummyApi/missions" host=univille2.herokuapp.com request_id=bff13f92-64a0-406f-8b94-5907ec12401f fwd="77.137.27.194" dyno=web.1 connect=0ms service=1ms status=200 bytes=1104 protocol=https
+2023-04-27T05:58:20.479697+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getOrAdd/V_-1960232169" host=univille2.herokuapp.com request_id=6c8c0626-eb97-4510-83d5-0fc3d0c30a10 fwd="62.90.77.236" dyno=web.1 connect=0ms service=26ms status=200 bytes=531 protocol=https
+2023-04-27T05:58:33.636140+00:00 app[web.1]: GIVE_POINTS
+2023-04-27T05:58:33.649288+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/644a0dc0e350429df09b0e96" host=univille2.herokuapp.com request_id=162692fe-e9af-477e-88e2-ab2893778932 fwd="62.90.77.236" dyno=web.1 connect=0ms service=158ms status=200 bytes=529 protocol=https
+PS C:\projects\dum_univille> heroku logs --tail
+2023-04-26T23:29:38.000000+00:00 app[api]: Build succeeded
+2023-04-26T23:29:39.055517+00:00 heroku[web.1]: Starting process with command `npm start`
+2023-04-26T23:29:42.029587+00:00 app[web.1]:
+2023-04-26T23:29:42.029622+00:00 app[web.1]: > dum_univille@1.0.0 start
+2023-04-26T23:29:42.029622+00:00 app[web.1]: > node index.js
+2023-04-26T23:29:42.029622+00:00 app[web.1]:
+2023-04-26T23:29:42.663290+00:00 app[web.1]: Data initialization
+2023-04-26T23:29:42.792632+00:00 app[web.1]: data already initialized
+2023-04-26T23:29:42.793033+00:00 app[web.1]: undefined
+2023-04-26T23:29:44.818049+00:00 heroku[web.1]: State changed from starting to up
+2023-04-26T23:29:46.677190+00:00 heroku[router]: at=info method=GET path="/" host=univille2.herokuapp.com request_id=95bf68e2-aa60-488b-8a31-5fe3afa4974c fwd="79.176.193.121" dyno=web.1 connect=0ms service=5ms status=200 bytes=276 protocol=https
+2023-04-26T23:30:30.008982+00:00 app[web.1]: GET_OBJECT_TAG
+2023-04-26T23:30:30.009460+00:00 heroku[router]: at=info method=GET path="/api/v1/game/dummyApi/missions" host=univille2.herokuapp.com request_id=cb8f836c-f2dc-4c09-a0a3-23bcabe23eaa fwd="79.176.193.121" dyno=web.1 connect=0ms service=3ms status=200 bytes=1104 protocol=https
+2023-04-26T23:30:30.026161+00:00 app[web.1]: GET_OR_ADD_PLAYER
+2023-04-26T23:30:30.049285+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getOrAdd/V_1578556686" host=univille2.herokuapp.com request_id=038b22a0-ec74-48ba-9cbe-3d8705cb8fb3 fwd="79.176.193.121" dyno=web.1 connect=0ms service=24ms status=200 bytes=529 protocol=https
+2023-04-26T23:30:53.939291+00:00 app[web.1]: GIVE_POINTS
+2023-04-26T23:30:53.949776+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/6449b416e350429df0d6ee29" host=univille2.herokuapp.com request_id=f30ce3df-6f5d-475c-ae4f-7de0ea3c1783 fwd="79.176.193.121" dyno=web.1 connect=0ms service=177ms status=200 bytes=529 protocol=https
+2023-04-26T23:32:09.703866+00:00 app[web.1]: GIVE_POINTS
+2023-04-26T23:32:09.729015+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/6449b416e350429df0d6ee29" host=univille2.herokuapp.com request_id=37f50798-218f-4563-8def-f72c9f2c07d6 fwd="79.176.193.121" dyno=web.1 connect=0ms service=162ms status=200 bytes=529 protocol=https
+2023-04-26T23:34:16.687154+00:00 app[web.1]: GIVE_POINTS
+2023-04-26T23:34:16.709315+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/6449b416e350429df0d6ee29" host=univille2.herokuapp.com request_id=00c99c5b-d060-48db-a0d1-66af1caef572 fwd="79.176.193.121" dyno=web.1 connect=0ms service=179ms status=200 bytes=529 protocol=https
+2023-04-26T23:36:51.444380+00:00 app[web.1]: GIVE_POINTS
+2023-04-26T23:36:51.471516+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/6449b416e350429df0d6ee29" host=univille2.herokuapp.com request_id=a5f02dba-2559-4d0e-b0a0-040689cee0d3 fwd="79.176.193.121" dyno=web.1 connect=0ms service=171ms status=200 bytes=529 protocol=https
+2023-04-26T23:36:54.096141+00:00 app[web.1]: GET_RANDOM_COLOR
+2023-04-26T23:36:54.106555+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getRandomColor/6449b416e350429df0d6ee29/5" host=univille2.herokuapp.com request_id=1a880f8e-95f7-4de1-8edd-15a9b2d215b2 fwd="79.176.193.121" dyno=web.1 connect=0ms service=12ms status=200 bytes=544 protocol=https
+2023-04-26T23:36:56.415015+00:00 app[web.1]: GET_RANDOM_COLOR
+2023-04-26T23:36:56.423473+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getRandomColor/6449b416e350429df0d6ee29/5" host=univille2.herokuapp.com request_id=fe80ad53-f901-404c-87e9-bd8025432cec fwd="79.176.193.121" dyno=web.1 connect=0ms service=9ms status=200 bytes=546 protocol=https
+2023-04-26T23:37:03.160015+00:00 app[web.1]: GET_RANDOM_COLOR
+2023-04-26T23:37:03.170162+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getRandomColor/6449b416e350429df0d6ee29/5" host=univille2.herokuapp.com request_id=b5a532c4-5211-49b8-87b9-54f8384014ac fwd="79.176.193.121" dyno=web.1 connect=0ms service=11ms status=200 bytes=543 protocol=https
+2023-04-26T23:37:08.817173+00:00 app[web.1]: GET_RANDOM_COLOR
+2023-04-26T23:37:08.826923+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getRandomColor/6449b416e350429df0d6ee29/5" host=univille2.herokuapp.com request_id=ef98f9a7-96a6-47b1-9b5d-d18c465c150e fwd="79.176.193.121" dyno=web.1 connect=1ms service=10ms status=200 bytes=545 protocol=https
+2023-04-26T23:39:36.202396+00:00 app[web.1]: /logs
+2023-04-26T23:39:36.204677+00:00 app[web.1]: /app/server/controllers/log/log.controller.js:84
+2023-04-26T23:39:36.204678+00:00 app[web.1]: throw new _utils.HttpError("Unable to scan directory: ".concat(err), 401);
+2023-04-26T23:39:36.204679+00:00 app[web.1]: ^
+2023-04-26T23:39:36.204680+00:00 app[web.1]:
+2023-04-26T23:39:36.204680+00:00 app[web.1]: HttpError: Unable to scan directory: Error: ENOENT: no such file or directory, scandir '/logs'
+2023-04-26T23:39:36.204680+00:00 app[web.1]: at /app/server/controllers/log/log.controller.js:84:27
+2023-04-26T23:39:36.204680+00:00 app[web.1]: at FSReqCallback.oncomplete (node:fs:198:23) {
+2023-04-26T23:39:36.204681+00:00 app[web.1]: statusCode: 401,
+2023-04-26T23:39:36.204681+00:00 app[web.1]: data: null
+2023-04-26T23:39:36.204681+00:00 app[web.1]: }
+2023-04-26T23:39:36.204681+00:00 app[web.1]:
+2023-04-26T23:39:36.204681+00:00 app[web.1]: Node.js v18.16.0
+2023-04-26T23:39:36.210082+00:00 heroku[router]: at=error code=H13 desc="Connection closed without response" method=GET path="/api/v2/log/logfiles" host=univille2.herokuapp.com request_id=39be122f-7a4c-4855-924a-48809454a111 fwd="79.176.193.121" dyno=web.1 connect=0ms service=9ms status=503 bytes=0 protocol=https
+2023-04-26T23:39:36.213093+00:00 app[web.1]: npm notice
+2023-04-26T23:39:36.213149+00:00 app[web.1]: npm notice New minor version of npm available! 9.5.1 -> 9.6.5
+2023-04-26T23:39:36.213299+00:00 app[web.1]: npm notice Changelog: <https://github.com/npm/cli/releases/tag/v9.6.5>
+2023-04-26T23:39:36.213339+00:00 app[web.1]: npm notice Run `npm install -g npm@9.6.5` to update!
+2023-04-26T23:39:36.213479+00:00 app[web.1]: npm notice
+2023-04-26T23:39:36.359839+00:00 heroku[web.1]: Process exited with status 1
+2023-04-26T23:39:36.398378+00:00 heroku[web.1]: State changed from up to crashed
+2023-04-26T23:39:36.401507+00:00 heroku[web.1]: State changed from crashed to starting
+2023-04-26T23:39:39.979134+00:00 heroku[web.1]: Starting process with command `npm start`
+2023-04-26T23:39:41.421786+00:00 app[web.1]:
+2023-04-26T23:39:41.421793+00:00 app[web.1]: > dum_univille@1.0.0 start
+2023-04-26T23:39:41.421793+00:00 app[web.1]: > node index.js
+2023-04-26T23:39:41.421793+00:00 app[web.1]:
+2023-04-26T23:39:41.961833+00:00 app[web.1]: Data initialization
+2023-04-26T23:39:42.083724+00:00 app[web.1]: data already initialized
+2023-04-26T23:39:42.084127+00:00 app[web.1]: undefined
+2023-04-26T23:39:44.430197+00:00 heroku[web.1]: State changed from starting to up
+2023-04-27T05:20:12.441539+00:00 app[web.1]: GET_OBJECT_TAG
+2023-04-27T05:20:12.441924+00:00 heroku[router]: at=info method=GET path="/api/v1/game/dummyApi/missions" host=univille2.herokuapp.com request_id=58c30f63-4d50-4402-ba08-8a837884c62a fwd="77.137.44.162" dyno=web.1 connect=0ms service=9ms status=200 bytes=1104 protocol=https
+2023-04-27T05:20:12.468203+00:00 app[web.1]: GET_OR_ADD_PLAYER
+2023-04-27T05:20:12.508460+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getOrAdd/V_931176719" host=univille2.herokuapp.com request_id=13968dbf-1fd3-410b-8d1c-c1945446bd30 fwd="77.137.27.194" dyno=web.1 connect=0ms service=40ms status=200 bytes=527 protocol=https
+2023-04-27T05:21:15.333980+00:00 app[web.1]: GIVE_POINTS
+2023-04-27T05:21:15.349889+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/644a060ce350429df08a2ea4" host=univille2.herokuapp.com request_id=15c852f0-1324-4af4-9040-cbd3a03cd0cd fwd="77.137.44.162" dyno=web.1 connect=0ms service=163ms status=200 bytes=527 protocol=https
+2023-04-27T05:39:35.624773+00:00 app[web.1]: GET_OBJECT_TAG
+2023-04-27T05:39:35.625936+00:00 heroku[router]: at=info method=GET path="/api/v1/game/dummyApi/missions" host=univille2.herokuapp.com request_id=a0ffb022-c842-4ece-b6e8-7372de68f347 fwd="77.137.44.162" dyno=web.1 connect=0ms service=2ms status=200 bytes=1104 protocol=https
+2023-04-27T05:39:35.660603+00:00 app[web.1]: GET_OR_ADD_PLAYER
+2023-04-27T05:39:35.686831+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getOrAdd/V_-310992135" host=univille2.herokuapp.com request_id=b87dfdb2-c7e2-4094-aca1-efc16e536c4b fwd="77.137.27.194" dyno=web.1 connect=2ms service=26ms status=200 bytes=529 protocol=https
+2023-04-27T05:39:41.082899+00:00 app[web.1]: GET_OR_ADD_PLAYER
+2023-04-27T05:39:41.095523+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getOrAdd/V_-248696813" host=univille2.herokuapp.com request_id=dbee31dd-28f2-4cee-bdcb-52de681c0256 fwd="62.90.77.236" dyno=web.1 connect=0ms service=12ms status=200 bytes=529 protocol=https
+2023-04-27T05:39:41.103844+00:00 app[web.1]: GET_OBJECT_TAG
+2023-04-27T05:39:41.104691+00:00 heroku[router]: at=info method=GET path="/api/v1/game/dummyApi/missions" host=univille2.herokuapp.com request_id=3602ab60-dd0d-4cd6-9779-097786accf36 fwd="62.90.77.236" dyno=web.1 connect=1ms service=1ms status=200 bytes=1104 protocol=https
+2023-04-27T05:39:47.027426+00:00 app[web.1]: GET_OBJECT_TAG
+2023-04-27T05:39:47.028888+00:00 heroku[router]: at=info method=GET path="/api/v1/game/dummyApi/missions" host=univille2.herokuapp.com request_id=3453f5f0-489a-47cb-9cad-209525334a4e fwd="77.137.27.194" dyno=web.1 connect=0ms service=1ms status=200 bytes=1104 protocol=https
+2023-04-27T05:39:47.036675+00:00 app[web.1]: GET_OR_ADD_PLAYER
+2023-04-27T05:39:47.047857+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getOrAdd/V_-192812638" host=univille2.herokuapp.com request_id=358d44e4-8c76-45a0-baa2-031d1fea72f2 fwd="77.137.44.162" dyno=web.1 connect=0ms service=11ms status=200 bytes=529 protocol=https
+2023-04-27T05:39:49.784441+00:00 app[web.1]: GET_OBJECT_TAG
+2023-04-27T05:39:49.785940+00:00 heroku[router]: at=info method=GET path="/api/v1/game/dummyApi/missions" host=univille2.herokuapp.com request_id=b6b319fd-db31-4273-a141-f34a3512e9b8 fwd="77.137.44.162" dyno=web.1 connect=0ms service=1ms status=200 bytes=1104 protocol=https
+2023-04-27T05:39:49.814979+00:00 app[web.1]: GET_OR_ADD_PLAYER
+2023-04-27T05:39:49.823896+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getOrAdd/V_-169103867" host=univille2.herokuapp.com request_id=04294f43-3efa-4f76-988a-be372059f851 fwd="77.137.27.194" dyno=web.1 connect=0ms service=10ms status=200 bytes=529 protocol=https
+2023-04-27T05:42:39.431500+00:00 app[web.1]: GET_OBJECT_TAG
+2023-04-27T05:42:39.433553+00:00 heroku[router]: at=info method=GET path="/api/v1/game/dummyApi/missions" host=univille2.herokuapp.com request_id=173a4299-8226-413f-ae86-baa4eb4eadf6 fwd="77.137.44.162" dyno=web.1 connect=0ms service=1ms status=200 bytes=1104 protocol=https
+2023-04-27T05:42:39.461361+00:00 app[web.1]: GET_OR_ADD_PLAYER
+2023-04-27T05:42:39.486498+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getOrAdd/V_1526744780" host=univille2.herokuapp.com request_id=5ce23e50-6245-4930-bd3d-ee57563911c9 fwd="62.90.77.236" dyno=web.1 connect=0ms service=25ms status=200 bytes=529 protocol=https
+2023-04-27T05:53:04.273834+00:00 app[web.1]: GET_OR_ADD_PLAYER
+2023-04-27T05:53:04.296008+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getOrAdd/V_-818791392" host=univille2.herokuapp.com request_id=7a5ac6ef-f718-4e4c-8800-65a78072ea8f fwd="62.90.77.236" dyno=web.1 connect=0ms service=22ms status=200 bytes=529 protocol=https
+2023-04-27T05:53:04.299021+00:00 heroku[router]: at=info method=GET path="/api/v1/game/dummyApi/missions" host=univille2.herokuapp.com request_id=6c9527fe-f39b-465e-8268-09ebd87f01bc fwd="77.137.44.162" dyno=web.1 connect=0ms service=1ms status=200 bytes=1104 protocol=https
+2023-04-27T05:53:04.302712+00:00 app[web.1]: GET_OBJECT_TAG
+2023-04-27T05:53:34.922810+00:00 app[web.1]: GIVE_POINTS
+2023-04-27T05:53:34.928956+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/644a0dc0e350429df09b0e96" host=univille2.herokuapp.com request_id=b196afce-f08c-43fa-b029-ec58cb467df8 fwd="77.137.44.162" dyno=web.1 connect=0ms service=156ms status=200 bytes=529 protocol=https
+2023-04-27T05:58:20.453396+00:00 app[web.1]: GET_OR_ADD_PLAYER
+2023-04-27T05:58:20.473908+00:00 app[web.1]: GET_OBJECT_TAG
+2023-04-27T05:58:20.475571+00:00 heroku[router]: at=info method=GET path="/api/v1/game/dummyApi/missions" host=univille2.herokuapp.com request_id=bff13f92-64a0-406f-8b94-5907ec12401f fwd="77.137.27.194" dyno=web.1 connect=0ms service=1ms status=200 bytes=1104 protocol=https
+2023-04-27T05:58:20.479697+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getOrAdd/V_-1960232169" host=univille2.herokuapp.com request_id=6c8c0626-eb97-4510-83d5-0fc3d0c30a10 fwd="62.90.77.236" dyno=web.1 connect=0ms service=26ms status=200 bytes=531 protocol=https
+2023-04-27T05:58:33.636140+00:00 app[web.1]: GIVE_POINTS
+2023-04-27T05:58:33.649288+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/644a0dc0e350429df09b0e96" host=univille2.herokuapp.com request_id=162692fe-e9af-477e-88e2-ab2893778932 fwd="62.90.77.236" dyno=web.1 connect=0ms service=158ms status=200 bytes=529 protocol=https
+2023-04-27T06:06:46.487391+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getOrAdd/V_-1186194715" host=univille2.herokuapp.com request_id=4b78f1e3-9a89-4dbe-aeb9-e222d6012d51 fwd="77.137.27.194" dyno=web.1 connect=0ms service=28ms status=200 bytes=531 protocol=https
+2023-04-27T06:06:46.428429+00:00 heroku[router]: at=info method=GET path="/api/v1/game/dummyApi/missions" host=univille2.herokuapp.com request_id=16f19af1-331a-487e-8637-06cedfcea23a fwd="62.90.77.236" dyno=web.1 connect=0ms service=1ms status=200 bytes=1104 protocol=https
+2023-04-27T06:06:46.427360+00:00 app[web.1]: GET_OBJECT_TAG
+2023-04-27T06:06:46.457558+00:00 app[web.1]: GET_OR_ADD_PLAYER
+2023-04-27T06:07:09.390873+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/644a10f6e350429df0a22ebe" host=univille2.herokuapp.com request_id=5c825519-e8f0-4894-95ff-e93386eeb814 fwd="62.90.77.236" dyno=web.1 connect=0ms service=148ms status=200 bytes=531 protocol=https
+2023-04-27T06:07:09.380268+00:00 app[web.1]: GIVE_POINTS
+^CTerminate batch job (Y/N)? y
+PS C:\projects\dum_univille> heroku logs --tail
+2023-04-26T23:30:30.049285+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getOrAdd/V_1578556686" host=univille2.herokuapp.com request_id=038b22a0-ec74-48ba-9cbe-3d8705cb8fb3 fwd="79.176.193.121" dyno=web.1 connect=0ms service=24ms status=200 bytes=529 protocol=https
+2023-04-26T23:30:53.939291+00:00 app[web.1]: GIVE_POINTS
+2023-04-26T23:30:53.949776+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/6449b416e350429df0d6ee29" host=univille2.herokuapp.com request_id=f30ce3df-6f5d-475c-ae4f-7de0ea3c1783 fwd="79.176.193.121" dyno=web.1 connect=0ms service=177ms status=200 bytes=529 protocol=https
+2023-04-26T23:32:09.703866+00:00 app[web.1]: GIVE_POINTS
+2023-04-26T23:32:09.729015+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/6449b416e350429df0d6ee29" host=univille2.herokuapp.com request_id=37f50798-218f-4563-8def-f72c9f2c07d6 fwd="79.176.193.121" dyno=web.1 connect=0ms service=162ms status=200 bytes=529 protocol=https
+2023-04-26T23:34:16.687154+00:00 app[web.1]: GIVE_POINTS
+2023-04-26T23:34:16.709315+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/6449b416e350429df0d6ee29" host=univille2.herokuapp.com request_id=00c99c5b-d060-48db-a0d1-66af1caef572 fwd="79.176.193.121" dyno=web.1 connect=0ms service=179ms status=200 bytes=529 protocol=https
+2023-04-26T23:36:51.444380+00:00 app[web.1]: GIVE_POINTS
+2023-04-26T23:36:51.471516+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/6449b416e350429df0d6ee29" host=univille2.herokuapp.com request_id=a5f02dba-2559-4d0e-b0a0-040689cee0d3 fwd="79.176.193.121" dyno=web.1 connect=0ms service=171ms status=200 bytes=529 protocol=https
+2023-04-26T23:36:54.096141+00:00 app[web.1]: GET_RANDOM_COLOR
+2023-04-26T23:36:54.106555+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getRandomColor/6449b416e350429df0d6ee29/5" host=univille2.herokuapp.com request_id=1a880f8e-95f7-4de1-8edd-15a9b2d215b2 fwd="79.176.193.121" dyno=web.1 connect=0ms service=12ms status=200 bytes=544 protocol=https
+2023-04-26T23:36:56.415015+00:00 app[web.1]: GET_RANDOM_COLOR
+2023-04-26T23:36:56.423473+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getRandomColor/6449b416e350429df0d6ee29/5" host=univille2.herokuapp.com request_id=fe80ad53-f901-404c-87e9-bd8025432cec fwd="79.176.193.121" dyno=web.1 connect=0ms service=9ms status=200 bytes=546 protocol=https
+2023-04-26T23:37:03.160015+00:00 app[web.1]: GET_RANDOM_COLOR
+2023-04-26T23:37:03.170162+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getRandomColor/6449b416e350429df0d6ee29/5" host=univille2.herokuapp.com request_id=b5a532c4-5211-49b8-87b9-54f8384014ac fwd="79.176.193.121" dyno=web.1 connect=0ms service=11ms status=200 bytes=543 protocol=https
+2023-04-26T23:37:08.817173+00:00 app[web.1]: GET_RANDOM_COLOR
+2023-04-26T23:37:08.826923+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getRandomColor/6449b416e350429df0d6ee29/5" host=univille2.herokuapp.com request_id=ef98f9a7-96a6-47b1-9b5d-d18c465c150e fwd="79.176.193.121" dyno=web.1 connect=1ms service=10ms status=200 bytes=545 protocol=https
+2023-04-26T23:39:36.202396+00:00 app[web.1]: /logs
+2023-04-26T23:39:36.204677+00:00 app[web.1]: /app/server/controllers/log/log.controller.js:84
+2023-04-26T23:39:36.204678+00:00 app[web.1]: throw new _utils.HttpError("Unable to scan directory: ".concat(err), 401);
+2023-04-26T23:39:36.204679+00:00 app[web.1]: ^
+2023-04-26T23:39:36.204680+00:00 app[web.1]:
+2023-04-26T23:39:36.204680+00:00 app[web.1]: HttpError: Unable to scan directory: Error: ENOENT: no such file or directory, scandir '/logs'
+2023-04-26T23:39:36.204680+00:00 app[web.1]: at /app/server/controllers/log/log.controller.js:84:27
+2023-04-26T23:39:36.204680+00:00 app[web.1]: at FSReqCallback.oncomplete (node:fs:198:23) {
+2023-04-26T23:39:36.204681+00:00 app[web.1]: statusCode: 401,
+2023-04-26T23:39:36.204681+00:00 app[web.1]: data: null
+2023-04-26T23:39:36.204681+00:00 app[web.1]: }
+2023-04-26T23:39:36.204681+00:00 app[web.1]:
+2023-04-26T23:39:36.204681+00:00 app[web.1]: Node.js v18.16.0
+2023-04-26T23:39:36.210082+00:00 heroku[router]: at=error code=H13 desc="Connection closed without response" method=GET path="/api/v2/log/logfiles" host=univille2.herokuapp.com request_id=39be122f-7a4c-4855-924a-48809454a111 fwd="79.176.193.121" dyno=web.1 connect=0ms service=9ms status=503 bytes=0 protocol=https
+2023-04-26T23:39:36.213093+00:00 app[web.1]: npm notice
+2023-04-26T23:39:36.213149+00:00 app[web.1]: npm notice New minor version of npm available! 9.5.1 -> 9.6.5
+2023-04-26T23:39:36.213299+00:00 app[web.1]: npm notice Changelog: <https://github.com/npm/cli/releases/tag/v9.6.5>
+2023-04-26T23:39:36.213339+00:00 app[web.1]: npm notice Run `npm install -g npm@9.6.5` to update!
+2023-04-26T23:39:36.213479+00:00 app[web.1]: npm notice
+2023-04-26T23:39:36.359839+00:00 heroku[web.1]: Process exited with status 1
+2023-04-26T23:39:36.398378+00:00 heroku[web.1]: State changed from up to crashed
+2023-04-26T23:39:36.401507+00:00 heroku[web.1]: State changed from crashed to starting
+2023-04-26T23:39:39.979134+00:00 heroku[web.1]: Starting process with command `npm start`
+2023-04-26T23:39:41.421786+00:00 app[web.1]:
+2023-04-26T23:39:41.421793+00:00 app[web.1]: > dum_univille@1.0.0 start
+2023-04-26T23:39:41.421793+00:00 app[web.1]: > node index.js
+2023-04-26T23:39:41.421793+00:00 app[web.1]:
+2023-04-26T23:39:41.961833+00:00 app[web.1]: Data initialization
+2023-04-26T23:39:42.083724+00:00 app[web.1]: data already initialized
+2023-04-26T23:39:42.084127+00:00 app[web.1]: undefined
+2023-04-26T23:39:44.430197+00:00 heroku[web.1]: State changed from starting to up
+2023-04-27T05:20:12.441539+00:00 app[web.1]: GET_OBJECT_TAG
+2023-04-27T05:20:12.441924+00:00 heroku[router]: at=info method=GET path="/api/v1/game/dummyApi/missions" host=univille2.herokuapp.com request_id=58c30f63-4d50-4402-ba08-8a837884c62a fwd="77.137.44.162" dyno=web.1 connect=0ms service=9ms status=200 bytes=1104 protocol=https
+2023-04-27T05:20:12.468203+00:00 app[web.1]: GET_OR_ADD_PLAYER
+2023-04-27T05:20:12.508460+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getOrAdd/V_931176719" host=univille2.herokuapp.com request_id=13968dbf-1fd3-410b-8d1c-c1945446bd30 fwd="77.137.27.194" dyno=web.1 connect=0ms service=40ms status=200 bytes=527 protocol=https
+2023-04-27T05:21:15.333980+00:00 app[web.1]: GIVE_POINTS
+2023-04-27T05:21:15.349889+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/644a060ce350429df08a2ea4" host=univille2.herokuapp.com request_id=15c852f0-1324-4af4-9040-cbd3a03cd0cd fwd="77.137.44.162" dyno=web.1 connect=0ms service=163ms status=200 bytes=527 protocol=https
+2023-04-27T05:39:35.624773+00:00 app[web.1]: GET_OBJECT_TAG
+2023-04-27T05:39:35.625936+00:00 heroku[router]: at=info method=GET path="/api/v1/game/dummyApi/missions" host=univille2.herokuapp.com request_id=a0ffb022-c842-4ece-b6e8-7372de68f347 fwd="77.137.44.162" dyno=web.1 connect=0ms service=2ms status=200 bytes=1104 protocol=https
+2023-04-27T05:39:35.660603+00:00 app[web.1]: GET_OR_ADD_PLAYER
+2023-04-27T05:39:35.686831+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getOrAdd/V_-310992135" host=univille2.herokuapp.com request_id=b87dfdb2-c7e2-4094-aca1-efc16e536c4b fwd="77.137.27.194" dyno=web.1 connect=2ms service=26ms status=200 bytes=529 protocol=https
+2023-04-27T05:39:41.082899+00:00 app[web.1]: GET_OR_ADD_PLAYER
+2023-04-27T05:39:41.095523+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getOrAdd/V_-248696813" host=univille2.herokuapp.com request_id=dbee31dd-28f2-4cee-bdcb-52de681c0256 fwd="62.90.77.236" dyno=web.1 connect=0ms service=12ms status=200 bytes=529 protocol=https
+2023-04-27T05:39:41.103844+00:00 app[web.1]: GET_OBJECT_TAG
+2023-04-27T05:39:41.104691+00:00 heroku[router]: at=info method=GET path="/api/v1/game/dummyApi/missions" host=univille2.herokuapp.com request_id=3602ab60-dd0d-4cd6-9779-097786accf36 fwd="62.90.77.236" dyno=web.1 connect=1ms service=1ms status=200 bytes=1104 protocol=https
+2023-04-27T05:39:47.027426+00:00 app[web.1]: GET_OBJECT_TAG
+2023-04-27T05:39:47.028888+00:00 heroku[router]: at=info method=GET path="/api/v1/game/dummyApi/missions" host=univille2.herokuapp.com request_id=3453f5f0-489a-47cb-9cad-209525334a4e fwd="77.137.27.194" dyno=web.1 connect=0ms service=1ms status=200 bytes=1104 protocol=https
+2023-04-27T05:39:47.036675+00:00 app[web.1]: GET_OR_ADD_PLAYER
+2023-04-27T05:39:47.047857+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getOrAdd/V_-192812638" host=univille2.herokuapp.com request_id=358d44e4-8c76-45a0-baa2-031d1fea72f2 fwd="77.137.44.162" dyno=web.1 connect=0ms service=11ms status=200 bytes=529 protocol=https
+2023-04-27T05:39:49.784441+00:00 app[web.1]: GET_OBJECT_TAG
+2023-04-27T05:39:49.785940+00:00 heroku[router]: at=info method=GET path="/api/v1/game/dummyApi/missions" host=univille2.herokuapp.com request_id=b6b319fd-db31-4273-a141-f34a3512e9b8 fwd="77.137.44.162" dyno=web.1 connect=0ms service=1ms status=200 bytes=1104 protocol=https
+2023-04-27T05:39:49.814979+00:00 app[web.1]: GET_OR_ADD_PLAYER
+2023-04-27T05:39:49.823896+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getOrAdd/V_-169103867" host=univille2.herokuapp.com request_id=04294f43-3efa-4f76-988a-be372059f851 fwd="77.137.27.194" dyno=web.1 connect=0ms service=10ms status=200 bytes=529 protocol=https
+2023-04-27T05:42:39.431500+00:00 app[web.1]: GET_OBJECT_TAG
+2023-04-27T05:42:39.433553+00:00 heroku[router]: at=info method=GET path="/api/v1/game/dummyApi/missions" host=univille2.herokuapp.com request_id=173a4299-8226-413f-ae86-baa4eb4eadf6 fwd="77.137.44.162" dyno=web.1 connect=0ms service=1ms status=200 bytes=1104 protocol=https
+2023-04-27T05:42:39.461361+00:00 app[web.1]: GET_OR_ADD_PLAYER
+2023-04-27T05:42:39.486498+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getOrAdd/V_1526744780" host=univille2.herokuapp.com request_id=5ce23e50-6245-4930-bd3d-ee57563911c9 fwd="62.90.77.236" dyno=web.1 connect=0ms service=25ms status=200 bytes=529 protocol=https
+2023-04-27T05:53:04.273834+00:00 app[web.1]: GET_OR_ADD_PLAYER
+2023-04-27T05:53:04.296008+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getOrAdd/V_-818791392" host=univille2.herokuapp.com request_id=7a5ac6ef-f718-4e4c-8800-65a78072ea8f fwd="62.90.77.236" dyno=web.1 connect=0ms service=22ms status=200 bytes=529 protocol=https
+2023-04-27T05:53:04.299021+00:00 heroku[router]: at=info method=GET path="/api/v1/game/dummyApi/missions" host=univille2.herokuapp.com request_id=6c9527fe-f39b-465e-8268-09ebd87f01bc fwd="77.137.44.162" dyno=web.1 connect=0ms service=1ms status=200 bytes=1104 protocol=https
+2023-04-27T05:53:04.302712+00:00 app[web.1]: GET_OBJECT_TAG
+2023-04-27T05:53:34.922810+00:00 app[web.1]: GIVE_POINTS
+2023-04-27T05:53:34.928956+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/644a0dc0e350429df09b0e96" host=univille2.herokuapp.com request_id=b196afce-f08c-43fa-b029-ec58cb467df8 fwd="77.137.44.162" dyno=web.1 connect=0ms service=156ms status=200 bytes=529 protocol=https
+2023-04-27T05:58:20.453396+00:00 app[web.1]: GET_OR_ADD_PLAYER
+2023-04-27T05:58:20.473908+00:00 app[web.1]: GET_OBJECT_TAG
+2023-04-27T05:58:20.475571+00:00 heroku[router]: at=info method=GET path="/api/v1/game/dummyApi/missions" host=univille2.herokuapp.com request_id=bff13f92-64a0-406f-8b94-5907ec12401f fwd="77.137.27.194" dyno=web.1 connect=0ms service=1ms status=200 bytes=1104 protocol=https
+2023-04-27T05:58:20.479697+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getOrAdd/V_-1960232169" host=univille2.herokuapp.com request_id=6c8c0626-eb97-4510-83d5-0fc3d0c30a10 fwd="62.90.77.236" dyno=web.1 connect=0ms service=26ms status=200 bytes=531 protocol=https
+2023-04-27T05:58:33.636140+00:00 app[web.1]: GIVE_POINTS
+2023-04-27T05:58:33.649288+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/644a0dc0e350429df09b0e96" host=univille2.herokuapp.com request_id=162692fe-e9af-477e-88e2-ab2893778932 fwd="62.90.77.236" dyno=web.1 connect=0ms service=158ms status=200 bytes=529 protocol=https
+2023-04-27T06:06:46.427360+00:00 app[web.1]: GET_OBJECT_TAG
+2023-04-27T06:06:46.428429+00:00 heroku[router]: at=info method=GET path="/api/v1/game/dummyApi/missions" host=univille2.herokuapp.com request_id=16f19af1-331a-487e-8637-06cedfcea23a fwd="62.90.77.236" dyno=web.1 connect=0ms service=1ms status=200 bytes=1104 protocol=https
+2023-04-27T06:06:46.457558+00:00 app[web.1]: GET_OR_ADD_PLAYER
+2023-04-27T06:06:46.487391+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getOrAdd/V_-1186194715" host=univille2.herokuapp.com request_id=4b78f1e3-9a89-4dbe-aeb9-e222d6012d51 fwd="77.137.27.194" dyno=web.1 connect=0ms service=28ms status=200 bytes=531 protocol=https
+2023-04-27T06:07:09.380268+00:00 app[web.1]: GIVE_POINTS
+2023-04-27T06:07:09.390873+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/644a10f6e350429df0a22ebe" host=univille2.herokuapp.com request_id=5c825519-e8f0-4894-95ff-e93386eeb814 fwd="62.90.77.236" dyno=web.1 connect=0ms service=148ms status=200 bytes=531 protocol=https
+2023-04-27T06:16:39.436796+00:00 app[web.1]: GET_OR_ADD_PLAYER
+2023-04-27T06:16:39.464586+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getOrAdd/V_467711438" host=univille2.herokuapp.com request_id=e6df4510-bcba-4291-a370-52e03e3c3ee2 fwd="141.226.74.129" dyno=web.1 connect=0ms service=27ms status=200 bytes=527 protocol=https
+2023-04-27T06:16:39.489859+00:00 app[web.1]: GET_OBJECT_TAG
+2023-04-27T06:16:39.491191+00:00 heroku[router]: at=info method=GET path="/api/v1/game/dummyApi/missions" host=univille2.herokuapp.com request_id=c4fadbc2-bee7-44da-b4d2-886fe61e5faf fwd="141.226.74.129" dyno=web.1 connect=0ms service=1ms status=200 bytes=1104 protocol=https
+2023-04-27T06:21:43.076012+00:00 app[web.1]: GET_OR_ADD_PLAYER
+2023-04-27T06:21:43.117244+00:00 app[web.1]: GET_OBJECT_TAG
+2023-04-27T06:21:43.118896+00:00 heroku[router]: at=info method=GET path="/api/v1/game/dummyApi/missions" host=univille2.herokuapp.com request_id=83d16446-137e-4dfa-90d6-207ee0c63674 fwd="77.137.27.194" dyno=web.1 connect=0ms service=1ms status=200 bytes=1104 protocol=https
+2023-04-27T06:21:43.184011+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getOrAdd/V_-801264233" host=univille2.herokuapp.com request_id=885e5fd7-37e0-4ef1-802e-4ed1a42b7db6 fwd="77.137.44.162" dyno=web.1 connect=0ms service=107ms status=200 bytes=529 protocol=https
+2023-04-27T06:27:49.238741+00:00 app[web.1]: GIVE_POINTS
+2023-04-27T06:27:49.262727+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/644a1477e350429df0a9c346" host=univille2.herokuapp.com request_id=4d9d6679-a9e5-42e7-bf20-b138e216e20b fwd="62.90.77.236" dyno=web.1 connect=0ms service=177ms status=200 bytes=529 protocol=https
+2023-04-27T06:30:26.996243+00:00 heroku[router]: at=info method=GET path="/api/v1/game/dummyApi/missions" host=univille2.herokuapp.com request_id=f6d0b3a1-a979-45ad-b411-89f29fb26909 fwd="62.90.77.236" dyno=web.1 connect=0ms service=1ms status=200 bytes=1104 protocol=https
+2023-04-27T06:30:26.994064+00:00 app[web.1]: GET_OBJECT_TAG
+2023-04-27T06:30:27.045060+00:00 app[web.1]: GET_OR_ADD_PLAYER
+2023-04-27T06:30:27.479348+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getOrAdd/V_136634458" host=univille2.herokuapp.com request_id=4a21a079-7a37-4f4b-bed2-bdf98e8a342a fwd="62.90.77.236" dyno=web.1 connect=0ms service=434ms status=200 bytes=527 protocol=https
+2023-04-27T06:30:29.959660+00:00 heroku[router]: at=info method=GET path="/api/v1/game/dummyApi/missions" host=univille2.herokuapp.com request_id=6f2ec0f9-29cf-4555-860d-4511058cebff fwd="77.137.44.162" dyno=web.1 connect=0ms service=1ms status=200 bytes=1104 protocol=https
+2023-04-27T06:30:30.007795+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getOrAdd/V_162535063" host=univille2.herokuapp.com request_id=14d9fb6b-7b9c-4262-b4fc-5f90c18e6ada fwd="77.137.27.194" dyno=web.1 connect=0ms service=22ms status=200 bytes=527 protocol=https
+2023-04-27T06:30:29.956774+00:00 app[web.1]: GET_OBJECT_TAG
+2023-04-27T06:30:29.985506+00:00 app[web.1]: GET_OR_ADD_PLAYER
+2023-04-27T06:30:31.126041+00:00 heroku[router]: at=info method=GET path="/api/v1/game/dummyApi/missions" host=univille2.herokuapp.com request_id=c8b701ab-8fe1-4a55-88ec-8364f889c363 fwd="62.90.77.236" dyno=web.1 connect=0ms service=1ms status=200 bytes=1104 protocol=https
+2023-04-27T06:30:31.193268+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getOrAdd/V_183186701" host=univille2.herokuapp.com request_id=0d65826b-453b-4413-925d-061f681ba507 fwd="62.90.77.236" dyno=web.1 connect=0ms service=23ms status=200 bytes=527 protocol=https
+2023-04-27T06:30:31.124559+00:00 app[web.1]: GET_OBJECT_TAG
+2023-04-27T06:30:31.169148+00:00 app[web.1]: GET_OR_ADD_PLAYER
+2023-04-27T06:30:32.708694+00:00 heroku[router]: at=info method=GET path="/api/v1/game/dummyApi/missions" host=univille2.herokuapp.com request_id=1ce0f4e9-5856-43d1-841e-9c133c1fd19f fwd="77.137.27.194" dyno=web.1 connect=0ms service=1ms status=200 bytes=1104 protocol=https
+2023-04-27T06:30:32.707060+00:00 app[web.1]: GET_OBJECT_TAG
+2023-04-27T06:30:32.727590+00:00 app[web.1]: GET_OR_ADD_PLAYER
+2023-04-27T06:30:32.927527+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getOrAdd/V_201098636" host=univille2.herokuapp.com request_id=07a64cb6-131d-4727-bb61-c95873f0c41f fwd="77.137.44.162" dyno=web.1 connect=0ms service=198ms status=200 bytes=527 protocol=https
+2023-04-27T06:30:34.463603+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getOrAdd/V_201796426" host=univille2.herokuapp.com request_id=c315e14b-3601-46d4-995b-ab794811354e fwd="77.137.27.194" dyno=web.1 connect=0ms service=10ms status=200 bytes=527 protocol=https
+2023-04-27T06:30:34.414474+00:00 heroku[router]: at=info method=GET path="/api/v1/game/dummyApi/missions" host=univille2.herokuapp.com request_id=07c20597-4d83-42ec-a79c-422b1f08d8cb fwd="77.137.44.162" dyno=web.1 connect=0ms service=1ms status=200 bytes=1104 protocol=https
+2023-04-27T06:30:34.411565+00:00 app[web.1]: GET_OBJECT_TAG
+2023-04-27T06:30:34.453157+00:00 app[web.1]: GET_OR_ADD_PLAYER
+2023-04-27T06:30:37.213780+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getOrAdd/V_239510573" host=univille2.herokuapp.com request_id=2bd3ea48-2445-4f0a-b440-68bdb890a517 fwd="62.90.77.236" dyno=web.1 connect=0ms service=12ms status=200 bytes=527 protocol=https
+2023-04-27T06:30:37.188109+00:00 heroku[router]: at=info method=GET path="/api/v1/game/dummyApi/missions" host=univille2.herokuapp.com request_id=3113da97-d1a7-4a95-9017-adb76ba25ef4 fwd="77.137.44.162" dyno=web.1 connect=0ms service=1ms status=200 bytes=1104 protocol=https
+2023-04-27T06:30:37.186505+00:00 app[web.1]: GET_OBJECT_TAG
+2023-04-27T06:30:37.199972+00:00 app[web.1]: GET_OR_ADD_PLAYER
+2023-04-27T06:30:37.612252+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getOrAdd/V_251003668" host=univille2.herokuapp.com request_id=41e37c73-4d4f-4927-937c-d54ed9a4ed1b fwd="77.137.27.194" dyno=web.1 connect=0ms service=9ms status=200 bytes=527 protocol=https
+2023-04-27T06:30:37.576100+00:00 heroku[router]: at=info method=GET path="/api/v1/game/dummyApi/missions" host=univille2.herokuapp.com request_id=b126e910-2d9e-4bf3-99b0-bf277006f71d fwd="62.90.77.236" dyno=web.1 connect=0ms service=1ms status=200 bytes=1104 protocol=https
+2023-04-27T06:30:37.575752+00:00 app[web.1]: GET_OBJECT_TAG
+2023-04-27T06:30:37.595696+00:00 app[web.1]: GET_OR_ADD_PLAYER
+2023-04-27T06:30:37.766026+00:00 app[web.1]: GET_OBJECT_TAG
+2023-04-27T06:30:37.791020+00:00 app[web.1]: GET_OR_ADD_PLAYER
+2023-04-27T06:30:37.801321+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getOrAdd/V_243950374" host=univille2.herokuapp.com request_id=8d533450-323e-4a31-bb68-c337186d5e4f fwd="77.137.27.194" dyno=web.1 connect=0ms service=9ms status=200 bytes=527 protocol=https
+2023-04-27T06:30:37.767424+00:00 heroku[router]: at=info method=GET path="/api/v1/game/dummyApi/missions" host=univille2.herokuapp.com request_id=c83fbc22-bbc0-4428-b0c0-a71d76938e69 fwd="77.137.44.162" dyno=web.1 connect=0ms service=1ms status=200 bytes=1104 protocol=https
+2023-04-27T06:30:39.663609+00:00 heroku[router]: at=info method=GET path="/api/v1/game/dummyApi/missions" host=univille2.herokuapp.com request_id=332554a1-aec6-4126-bd69-e27458340de3 fwd="77.137.44.162" dyno=web.1 connect=0ms service=1ms status=200 bytes=1104 protocol=https
+2023-04-27T06:30:39.662045+00:00 app[web.1]: GET_OBJECT_TAG
+2023-04-27T06:30:39.713732+00:00 app[web.1]: GET_OR_ADD_PLAYER
+2023-04-27T06:30:39.724150+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getOrAdd/V_271235177" host=univille2.herokuapp.com request_id=dcc238c3-7a8d-4944-8a74-43ed07aeb32b fwd="77.137.27.194" dyno=web.1 connect=0ms service=10ms status=200 bytes=527 protocol=https
+2023-04-27T06:30:40.948593+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getOrAdd/V_276855244" host=univille2.herokuapp.com request_id=5b4abe0c-d46e-446f-aa4a-63eee17ed9c4 fwd="62.90.77.236" dyno=web.1 connect=0ms service=10ms status=200 bytes=527 protocol=https
+2023-04-27T06:30:40.938558+00:00 app[web.1]: GET_OR_ADD_PLAYER
+2023-04-27T06:30:40.968592+00:00 app[web.1]: GET_OBJECT_TAG
+2023-04-27T06:30:40.968109+00:00 heroku[router]: at=info method=GET path="/api/v1/game/dummyApi/missions" host=univille2.herokuapp.com request_id=285e8d3b-358b-49e2-86b8-b98d48898c15 fwd="77.137.27.194" dyno=web.1 connect=0ms service=1ms status=200 bytes=1104 protocol=https
+2023-04-27T06:30:43.659794+00:00 app[web.1]: GET_OR_ADD_PLAYER
+2023-04-27T06:30:43.668653+00:00 app[web.1]: GET_OBJECT_TAG
+2023-04-27T06:30:43.669955+00:00 heroku[router]: at=info method=GET path="/api/v1/game/dummyApi/missions" host=univille2.herokuapp.com request_id=3b59df07-8c7b-4ec7-8316-d01901c8dd3f fwd="62.90.77.236" dyno=web.1 connect=0ms service=2ms status=200 bytes=1104 protocol=https
+2023-04-27T06:30:43.669629+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getOrAdd/V_302673104" host=univille2.herokuapp.com request_id=c2ebdf3f-e746-4a05-96ff-5873a9674938 fwd="77.137.44.162" dyno=web.1 connect=0ms service=12ms status=200 bytes=527 protocol=https
+2023-04-27T06:30:45.712270+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getOrAdd/V_320733248" host=univille2.herokuapp.com request_id=9c3be614-348a-4910-a03e-48fb2d315af9 fwd="77.137.44.162" dyno=web.1 connect=1ms service=11ms status=200 bytes=527 protocol=https
+2023-04-27T06:30:45.772740+00:00 heroku[router]: at=info method=GET path="/api/v1/game/dummyApi/missions" host=univille2.herokuapp.com request_id=5cb40ea8-de1b-4647-ad8a-c50799ccff0f fwd="62.90.77.236" dyno=web.1 connect=0ms service=1ms status=200 bytes=1104 protocol=https
+2023-04-27T06:30:45.701128+00:00 app[web.1]: GET_OR_ADD_PLAYER
+2023-04-27T06:30:45.738241+00:00 app[web.1]: GET_OBJECT_TAG
+2023-04-27T06:30:45.771542+00:00 app[web.1]: GET_OBJECT_TAG
+2023-04-27T06:30:45.785162+00:00 app[web.1]: GET_OR_ADD_PLAYER
+2023-04-27T06:30:45.794658+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getOrAdd/V_322283520" host=univille2.herokuapp.com request_id=19b04f78-4581-4385-84e2-d2a90d964e79 fwd="62.90.77.236" dyno=web.1 connect=0ms service=8ms status=200 bytes=527 protocol=https
+2023-04-27T06:30:45.737701+00:00 heroku[router]: at=info method=GET path="/api/v1/game/dummyApi/missions" host=univille2.herokuapp.com request_id=ea6d3e26-a9fa-4d88-9808-0fd7e3d56cf0 fwd="62.90.77.236" dyno=web.1 connect=0ms service=1ms status=200 bytes=1104 protocol=https
+2023-04-27T06:30:49.536132+00:00 heroku[router]: at=info method=GET path="/api/v1/game/dummyApi/missions" host=univille2.herokuapp.com request_id=de7abc41-76a8-4768-83a3-c986a16cc810 fwd="62.90.77.236" dyno=web.1 connect=0ms service=1ms status=200 bytes=1104 protocol=https
+2023-04-27T06:30:49.533494+00:00 app[web.1]: GET_OBJECT_TAG
+2023-04-27T06:30:49.594847+00:00 app[web.1]: GET_OR_ADD_PLAYER
+2023-04-27T06:30:49.604065+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getOrAdd/V_361246302" host=univille2.herokuapp.com request_id=010c381c-2496-4cca-af79-d37edc006586 fwd="77.137.44.162" dyno=web.1 connect=0ms service=10ms status=200 bytes=527 protocol=https
+2023-04-27T06:30:51.693283+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getOrAdd/V_381268384" host=univille2.herokuapp.com request_id=e44564f3-d06e-46a7-a109-e69b2645ec19 fwd="77.137.44.162" dyno=web.1 connect=0ms service=12ms status=200 bytes=527 protocol=https
+2023-04-27T06:30:51.680779+00:00 app[web.1]: GET_OR_ADD_PLAYER
+2023-04-27T06:30:52.027412+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getOrAdd/V_385444591" host=univille2.herokuapp.com request_id=2e20b217-bdc7-4717-8dcc-2fefa2442005 fwd="77.137.27.194" dyno=web.1 connect=0ms service=17ms status=200 bytes=527 protocol=https
+2023-04-27T06:30:51.987271+00:00 heroku[router]: at=info method=GET path="/api/v1/game/dummyApi/missions" host=univille2.herokuapp.com request_id=913da268-fd64-4042-909c-0f37d3043c9a fwd="77.137.27.194" dyno=web.1 connect=0ms service=1ms status=200 bytes=1104 protocol=https
+2023-04-27T06:30:51.985520+00:00 app[web.1]: GET_OBJECT_TAG
+2023-04-27T06:30:51.996598+00:00 app[web.1]: GET_OBJECT_TAG
+2023-04-27T06:30:52.011720+00:00 app[web.1]: GET_OR_ADD_PLAYER
+2023-04-27T06:30:51.997773+00:00 heroku[router]: at=info method=GET path="/api/v1/game/dummyApi/missions" host=univille2.herokuapp.com request_id=64ebe98d-32bb-46ab-b97d-a858c53b73db fwd="77.137.44.162" dyno=web.1 connect=0ms service=0ms status=200 bytes=1104 protocol=https
+2023-04-27T06:30:53.605215+00:00 heroku[router]: at=info method=GET path="/api/v1/game/dummyApi/missions" host=univille2.herokuapp.com request_id=9faf8996-ede1-41ff-82fa-c7c48fbafd6a fwd="62.90.77.236" dyno=web.1 connect=0ms service=1ms status=200 bytes=1104 protocol=https
+2023-04-27T06:30:53.602090+00:00 app[web.1]: GET_OBJECT_TAG
+2023-04-27T06:30:53.784405+00:00 app[web.1]: GET_OR_ADD_PLAYER
+2023-04-27T06:30:53.797901+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getOrAdd/V_402293392" host=univille2.herokuapp.com request_id=594204c5-b8f3-4c66-8ffe-1baac27c0c72 fwd="77.137.44.162" dyno=web.1 connect=0ms service=12ms status=200 bytes=527 protocol=https
+2023-04-27T06:30:54.177757+00:00 heroku[router]: at=info method=GET path="/api/v1/game/dummyApi/missions" host=univille2.herokuapp.com request_id=d36e727a-3667-4161-ada8-2ded8c5d3f87 fwd="62.90.77.236" dyno=web.1 connect=0ms service=4ms status=200 bytes=1104 protocol=https
+2023-04-27T06:30:54.172085+00:00 app[web.1]: GET_OBJECT_TAG
+2023-04-27T06:30:54.190596+00:00 app[web.1]: GET_OR_ADD_PLAYER
+2023-04-27T06:30:54.201580+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getOrAdd/V_403653203" host=univille2.herokuapp.com request_id=21e29e70-5da6-42ff-a58a-ba59757239eb fwd="62.90.77.236" dyno=web.1 connect=0ms service=10ms status=200 bytes=527 protocol=https
+2023-04-27T06:30:55.330669+00:00 heroku[router]: at=info method=GET path="/api/v1/game/dummyApi/missions" host=univille2.herokuapp.com request_id=6f7beab8-df82-4242-a2c7-9e702f3607b5 fwd="62.90.77.236" dyno=web.1 connect=0ms service=1ms status=200 bytes=1104 protocol=https
+2023-04-27T06:30:55.409992+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getOrAdd/V_415523366" host=univille2.herokuapp.com request_id=c4704f3b-ffe2-411d-bb4d-dada51633fbc fwd="62.90.77.236" dyno=web.1 connect=0ms service=8ms status=200 bytes=527 protocol=https
+2023-04-27T06:30:55.331157+00:00 app[web.1]: GET_OBJECT_TAG
+2023-04-27T06:30:55.403455+00:00 app[web.1]: GET_OR_ADD_PLAYER
+2023-04-27T06:31:07.668417+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getOrAdd/V_540263311" host=univille2.herokuapp.com request_id=6e9dfb07-9300-4268-ba28-4375e3c0084b fwd="77.137.27.194" dyno=web.1 connect=0ms service=11ms status=200 bytes=527 protocol=https
+2023-04-27T06:31:07.617134+00:00 heroku[router]: at=info method=GET path="/api/v1/game/dummyApi/missions" host=univille2.herokuapp.com request_id=bb5e5004-784c-4eb1-94dd-8d89e7d56da6 fwd="77.137.44.162" dyno=web.1 connect=0ms service=1ms status=200 bytes=1104 protocol=https
+2023-04-27T06:31:07.616277+00:00 app[web.1]: GET_OBJECT_TAG
+2023-04-27T06:31:07.656660+00:00 app[web.1]: GET_OR_ADD_PLAYER
+2023-04-27T06:31:57.242402+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getOrAdd/V_1037912058" host=univille2.herokuapp.com request_id=12c7189d-91df-4315-a7c2-91dd123a4aa1 fwd="77.137.27.194" dyno=web.1 connect=0ms service=10ms status=200 bytes=529 protocol=https
+2023-04-27T06:31:57.300154+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getOrAdd/V_1048462820" host=univille2.herokuapp.com request_id=f963de97-1732-414f-b7eb-8ab96775dc1b fwd="77.137.44.162" dyno=web.1 connect=0ms service=9ms status=200 bytes=529 protocol=https
+2023-04-27T06:31:57.253790+00:00 heroku[router]: at=info method=GET path="/api/v1/game/dummyApi/missions" host=univille2.herokuapp.com request_id=95b160a4-b0d6-405c-8531-82526ca5a37a fwd="62.90.77.236" dyno=web.1 connect=0ms service=0ms status=200 bytes=1104 protocol=https
+2023-04-27T06:31:57.196510+00:00 app[web.1]: GET_OBJECT_TAG
+2023-04-27T06:31:57.228418+00:00 app[web.1]: GET_OR_ADD_PLAYER
+2023-04-27T06:31:57.257921+00:00 app[web.1]: GET_OBJECT_TAG
+2023-04-27T06:31:57.290573+00:00 app[web.1]: GET_OR_ADD_PLAYER
+2023-04-27T06:31:57.199372+00:00 heroku[router]: at=info method=GET path="/api/v1/game/dummyApi/missions" host=univille2.herokuapp.com request_id=1e4e67d9-a9aa-4bea-9b24-e8ed50b9df39 fwd="62.90.77.236" dyno=web.1 connect=0ms service=1ms status=200 bytes=1104 protocol=https
+2023-04-27T06:32:01.140382+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/644a168de350429df0ae3ae7" host=univille2.herokuapp.com request_id=6ec0d03c-03d9-4635-bdb4-a3188fb430f2 fwd="77.137.44.162" dyno=web.1 connect=0ms service=159ms status=200 bytes=527 protocol=https
+2023-04-27T06:32:01.127338+00:00 app[web.1]: GIVE_POINTS
+2023-04-27T06:32:04.218502+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/644a1699e350429df0ae58d1" host=univille2.herokuapp.com request_id=04aaa0eb-b848-4573-8f79-68964c3a9a03 fwd="77.137.27.194" dyno=web.1 connect=0ms service=158ms status=200 bytes=527 protocol=https
+2023-04-27T06:32:04.208670+00:00 app[web.1]: GIVE_POINTS
+2023-04-27T06:32:04.704900+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/644a168de350429df0ae3bee" host=univille2.herokuapp.com request_id=edc7fd3a-6da1-4613-857f-a595a713638a fwd="77.137.27.194" dyno=web.1 connect=0ms service=167ms status=200 bytes=527 protocol=https
+2023-04-27T06:32:04.694573+00:00 app[web.1]: GIVE_POINTS
+2023-04-27T06:32:06.008397+00:00 app[web.1]: GIVE_POINTS
+2023-04-27T06:32:06.018408+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/644a169ee350429df0ae634d" host=univille2.herokuapp.com request_id=145f7034-b858-457c-ab63-d4d9799c8f8b fwd="77.137.44.162" dyno=web.1 connect=0ms service=147ms status=200 bytes=527 protocol=https
+2023-04-27T06:32:08.128690+00:00 app[web.1]: GIVE_POINTS
+2023-04-27T06:32:08.140984+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/644a1687e350429df0ae2de8" host=univille2.herokuapp.com request_id=d81b71c8-06e2-4b71-a70e-350dea2dd4ad fwd="77.137.27.194" dyno=web.1 connect=0ms service=163ms status=200 bytes=527 protocol=https
+2023-04-27T06:32:10.331371+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/644a1690e350429df0ae4448" host=univille2.herokuapp.com request_id=cea1b41a-dd3c-4025-98a1-536ff4d0cd7b fwd="77.137.27.194" dyno=web.1 connect=0ms service=160ms status=200 bytes=527 protocol=https
+2023-04-27T06:32:10.319841+00:00 app[web.1]: GIVE_POINTS
+2023-04-27T06:32:10.887831+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/644a1683e350429df0ae24e9" host=univille2.herokuapp.com request_id=0331ac4d-b8a3-40ab-bf51-c4dfee7bb21c fwd="77.137.27.194" dyno=web.1 connect=0ms service=164ms status=200 bytes=527 protocol=https
+2023-04-27T06:32:10.875467+00:00 app[web.1]: GIVE_POINTS
+2023-04-27T06:32:12.284623+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/644a168de350429df0ae3c45" host=univille2.herokuapp.com request_id=d14bbf8f-f53f-4525-b008-9a13a36db7af fwd="62.90.77.236" dyno=web.1 connect=0ms service=161ms status=200 bytes=527 protocol=https
+2023-04-27T06:32:12.273966+00:00 app[web.1]: GIVE_POINTS
+2023-04-27T06:32:13.012057+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/644a16dde350429df0aeea02" host=univille2.herokuapp.com request_id=9a04b66c-277f-471e-b4f2-65bf20c1ab03 fwd="62.90.77.236" dyno=web.1 connect=0ms service=149ms status=200 bytes=529 protocol=https
+2023-04-27T06:32:13.006520+00:00 app[web.1]: GIVE_POINTS
+2023-04-27T06:32:17.233368+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/644a16dde350429df0aee9d4" host=univille2.herokuapp.com request_id=b54f97a1-0740-4497-93cb-807f8abbeb03 fwd="62.90.77.236" dyno=web.1 connect=0ms service=169ms status=200 bytes=529 protocol=https
+2023-04-27T06:32:17.401318+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/644a169de350429df0ae6296" host=univille2.herokuapp.com request_id=ca6bf6de-d007-491b-aa2c-26197ba49f12 fwd="77.137.27.194" dyno=web.1 connect=0ms service=159ms status=200 bytes=527 protocol=https
+2023-04-27T06:32:17.221791+00:00 app[web.1]: GIVE_POINTS
+2023-04-27T06:32:17.392001+00:00 app[web.1]: GIVE_POINTS
+2023-04-27T06:32:22.227680+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/644a16abe350429df0ae8135" host=univille2.herokuapp.com request_id=fcdbd161-85c0-4a8d-af5c-54003b7ebcac fwd="77.137.27.194" dyno=web.1 connect=0ms service=158ms status=200 bytes=527 protocol=https
+2023-04-27T06:32:22.217904+00:00 app[web.1]: GIVE_POINTS
+2023-04-27T06:32:22.630755+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/644a169be350429df0ae5e5c" host=univille2.herokuapp.com request_id=cba6ac5a-83ba-4d15-9813-92c0228bcd9a fwd="77.137.44.162" dyno=web.1 connect=0ms service=162ms status=200 bytes=527 protocol=https
+2023-04-27T06:32:22.622115+00:00 app[web.1]: GIVE_POINTS
+2023-04-27T06:32:24.444456+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/644a1685e350429df0ae2acd" host=univille2.herokuapp.com request_id=5a56a8aa-40b3-4c9a-92e7-6297ca5545bc fwd="77.137.44.162" dyno=web.1 connect=0ms service=156ms status=200 bytes=527 protocol=https
+2023-04-27T06:32:24.434178+00:00 app[web.1]: GIVE_POINTS
+2023-04-27T06:32:28.400364+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/644a1693e350429df0ae4b4e" host=univille2.herokuapp.com request_id=7facbe50-18c8-46af-bd63-6e02f1fb5a1f fwd="62.90.77.236" dyno=web.1 connect=0ms service=167ms status=200 bytes=527 protocol=https
+2023-04-27T06:32:28.378391+00:00 app[web.1]: GIVE_POINTS
+2023-04-27T06:32:44.159713+00:00 app[web.1]: GIVE_POINTS
+2023-04-27T06:32:44.170214+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/644a1688e350429df0ae31a8" host=univille2.herokuapp.com request_id=18ca4116-7675-4381-be22-513780beefae fwd="77.137.44.162" dyno=web.1 connect=0ms service=168ms status=200 bytes=527 protocol=https
+2023-04-27T06:32:54.638676+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/644a1687e350429df0ae2de8" host=univille2.herokuapp.com request_id=7203ee36-a660-4a1d-81e4-fde2f0241310 fwd="77.137.27.194" dyno=web.1 connect=0ms service=166ms status=200 bytes=527 protocol=https
+2023-04-27T06:32:54.625057+00:00 app[web.1]: GIVE_POINTS
+2023-04-27T06:33:01.097274+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/644a1683e350429df0ae24e9" host=univille2.herokuapp.com request_id=35a43dc0-ee4f-4aba-b130-9103bd3a1886 fwd="77.137.27.194" dyno=web.1 connect=2ms service=157ms status=200 bytes=527 protocol=https
+2023-04-27T06:33:01.082661+00:00 app[web.1]: GIVE_POINTS
+2023-04-27T06:33:03.646403+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/644a16dde350429df0aeea02" host=univille2.herokuapp.com request_id=7ce4cb89-23d6-4e5f-9972-5835008b03a4 fwd="62.90.77.236" dyno=web.1 connect=0ms service=148ms status=200 bytes=529 protocol=https
+2023-04-27T06:33:03.640638+00:00 app[web.1]: GIVE_POINTS
+2023-04-27T06:33:10.301235+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/644a168de350429df0ae3bee" host=univille2.herokuapp.com request_id=789907a6-6f9a-4c49-8d9f-893cd0acfc21 fwd="77.137.44.162" dyno=web.1 connect=0ms service=157ms status=200 bytes=527 protocol=https
+2023-04-27T06:33:10.291850+00:00 app[web.1]: GIVE_POINTS
+2023-04-27T06:33:12.346559+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/644a169be350429df0ae5e5c" host=univille2.herokuapp.com request_id=a3a82e98-1b16-46dd-ac22-0c1a688d66e2 fwd="77.137.44.162" dyno=web.1 connect=0ms service=158ms status=200 bytes=527 protocol=https
+2023-04-27T06:33:12.337450+00:00 app[web.1]: GIVE_POINTS
+2023-04-27T06:33:17.009184+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/644a169ee350429df0ae634d" host=univille2.herokuapp.com request_id=3b79830f-9141-402f-aa68-3e5ffce68763 fwd="62.90.77.236" dyno=web.1 connect=0ms service=161ms status=200 bytes=527 protocol=https
+2023-04-27T06:33:17.003416+00:00 app[web.1]: GIVE_POINTS
+2023-04-27T06:33:24.438359+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/644a168de350429df0ae3c45" host=univille2.herokuapp.com request_id=36be348d-c866-46e0-9f8a-e1464b58ccc2 fwd="77.137.27.194" dyno=web.1 connect=0ms service=161ms status=200 bytes=527 protocol=https
+2023-04-27T06:33:24.423894+00:00 app[web.1]: GIVE_POINTS
+2023-04-27T06:33:41.794677+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/644a169de350429df0ae6296" host=univille2.herokuapp.com request_id=22f8b43c-aed7-4ac6-9c66-cf66559b60ee fwd="77.137.44.162" dyno=web.1 connect=0ms service=157ms status=200 bytes=527 protocol=https
+2023-04-27T06:33:41.784916+00:00 app[web.1]: GIVE_POINTS
+2023-04-27T06:33:51.889343+00:00 app[web.1]: GIVE_POINTS
+2023-04-27T06:33:51.900362+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/644a1693e350429df0ae4b4e" host=univille2.herokuapp.com request_id=93a3ce38-675c-4774-ac7a-fbe6131eed9c fwd="77.137.27.194" dyno=web.1 connect=0ms service=159ms status=200 bytes=527 protocol=https
+2023-04-27T06:33:52.465196+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/644a16dde350429df0aee9d4" host=univille2.herokuapp.com request_id=d2576b54-34e7-432c-937b-2637ad492fc2 fwd="77.137.27.194" dyno=web.1 connect=0ms service=165ms status=200 bytes=529 protocol=https
+2023-04-27T06:33:52.455783+00:00 app[web.1]: GIVE_POINTS
+2023-04-27T06:33:54.327093+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/644a16abe350429df0ae8135" host=univille2.herokuapp.com request_id=9ea34600-a975-40b8-a23f-87f520a88c3d fwd="77.137.27.194" dyno=web.1 connect=0ms service=173ms status=200 bytes=527 protocol=https
+2023-04-27T06:33:54.312618+00:00 app[web.1]: GIVE_POINTS
+2023-04-27T06:33:56.124735+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/644a168de350429df0ae3ae7" host=univille2.herokuapp.com request_id=0d2f7a17-29d7-4709-a1ad-a601203bdfff fwd="77.137.27.194" dyno=web.1 connect=0ms service=189ms status=200 bytes=527 protocol=https
+2023-04-27T06:33:56.085129+00:00 app[web.1]: GIVE_POINTS
+2023-04-27T06:33:57.746074+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/644a1685e350429df0ae2acd" host=univille2.herokuapp.com request_id=5a81f44c-da12-4fc8-beab-8d000cdf7da6 fwd="77.137.44.162" dyno=web.1 connect=0ms service=165ms status=200 bytes=527 protocol=https
+2023-04-27T06:33:57.735151+00:00 app[web.1]: GIVE_POINTS
+2023-04-27T06:34:29.062315+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/644a1699e350429df0ae58d1" host=univille2.herokuapp.com request_id=8f49a463-b6f2-40bb-b864-e3b68227087e fwd="62.90.77.236" dyno=web.1 connect=0ms service=159ms status=200 bytes=527 protocol=https
+2023-04-27T06:34:29.039915+00:00 app[web.1]: GIVE_POINTS
+2023-04-27T06:34:47.823092+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/644a1683e350429df0ae24e9" host=univille2.herokuapp.com request_id=600fbc0d-d585-48e2-a59c-4ec04ebb798c fwd="77.137.44.162" dyno=web.1 connect=0ms service=147ms status=200 bytes=527 protocol=https
+2023-04-27T06:34:47.811570+00:00 app[web.1]: GIVE_POINTS
+2023-04-27T06:34:48.052829+00:00 app[web.1]: GIVE_POINTS
+2023-04-27T06:34:48.063377+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/644a1687e350429df0ae2de8" host=univille2.herokuapp.com request_id=7978160c-c961-4ed6-9ac4-90e9ebe2f2cc fwd="77.137.27.194" dyno=web.1 connect=0ms service=165ms status=200 bytes=527 protocol=https
+2023-04-27T06:35:25.609945+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/644a168ae350429df0ae353f" host=univille2.herokuapp.com request_id=ca92cbca-202d-434e-8264-7fe0f5c1047e fwd="62.90.77.236" dyno=web.1 connect=0ms service=205ms status=200 bytes=527 protocol=https
+2023-04-27T06:35:25.552794+00:00 app[web.1]: GIVE_POINTS
+2023-04-27T06:35:34.593963+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/644a16dde350429df0aeea02" host=univille2.herokuapp.com request_id=c9c188d0-7654-4ad6-8918-2feb8627e58a fwd="62.90.77.236" dyno=web.1 connect=0ms service=163ms status=200 bytes=529 protocol=https
+2023-04-27T06:35:34.580516+00:00 app[web.1]: GIVE_POINTS
+2023-04-27T06:35:36.164570+00:00 app[web.1]: GIVE_POINTS
+2023-04-27T06:35:36.172308+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/644a169be350429df0ae5e5c" host=univille2.herokuapp.com request_id=e73afde8-635b-439d-a489-e221507f9ab5 fwd="77.137.44.162" dyno=web.1 connect=0ms service=154ms status=200 bytes=527 protocol=https
+2023-04-27T06:35:39.345948+00:00 app[web.1]: GIVE_POINTS
+2023-04-27T06:35:39.356500+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/644a168de350429df0ae3c45" host=univille2.herokuapp.com request_id=ef7772f6-9a3f-460a-8c32-ced48811be41 fwd="77.137.27.194" dyno=web.1 connect=0ms service=171ms status=200 bytes=527 protocol=https
+2023-04-27T06:35:44.990886+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/644a169ee350429df0ae634d" host=univille2.herokuapp.com request_id=3128e116-c99c-45a2-bae4-fe08f98630ff fwd="62.90.77.236" dyno=web.1 connect=0ms service=170ms status=200 bytes=527 protocol=https
+2023-04-27T06:35:44.967341+00:00 app[web.1]: GIVE_POINTS
+2023-04-27T06:35:48.198484+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/644a168de350429df0ae3bee" host=univille2.herokuapp.com request_id=84bb2af8-c82b-4610-ae23-4f639eb597d1 fwd="77.137.27.194" dyno=web.1 connect=0ms service=161ms status=200 bytes=527 protocol=https
+2023-04-27T06:35:48.187843+00:00 app[web.1]: GIVE_POINTS
+2023-04-27T06:35:52.906900+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/644a169de350429df0ae6296" host=univille2.herokuapp.com request_id=280ba423-cce1-4c61-8b5d-ca597891d074 fwd="62.90.77.236" dyno=web.1 connect=0ms service=165ms status=200 bytes=527 protocol=https
+2023-04-27T06:35:52.888430+00:00 app[web.1]: GIVE_POINTS
+2023-04-27T06:35:55.196550+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/644a168de350429df0ae3ae7" host=univille2.herokuapp.com request_id=155ec779-e9df-41c7-9718-270ab4ee9b90 fwd="62.90.77.236" dyno=web.1 connect=0ms service=157ms status=200 bytes=527 protocol=https
+2023-04-27T06:35:55.187049+00:00 app[web.1]: GIVE_POINTS
+2023-04-27T06:35:56.343550+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/644a16dde350429df0aee9d4" host=univille2.herokuapp.com request_id=c10d6260-963e-4809-9783-6c879e4cf444 fwd="77.137.27.194" dyno=web.1 connect=0ms service=158ms status=200 bytes=529 protocol=https
+2023-04-27T06:35:56.334356+00:00 app[web.1]: GIVE_POINTS
+2023-04-27T06:36:01.808500+00:00 app[web.1]: GIVE_POINTS
+2023-04-27T06:36:01.822156+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/644a1688e350429df0ae31a8" host=univille2.herokuapp.com request_id=b4aa5e6a-faa8-4eed-9eeb-d21cb285d3da fwd="77.137.44.162" dyno=web.1 connect=0ms service=169ms status=200 bytes=527 protocol=https
+2023-04-27T06:36:04.231060+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/644a1693e350429df0ae4b4e" host=univille2.herokuapp.com request_id=f3f2a6c5-d4af-489e-a856-3bc65cc8fbb5 fwd="62.90.77.236" dyno=web.1 connect=0ms service=148ms status=200 bytes=527 protocol=https
+2023-04-27T06:36:04.221227+00:00 app[web.1]: GIVE_POINTS
+2023-04-27T06:36:21.036997+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/644a16abe350429df0ae8135" host=univille2.herokuapp.com request_id=0be7581e-fcce-4d54-a525-3f48cc2f1fdb fwd="77.137.27.194" dyno=web.1 connect=0ms service=171ms status=200 bytes=527 protocol=https
+2023-04-27T06:36:21.024631+00:00 app[web.1]: GIVE_POINTS
+2023-04-27T06:36:24.953052+00:00 app[web.1]: GIVE_POINTS
+2023-04-27T06:36:24.962017+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/644a1685e350429df0ae2acd" host=univille2.herokuapp.com request_id=0d8c23d8-c91a-4e9a-a6c3-8152852a3e07 fwd="77.137.44.162" dyno=web.1 connect=0ms service=158ms status=200 bytes=527 protocol=https
+2023-04-27T06:37:01.992863+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/644a1690e350429df0ae4448" host=univille2.herokuapp.com request_id=9b587cee-70d6-4ac8-90a8-e88f51b13678 fwd="77.137.27.194" dyno=web.1 connect=0ms service=199ms status=200 bytes=527 protocol=https
+2023-04-27T06:37:01.964931+00:00 app[web.1]: GIVE_POINTS
+2023-04-27T06:37:16.513928+00:00 app[web.1]: GIVE_POINTS
+2023-04-27T06:37:16.524418+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/644a1683e350429df0ae24e9" host=univille2.herokuapp.com request_id=320cff2a-aa18-4b7b-b65c-bf95ee71dcfd fwd="77.137.27.194" dyno=web.1 connect=0ms service=157ms status=200 bytes=527 protocol=https
+2023-04-27T06:37:23.270227+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getRandomColor/644a1683e350429df0ae24e9/5" host=univille2.herokuapp.com request_id=7fe879ab-83b9-4cd6-a817-13a986dba3f4 fwd="77.137.27.194" dyno=web.1 connect=0ms service=12ms status=200 bytes=544 protocol=https
+2023-04-27T06:37:23.257365+00:00 app[web.1]: GET_RANDOM_COLOR
+2023-04-27T06:37:32.506299+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/644a1699e350429df0ae58d1" host=univille2.herokuapp.com request_id=3f8d68d2-e4f5-48f3-8921-329e937c6809 fwd="77.137.44.162" dyno=web.1 connect=0ms service=159ms status=200 bytes=527 protocol=https
+2023-04-27T06:37:32.490028+00:00 app[web.1]: GIVE_POINTS
+2023-04-27T06:37:46.287496+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/644a1687e350429df0ae2de8" host=univille2.herokuapp.com request_id=6a45dac5-4d65-483e-a504-dcd6613c0c87 fwd="77.137.27.194" dyno=web.1 connect=0ms service=159ms status=200 bytes=527 protocol=https
+2023-04-27T06:37:46.276770+00:00 app[web.1]: GIVE_POINTS
+2023-04-27T06:37:46.731228+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getRandomColor/644a1687e350429df0ae2de8/5" host=univille2.herokuapp.com request_id=cc37f690-e7e3-48f7-8b88-73028a066ebd fwd="77.137.27.194" dyno=web.1 connect=0ms service=11ms status=200 bytes=544 protocol=https
+2023-04-27T06:37:46.719807+00:00 app[web.1]: GET_RANDOM_COLOR
+2023-04-27T06:37:48.398152+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/644a16dde350429df0aeea02" host=univille2.herokuapp.com request_id=09a86eb0-d727-40bb-99d0-e26b2a588980 fwd="77.137.27.194" dyno=web.1 connect=0ms service=164ms status=200 bytes=529 protocol=https
+2023-04-27T06:37:48.522181+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getRandomColor/644a16dde350429df0aeea02/5" host=univille2.herokuapp.com request_id=5567c6e2-f0e9-422c-a896-19baf0b93171 fwd="62.90.77.236" dyno=web.1 connect=0ms service=10ms status=200 bytes=544 protocol=https
+2023-04-27T06:37:48.386844+00:00 app[web.1]: GIVE_POINTS
+2023-04-27T06:37:48.511525+00:00 app[web.1]: GET_RANDOM_COLOR
+2023-04-27T06:37:53.834744+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/644a168de350429df0ae3ae7" host=univille2.herokuapp.com request_id=0229046c-7ee9-4a7d-a3c8-4bf6ce41c53a fwd="77.137.44.162" dyno=web.1 connect=0ms service=165ms status=200 bytes=527 protocol=https
+2023-04-27T06:37:53.824523+00:00 app[web.1]: GIVE_POINTS
+2023-04-27T06:38:02.394223+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/644a169be350429df0ae5e5c" host=univille2.herokuapp.com request_id=2d2e54df-277d-4ea8-ba6b-34bd002ee128 fwd="77.137.44.162" dyno=web.1 connect=0ms service=148ms status=200 bytes=527 protocol=https
+2023-04-27T06:38:02.384095+00:00 app[web.1]: GIVE_POINTS
+2023-04-27T06:38:04.926147+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getRandomColor/644a169be350429df0ae5e5c/5" host=univille2.herokuapp.com request_id=5755dc65-049b-49c4-94ee-5872d1fd09a7 fwd="77.137.44.162" dyno=web.1 connect=0ms service=10ms status=200 bytes=544 protocol=https
+2023-04-27T06:38:04.916038+00:00 app[web.1]: GET_RANDOM_COLOR
+2023-04-27T06:38:06.926645+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/644a168de350429df0ae3bee" host=univille2.herokuapp.com request_id=04b0454d-fc0c-4c92-83bd-354ec843cca2 fwd="62.90.77.236" dyno=web.1 connect=0ms service=159ms status=200 bytes=527 protocol=https
+2023-04-27T06:38:06.914848+00:00 app[web.1]: GIVE_POINTS
+2023-04-27T06:38:16.074673+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getRandomColor/644a168de350429df0ae3ae7/5" host=univille2.herokuapp.com request_id=b307ebe6-b844-4124-b8f1-c845c74978fa fwd="77.137.44.162" dyno=web.1 connect=0ms service=9ms status=200 bytes=541 protocol=https
+2023-04-27T06:38:16.064402+00:00 app[web.1]: GET_RANDOM_COLOR
+2023-04-27T06:38:16.813497+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getRandomColor/644a168de350429df0ae3bee/5" host=univille2.herokuapp.com request_id=7b1b5af0-42f7-4840-a1b3-2a7a87ab7bb4 fwd="62.90.77.236" dyno=web.1 connect=0ms service=9ms status=200 bytes=544 protocol=https
+2023-04-27T06:38:16.803524+00:00 app[web.1]: GET_RANDOM_COLOR
+2023-04-27T06:38:21.869170+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/644a168de350429df0ae3c45" host=univille2.herokuapp.com request_id=d404040c-d724-4c28-9f88-d642baaf4408 fwd="77.137.27.194" dyno=web.1 connect=0ms service=164ms status=200 bytes=527 protocol=https
+2023-04-27T06:38:21.851033+00:00 app[web.1]: GIVE_POINTS
+2023-04-27T06:38:22.203047+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getRandomColor/644a168de350429df0ae3c45/5" host=univille2.herokuapp.com request_id=9415926f-8500-44d1-8b75-6b539adbb359 fwd="77.137.27.194" dyno=web.1 connect=0ms service=8ms status=200 bytes=541 protocol=https
+2023-04-27T06:38:22.193590+00:00 app[web.1]: GET_RANDOM_COLOR
+2023-04-27T06:38:35.297649+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/644a169ee350429df0ae634d" host=univille2.herokuapp.com request_id=ab50f27a-3987-4147-b793-72459985211c fwd="62.90.77.236" dyno=web.1 connect=0ms service=161ms status=200 bytes=527 protocol=https
+2023-04-27T06:38:35.283426+00:00 app[web.1]: GIVE_POINTS
+2023-04-27T06:38:36.072539+00:00 app[web.1]: GET_RANDOM_COLOR
+2023-04-27T06:38:36.083710+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getRandomColor/644a169ee350429df0ae634d/5" host=univille2.herokuapp.com request_id=7ce8c243-4e44-437c-a625-968b7b1f5a76 fwd="62.90.77.236" dyno=web.1 connect=0ms service=10ms status=200 bytes=543 protocol=https
+2023-04-27T06:38:43.537451+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/644a169de350429df0ae6296" host=univille2.herokuapp.com request_id=e83b9421-c487-4352-84da-8c71dee98ca6 fwd="77.137.27.194" dyno=web.1 connect=0ms service=167ms status=200 bytes=527 protocol=https
+2023-04-27T06:38:43.529077+00:00 app[web.1]: GIVE_POINTS
+2023-04-27T06:38:44.608061+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getRandomColor/644a169de350429df0ae6296/5" host=univille2.herokuapp.com request_id=94ca6a9a-d7b7-4f6b-9a1b-30a809131380 fwd="77.137.27.194" dyno=web.1 connect=0ms service=9ms status=200 bytes=541 protocol=https
+2023-04-27T06:38:44.599087+00:00 app[web.1]: GET_RANDOM_COLOR
+2023-04-27T06:39:17.394085+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/644a16dde350429df0aee9d4" host=univille2.herokuapp.com request_id=c8f586b9-1bc7-4bda-bb29-13f345a68718 fwd="77.137.44.162" dyno=web.1 connect=0ms service=203ms status=200 bytes=529 protocol=https
+2023-04-27T06:39:17.366685+00:00 app[web.1]: GIVE_POINTS
+2023-04-27T06:39:17.602826+00:00 app[web.1]: GET_RANDOM_COLOR
+2023-04-27T06:39:17.617236+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getRandomColor/644a16dde350429df0aee9d4/5" host=univille2.herokuapp.com request_id=f166de47-d13d-4810-8a1f-21cae4c76345 fwd="77.137.44.162" dyno=web.1 connect=0ms service=10ms status=200 bytes=543 protocol=https
+2023-04-27T06:39:26.750535+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/644a1693e350429df0ae4b4e" host=univille2.herokuapp.com request_id=a4759c59-936c-4095-b389-e086e198f5ae fwd="77.137.27.194" dyno=web.1 connect=0ms service=167ms status=200 bytes=527 protocol=https
+2023-04-27T06:39:26.740500+00:00 app[web.1]: GIVE_POINTS
+2023-04-27T06:39:31.204385+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getRandomColor/644a1693e350429df0ae4b4e/5" host=univille2.herokuapp.com request_id=ff974b57-6d28-4c82-99ed-60814a009021 fwd="77.137.27.194" dyno=web.1 connect=0ms service=9ms status=200 bytes=544 protocol=https
+2023-04-27T06:39:31.194434+00:00 app[web.1]: GET_RANDOM_COLOR
+2023-04-27T06:40:20.073848+00:00 app[web.1]: GET_RANDOM_COLOR
+2023-04-27T06:40:20.085986+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getRandomColor/644a169be350429df0ae5e5c/5" host=univille2.herokuapp.com request_id=be0f6944-6a49-45a8-b7f1-2431b6b360c1 fwd="77.137.27.194" dyno=web.1 connect=0ms service=11ms status=200 bytes=541 protocol=https
+2023-04-27T06:40:20.990858+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getRandomColor/644a169be350429df0ae5e5c/5" host=univille2.herokuapp.com request_id=0aa550b8-9bf9-4073-a4ac-113005d2f602 fwd="77.137.27.194" dyno=web.1 connect=0ms service=46ms status=200 bytes=543 protocol=https
+2023-04-27T06:40:20.943293+00:00 app[web.1]: GET_RANDOM_COLOR
+2023-04-27T06:40:26.086893+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getRandomColor/644a169be350429df0ae5e5c/5" host=univille2.herokuapp.com request_id=3aef7343-1092-4c02-a5f3-98fffdd2f96f fwd="77.137.27.194" dyno=web.1 connect=0ms service=65ms status=200 bytes=541 protocol=https
+2023-04-27T06:40:26.021092+00:00 app[web.1]: GET_RANDOM_COLOR
+2023-04-27T06:40:26.107651+00:00 app[web.1]: GET_RANDOM_COLOR
+2023-04-27T06:40:26.214687+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getRandomColor/644a1693e350429df0ae4b4e/5" host=univille2.herokuapp.com request_id=6e54b52c-8286-4146-9e5e-545a582cc8db fwd="77.137.27.194" dyno=web.1 connect=0ms service=106ms status=200 bytes=543 protocol=https
+2023-04-27T06:40:30.185548+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/644a1688e350429df0ae31a8" host=univille2.herokuapp.com request_id=a46a9e21-5ee9-4f24-9129-fc894ebce895 fwd="77.137.27.194" dyno=web.1 connect=0ms service=169ms status=200 bytes=527 protocol=https
+2023-04-27T06:40:30.160599+00:00 app[web.1]: GIVE_POINTS
+2023-04-27T06:40:34.701459+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/644a16abe350429df0ae8135" host=univille2.herokuapp.com request_id=af94c29f-2fbe-4986-b1e4-2093718ea216 fwd="77.137.27.194" dyno=web.1 connect=0ms service=160ms status=200 bytes=527 protocol=https
+2023-04-27T06:40:34.690727+00:00 app[web.1]: GIVE_POINTS
+2023-04-27T06:40:39.791795+00:00 app[web.1]: GET_RANDOM_COLOR
+2023-04-27T06:40:39.803452+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getRandomColor/644a16abe350429df0ae8135/5" host=univille2.herokuapp.com request_id=fdfd84ba-c131-494e-bd9b-013ef9962702 fwd="77.137.27.194" dyno=web.1 connect=0ms service=11ms status=200 bytes=543 protocol=https
+2023-04-27T06:40:45.598671+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/644a1699e350429df0ae58d1" host=univille2.herokuapp.com request_id=b8b51d7b-feda-4171-8cfd-8b9538cf937f fwd="77.137.27.194" dyno=web.1 connect=0ms service=155ms status=200 bytes=527 protocol=https
+2023-04-27T06:40:45.589901+00:00 app[web.1]: GIVE_POINTS
+2023-04-27T06:40:46.682149+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getRandomColor/644a1699e350429df0ae58d1/5" host=univille2.herokuapp.com request_id=f1d36348-43f9-4fde-bd20-dc023b267920 fwd="77.137.27.194" dyno=web.1 connect=0ms service=8ms status=200 bytes=544 protocol=https
+2023-04-27T06:40:46.673495+00:00 app[web.1]: GET_RANDOM_COLOR
+2023-04-27T06:40:56.733765+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getRandomColor/644a16abe350429df0ae8135/5" host=univille2.herokuapp.com request_id=996b4a56-0781-4721-9cae-68bfc6d77399 fwd="77.137.27.194" dyno=web.1 connect=0ms service=9ms status=200 bytes=544 protocol=https
+2023-04-27T06:40:56.724125+00:00 app[web.1]: GET_RANDOM_COLOR
+2023-04-27T06:41:00.054101+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getRandomColor/644a16abe350429df0ae8135/5" host=univille2.herokuapp.com request_id=c6836bec-6ee7-4fbf-a3a7-89e5cd4c81e3 fwd="77.137.27.194" dyno=web.1 connect=0ms service=10ms status=200 bytes=544 protocol=https
+2023-04-27T06:41:00.043642+00:00 app[web.1]: GET_RANDOM_COLOR
+2023-04-27T06:41:01.027365+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getRandomColor/644a16abe350429df0ae8135/5" host=univille2.herokuapp.com request_id=f79922a1-ac00-4d8d-a40c-12be0c5de811 fwd="77.137.27.194" dyno=web.1 connect=0ms service=10ms status=200 bytes=542 protocol=https
+2023-04-27T06:41:01.016729+00:00 app[web.1]: GET_RANDOM_COLOR
+2023-04-27T06:41:02.607228+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/644a1685e350429df0ae2acd" host=univille2.herokuapp.com request_id=1f9e7f45-4526-47b0-bfe2-63ffaa4fd827 fwd="62.90.77.236" dyno=web.1 connect=0ms service=147ms status=200 bytes=527 protocol=https
+2023-04-27T06:41:02.594434+00:00 app[web.1]: GIVE_POINTS
+2023-04-27T06:41:03.436775+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getRandomColor/644a1685e350429df0ae2acd/5" host=univille2.herokuapp.com request_id=4491aa7d-386f-4fed-b671-a8c1cf70f7fd fwd="62.90.77.236" dyno=web.1 connect=0ms service=9ms status=200 bytes=542 protocol=https
+2023-04-27T06:41:03.423654+00:00 app[web.1]: GET_RANDOM_COLOR
+2023-04-27T06:41:15.241137+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getRandomColor/644a16abe350429df0ae8135/5" host=univille2.herokuapp.com request_id=e43981aa-12e3-4a35-a8dd-89ebe59cd16f fwd="77.137.27.194" dyno=web.1 connect=0ms service=9ms status=200 bytes=544 protocol=https
+2023-04-27T06:41:15.231210+00:00 app[web.1]: GET_RANDOM_COLOR
+2023-04-27T06:41:15.587566+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getRandomColor/644a16abe350429df0ae8135/5" host=univille2.herokuapp.com request_id=c7108854-9be8-4fea-a621-2488c5a8ec45 fwd="77.137.27.194" dyno=web.1 connect=0ms service=10ms status=200 bytes=543 protocol=https
+2023-04-27T06:41:15.576429+00:00 app[web.1]: GET_RANDOM_COLOR
+2023-04-27T06:41:15.932893+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getRandomColor/644a16abe350429df0ae8135/5" host=univille2.herokuapp.com request_id=66e3e496-1693-45de-a785-1a65639081f3 fwd="77.137.27.194" dyno=web.1 connect=0ms service=9ms status=200 bytes=544 protocol=https
+2023-04-27T06:41:15.923229+00:00 app[web.1]: GET_RANDOM_COLOR
+2023-04-27T06:41:16.296100+00:00 app[web.1]: GET_RANDOM_COLOR
+2023-04-27T06:41:16.306644+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getRandomColor/644a16abe350429df0ae8135/5" host=univille2.herokuapp.com request_id=6e047076-9efa-455f-b25c-c3dd02ab7ef0 fwd="77.137.27.194" dyno=web.1 connect=0ms service=9ms status=200 bytes=541 protocol=https
+2023-04-27T06:41:16.666453+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getRandomColor/644a16abe350429df0ae8135/5" host=univille2.herokuapp.com request_id=2cf05399-fd6a-4b2f-8a0b-50665ac5e2c6 fwd="77.137.27.194" dyno=web.1 connect=0ms service=9ms status=200 bytes=543 protocol=https
+2023-04-27T06:41:16.656763+00:00 app[web.1]: GET_RANDOM_COLOR
+2023-04-27T06:41:17.185196+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getRandomColor/644a16abe350429df0ae8135/5" host=univille2.herokuapp.com request_id=9275a1a8-0649-4c2b-a5fa-f4469c6486b9 fwd="77.137.27.194" dyno=web.1 connect=0ms service=8ms status=200 bytes=544 protocol=https
+2023-04-27T06:41:17.176602+00:00 app[web.1]: GET_RANDOM_COLOR
+2023-04-27T06:41:18.526203+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getRandomColor/644a16abe350429df0ae8135/5" host=univille2.herokuapp.com request_id=913d4480-33d1-4156-a050-0ca637e37378 fwd="77.137.27.194" dyno=web.1 connect=0ms service=29ms status=200 bytes=541 protocol=https
+2023-04-27T06:41:18.496590+00:00 app[web.1]: GET_RANDOM_COLOR
+2023-04-27T06:41:52.605696+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/644a1690e350429df0ae4448" host=univille2.herokuapp.com request_id=30570078-ef1d-46d5-bb78-ed9a8aed7884 fwd="77.137.27.194" dyno=web.1 connect=0ms service=163ms status=200 bytes=527 protocol=https
+2023-04-27T06:41:52.589442+00:00 app[web.1]: GIVE_POINTS
+2023-04-27T06:42:22.351447+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getRandomColor/644a1687e350429df0ae2de8/5" host=univille2.herokuapp.com request_id=93042715-b9f2-4f79-b348-29487d69e5a1 fwd="62.90.77.236" dyno=web.1 connect=0ms service=8ms status=200 bytes=543 protocol=https
+2023-04-27T06:42:22.342376+00:00 app[web.1]: GET_RANDOM_COLOR
+2023-04-27T06:42:23.456132+00:00 app[web.1]: GET_RANDOM_COLOR
+2023-04-27T06:42:23.466938+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getRandomColor/644a1687e350429df0ae2de8/5" host=univille2.herokuapp.com request_id=0813235a-ea7a-4802-abb2-33fd4cc5438e fwd="62.90.77.236" dyno=web.1 connect=0ms service=10ms status=200 bytes=543 protocol=https
+2023-04-27T06:42:24.412714+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getRandomColor/644a1687e350429df0ae2de8/5" host=univille2.herokuapp.com request_id=c06cdb5d-284e-481d-833a-3d4caa861cd3 fwd="62.90.77.236" dyno=web.1 connect=0ms service=9ms status=200 bytes=544 protocol=https
+2023-04-27T06:42:24.402728+00:00 app[web.1]: GET_RANDOM_COLOR
+2023-04-27T06:42:25.549333+00:00 app[web.1]: GET_RANDOM_COLOR
+2023-04-27T06:42:25.560230+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getRandomColor/644a1687e350429df0ae2de8/5" host=univille2.herokuapp.com request_id=2a7db768-ce66-417a-8fd4-7629ca02b4c6 fwd="62.90.77.236" dyno=web.1 connect=0ms service=10ms status=200 bytes=542 protocol=https
+2023-04-27T06:42:26.745915+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getRandomColor/644a1687e350429df0ae2de8/5" host=univille2.herokuapp.com request_id=53beddd5-8574-4e8f-ae27-07b89abb47e1 fwd="62.90.77.236" dyno=web.1 connect=0ms service=10ms status=200 bytes=544 protocol=https
+2023-04-27T06:42:26.735013+00:00 app[web.1]: GET_RANDOM_COLOR
+2023-04-27T06:42:27.601166+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getRandomColor/644a1687e350429df0ae2de8/5" host=univille2.herokuapp.com request_id=cdee7af0-df5e-45e0-9546-7130dce587d6 fwd="62.90.77.236" dyno=web.1 connect=0ms service=12ms status=200 bytes=543 protocol=https
+2023-04-27T06:42:27.588601+00:00 app[web.1]: GET_RANDOM_COLOR
+2023-04-27T06:42:28.373355+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getRandomColor/644a1687e350429df0ae2de8/5" host=univille2.herokuapp.com request_id=2ec848af-49ce-4515-803c-0244bcdca0c2 fwd="62.90.77.236" dyno=web.1 connect=0ms service=9ms status=200 bytes=544 protocol=https
+2023-04-27T06:42:28.363081+00:00 app[web.1]: GET_RANDOM_COLOR
+2023-04-27T06:42:29.028514+00:00 app[web.1]: GET_RANDOM_COLOR
+2023-04-27T06:42:29.037214+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getRandomColor/644a1687e350429df0ae2de8/5" host=univille2.herokuapp.com request_id=299e0f48-96da-4c9f-bd81-52b12d38f0f1 fwd="62.90.77.236" dyno=web.1 connect=0ms service=8ms status=200 bytes=544 protocol=https
+2023-04-27T06:42:29.560350+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getRandomColor/644a1687e350429df0ae2de8/5" host=univille2.herokuapp.com request_id=2e123689-b841-4a18-a380-76c2e1a0648d fwd="62.90.77.236" dyno=web.1 connect=0ms service=12ms status=200 bytes=542 protocol=https
+2023-04-27T06:42:29.547972+00:00 app[web.1]: GET_RANDOM_COLOR
+2023-04-27T06:42:30.015490+00:00 app[web.1]: GET_RANDOM_COLOR
+2023-04-27T06:42:30.026055+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getRandomColor/644a1687e350429df0ae2de8/5" host=univille2.herokuapp.com request_id=66160388-1b22-45f9-adc3-13b38e8defe0 fwd="62.90.77.236" dyno=web.1 connect=0ms service=10ms status=200 bytes=544 protocol=https
+2023-04-27T06:42:30.427350+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getRandomColor/644a1687e350429df0ae2de8/5" host=univille2.herokuapp.com request_id=daa39b72-b051-4403-998c-afbb85d12d1f fwd="62.90.77.236" dyno=web.1 connect=0ms service=11ms status=200 bytes=544 protocol=https
+2023-04-27T06:42:30.416221+00:00 app[web.1]: GET_RANDOM_COLOR
+2023-04-27T06:42:30.799115+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getRandomColor/644a1687e350429df0ae2de8/5" host=univille2.herokuapp.com request_id=31b637ed-8c3c-4749-8202-3c8c77320223 fwd="62.90.77.236" dyno=web.1 connect=0ms service=10ms status=200 bytes=541 protocol=https
+2023-04-27T06:42:30.787955+00:00 app[web.1]: GET_RANDOM_COLOR
+2023-04-27T06:42:31.200180+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getRandomColor/644a1687e350429df0ae2de8/5" host=univille2.herokuapp.com request_id=8a5d034b-403c-427a-9c2c-a3e2b674e508 fwd="62.90.77.236" dyno=web.1 connect=0ms service=11ms status=200 bytes=541 protocol=https
+2023-04-27T06:42:31.189033+00:00 app[web.1]: GET_RANDOM_COLOR
+2023-04-27T06:42:31.640719+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getRandomColor/644a1687e350429df0ae2de8/5" host=univille2.herokuapp.com request_id=06af028d-4df1-414c-841d-bc8ed58fe97f fwd="62.90.77.236" dyno=web.1 connect=0ms service=11ms status=200 bytes=542 protocol=https
+2023-04-27T06:42:31.629687+00:00 app[web.1]: GET_RANDOM_COLOR
+2023-04-27T06:42:32.305125+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getRandomColor/644a1687e350429df0ae2de8/5" host=univille2.herokuapp.com request_id=66f36001-2df3-4631-8735-6bafbf4d966f fwd="62.90.77.236" dyno=web.1 connect=0ms service=10ms status=200 bytes=543 protocol=https
+2023-04-27T06:42:32.294920+00:00 app[web.1]: GET_RANDOM_COLOR
+2023-04-27T06:42:32.788296+00:00 app[web.1]: GET_RANDOM_COLOR
+2023-04-27T06:42:32.800738+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getRandomColor/644a1687e350429df0ae2de8/5" host=univille2.herokuapp.com request_id=ea74f354-aece-4d0d-8ce8-d624209883c0 fwd="62.90.77.236" dyno=web.1 connect=0ms service=12ms status=200 bytes=542 protocol=https
+2023-04-27T06:42:33.266425+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getRandomColor/644a1687e350429df0ae2de8/5" host=univille2.herokuapp.com request_id=7474d9be-8093-4afb-ac18-64332f29f4ab fwd="62.90.77.236" dyno=web.1 connect=0ms service=9ms status=200 bytes=543 protocol=https
+2023-04-27T06:42:33.256963+00:00 app[web.1]: GET_RANDOM_COLOR
+2023-04-27T06:42:33.774554+00:00 app[web.1]: GET_RANDOM_COLOR
+2023-04-27T06:42:33.785092+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getRandomColor/644a1687e350429df0ae2de8/5" host=univille2.herokuapp.com request_id=c908ccef-b0d0-4baf-b2c4-7e634a0a40c8 fwd="62.90.77.236" dyno=web.1 connect=0ms service=10ms status=200 bytes=542 protocol=https
+2023-04-27T06:42:34.359430+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getRandomColor/644a1687e350429df0ae2de8/5" host=univille2.herokuapp.com request_id=2439be5e-9895-47b6-865e-e60110e590a0 fwd="62.90.77.236" dyno=web.1 connect=0ms service=10ms status=200 bytes=544 protocol=https
+2023-04-27T06:42:34.348964+00:00 app[web.1]: GET_RANDOM_COLOR
+2023-04-27T06:42:34.788532+00:00 app[web.1]: GET_RANDOM_COLOR
+2023-04-27T06:42:34.798771+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getRandomColor/644a1687e350429df0ae2de8/5" host=univille2.herokuapp.com request_id=eb20282e-7d2c-47da-bccd-965ccf5ca1b2 fwd="62.90.77.236" dyno=web.1 connect=0ms service=10ms status=200 bytes=544 protocol=https
+2023-04-27T06:42:36.534052+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getRandomColor/644a1687e350429df0ae2de8/5" host=univille2.herokuapp.com request_id=f076b48d-e9c4-4158-8426-7598dcd68591 fwd="62.90.77.236" dyno=web.1 connect=0ms service=11ms status=200 bytes=541 protocol=https
+2023-04-27T06:42:36.522369+00:00 app[web.1]: GET_RANDOM_COLOR
+2023-04-27T06:42:37.973552+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getRandomColor/644a1687e350429df0ae2de8/5" host=univille2.herokuapp.com request_id=fa3c4ebc-af28-44ce-94b2-c16c50dd2c8c fwd="62.90.77.236" dyno=web.1 connect=0ms service=9ms status=200 bytes=543 protocol=https
+2023-04-27T06:42:37.963520+00:00 app[web.1]: GET_RANDOM_COLOR
+2023-04-27T06:42:39.623808+00:00 app[web.1]: GET_RANDOM_COLOR
+2023-04-27T06:42:39.646871+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getRandomColor/644a1687e350429df0ae2de8/5" host=univille2.herokuapp.com request_id=46a9fa6b-649c-43fe-9913-4e53ca273d97 fwd="62.90.77.236" dyno=web.1 connect=0ms service=23ms status=200 bytes=543 protocol=https
+2023-04-27T06:42:40.780436+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getRandomColor/644a1687e350429df0ae2de8/5" host=univille2.herokuapp.com request_id=53ecd182-146b-4f1d-8218-a35c9d6d4094 fwd="62.90.77.236" dyno=web.1 connect=0ms service=17ms status=200 bytes=544 protocol=https
+2023-04-27T06:42:40.762353+00:00 app[web.1]: GET_RANDOM_COLOR
+2023-04-27T06:43:10.214044+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getRandomColor/644a169ee350429df0ae634d/5" host=univille2.herokuapp.com request_id=d61485fe-6b63-43db-b423-17dae954f5e6 fwd="77.137.44.162" dyno=web.1 connect=1ms service=9ms status=200 bytes=542 protocol=https
+2023-04-27T06:43:10.203554+00:00 app[web.1]: GET_RANDOM_COLOR
+2023-04-27T06:43:10.791247+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getRandomColor/644a169ee350429df0ae634d/5" host=univille2.herokuapp.com request_id=b72a8ff3-1c1d-4273-bc1a-34ce7bcabc6a fwd="77.137.44.162" dyno=web.1 connect=0ms service=9ms status=200 bytes=544 protocol=https
+2023-04-27T06:43:10.780873+00:00 app[web.1]: GET_RANDOM_COLOR
+2023-04-27T06:43:49.261280+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getRandomColor/644a169de350429df0ae6296/5" host=univille2.herokuapp.com request_id=a67e7ba0-9460-41be-a70d-e061be7e6a92 fwd="77.137.27.194" dyno=web.1 connect=0ms service=27ms status=200 bytes=542 protocol=https
+2023-04-27T06:43:49.237191+00:00 app[web.1]: GET_RANDOM_COLOR
+2023-04-27T06:43:49.730100+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getRandomColor/644a169de350429df0ae6296/5" host=univille2.herokuapp.com request_id=4ba9da1a-4fbd-4525-ae95-8d311a3853ee fwd="77.137.27.194" dyno=web.1 connect=0ms service=10ms status=200 bytes=544 protocol=https
+2023-04-27T06:43:49.722769+00:00 app[web.1]: GET_RANDOM_COLOR
+2023-04-27T06:43:50.720616+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/644a1688e350429df0ae31a8" host=univille2.herokuapp.com request_id=6523d551-c3c0-4984-a9da-baeb8f76b986 fwd="77.137.44.162" dyno=web.1 connect=0ms service=156ms status=200 bytes=527 protocol=https
+2023-04-27T06:43:50.698537+00:00 app[web.1]: GIVE_POINTS
+2023-04-27T06:43:51.367419+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getRandomColor/644a169de350429df0ae6296/5" host=univille2.herokuapp.com request_id=2c39391a-657a-49f4-b246-a62d7dc1a554 fwd="77.137.27.194" dyno=web.1 connect=0ms service=10ms status=200 bytes=543 protocol=https
+2023-04-27T06:43:51.359940+00:00 app[web.1]: GET_RANDOM_COLOR
+2023-04-27T06:43:52.683630+00:00 app[web.1]: GET_RANDOM_COLOR
+2023-04-27T06:43:52.692255+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getRandomColor/644a169de350429df0ae6296/5" host=univille2.herokuapp.com request_id=7ef9e72e-cae6-440a-863a-78eb7736ded5 fwd="77.137.27.194" dyno=web.1 connect=0ms service=11ms status=200 bytes=544 protocol=https
+2023-04-27T06:43:53.037706+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getRandomColor/644a1688e350429df0ae31a8/5" host=univille2.herokuapp.com request_id=872dddbe-09b4-4487-9865-870b65d54223 fwd="77.137.44.162" dyno=web.1 connect=0ms service=10ms status=200 bytes=542 protocol=https
+2023-04-27T06:43:53.027120+00:00 app[web.1]: GET_RANDOM_COLOR
+2023-04-27T06:43:54.175905+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getRandomColor/644a169de350429df0ae6296/5" host=univille2.herokuapp.com request_id=5d5ab449-28e0-43f6-92b2-6aa34e505f1f fwd="77.137.27.194" dyno=web.1 connect=0ms service=9ms status=200 bytes=541 protocol=https
+2023-04-27T06:43:54.169117+00:00 app[web.1]: GET_RANDOM_COLOR
+2023-04-27T06:43:56.672432+00:00 app[web.1]: GET_RANDOM_COLOR
+2023-04-27T06:43:56.688045+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getRandomColor/644a169de350429df0ae6296/5" host=univille2.herokuapp.com request_id=f3492fbd-50ae-41db-8588-4931fa0a851a fwd="77.137.27.194" dyno=web.1 connect=0ms service=18ms status=200 bytes=544 protocol=https
+2023-04-27T06:43:58.253144+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getRandomColor/644a169de350429df0ae6296/5" host=univille2.herokuapp.com request_id=e50da415-28cb-4580-853d-02318593a9d3 fwd="77.137.27.194" dyno=web.1 connect=0ms service=11ms status=200 bytes=541 protocol=https
+2023-04-27T06:43:58.244134+00:00 app[web.1]: GET_RANDOM_COLOR
+2023-04-27T06:43:59.706728+00:00 app[web.1]: GET_RANDOM_COLOR
+2023-04-27T06:43:59.714412+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getRandomColor/644a169de350429df0ae6296/5" host=univille2.herokuapp.com request_id=91263392-2875-4643-9e0c-3fb4c4c4f6ad fwd="77.137.27.194" dyno=web.1 connect=0ms service=10ms status=200 bytes=543 protocol=https
+2023-04-27T06:44:01.178954+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getRandomColor/644a169de350429df0ae6296/5" host=univille2.herokuapp.com request_id=ed0bdbc6-3cae-45eb-b6e5-de2ba2b88309 fwd="77.137.27.194" dyno=web.1 connect=0ms service=11ms status=200 bytes=544 protocol=https
+2023-04-27T06:44:01.172116+00:00 app[web.1]: GET_RANDOM_COLOR
+2023-04-27T06:44:02.853483+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getRandomColor/644a169de350429df0ae6296/5" host=univille2.herokuapp.com request_id=fc81ca72-c77c-470c-b53c-1795cfaba539 fwd="77.137.27.194" dyno=web.1 connect=0ms service=17ms status=200 bytes=544 protocol=https
+2023-04-27T06:44:02.838353+00:00 app[web.1]: GET_RANDOM_COLOR
+2023-04-27T06:44:09.444867+00:00 heroku[router]: at=info method=PUT path="/api/v1/players/dummyApi/givePoints/644a1690e350429df0ae4448" host=univille2.herokuapp.com request_id=39ac0f62-7c41-4539-91f1-811ed5d8b73b fwd="62.90.77.236" dyno=web.1 connect=0ms service=149ms status=200 bytes=527 protocol=https
+2023-04-27T06:44:09.432898+00:00 app[web.1]: GIVE_POINTS
+2023-04-27T06:44:10.230152+00:00 heroku[router]: at=info method=GET path="/api/v1/players/dummyApi/getRandomColor/644a1690e350429df0ae4448/5" host=univille2.herokuapp.com request_id=10c507a3-dc20-4a39-8d87-67b1f1f3125f fwd="62.90.77.236" dyno=web.1 connect=0ms service=9ms status=200 bytes=542 protocol=https
+2023-04-27T06:44:10.220205+00:00 app[web.1]: GET_RANDOM_COLOR
+
+
